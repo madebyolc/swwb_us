@@ -23,14 +23,14 @@
 <body <?php body_class(); ?>>
 
 <div id="page" class="hfeed site">
-    
+
     <!-- ******************* The Navbar Area ******************* -->
     <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
-	
+
         <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
 
-        <nav class="navbar navbar-dark bg-inverse site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                            
+        <nav class="navbar site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
 
                 <div class="container">
 
@@ -65,13 +65,7 @@
                             ); ?>
 
                 </div> <!-- .container -->
-            
+
         </nav><!-- .site-navigation -->
-        
+
     </div><!-- .wrapper-navbar end -->
-
-
-
-
-
-
