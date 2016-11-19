@@ -1,15 +1,13 @@
 /*
-# Theme
+# Structure
 */
 
-html, body {
-  height: 100%;
-  width: 100%;
+.site {
+  transition: all .333s ease;
+  &.active {
+    opacity: .5;
+  }
 }
-
-@import "components/components";
-@import "layout/layout";
-@import "campaigns/campaigns";
 
 // Responsive breakpoints
 @include media-breakpoint-up(sm) { }

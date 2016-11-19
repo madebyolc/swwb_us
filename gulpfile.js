@@ -141,7 +141,8 @@ gulp.task('scripts', function() {
 
     // End - All BS4 stuff
 
-    basePaths.dev + 'js/skip-link-focus-fix.js'
+    basePaths.dev + 'js/skip-link-focus-fix.js',
+    basePaths.dev + 'js/ux.js'
     ])
     .pipe(concat('theme.min.js'))
     .pipe(uglify())
@@ -156,7 +157,8 @@ gulp.task('scripts', function() {
 
     // End - All BS4 stuff
 
-    basePaths.dev + 'js/skip-link-focus-fix.js'
+    basePaths.dev + 'js/skip-link-focus-fix.js',
+    basePaths.dev + 'js/ux.js'
     ])
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js/'));

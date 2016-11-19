@@ -5,7 +5,7 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
-$brand-primary:         #452345; //#ff6d5a
+$brand-primary:         #000; //#ff6d5a
 
 // Basics of a navbar
 $navbar-height:                    60px;
@@ -17,3 +17,47 @@ $font-family-sans-serif: "HK Grotesk", -apple-system, BlinkMacSystemFont, "Segoe
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
+
+$font-size-root: 16px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg:   1.25rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+
+$line-height-base: 1.5 !default;
+
+$font-size-h1: 2.5rem !default;
+$font-size-h2: 2rem !default;
+$font-size-h3: 1.75rem !default;
+$font-size-h4: 1.5rem !default;
+$font-size-h5: 1.25rem !default;
+$font-size-h6: 1rem !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+
+// Theme
+$theme-background:    #FFFFFF;
+$theme-lines:         #2F277D;
+$theme-shadow:        #2F277D;
+
+$theme-primary:       $brand-primary;
+$theme-secondary:     #DDD;
+
+$theme-negative:      $theme-primary; // Where scheme is needed to offer contrasts (i.e. dark background, light text)
+$theme-positive:      #FFFFFF;
+
+// Paddings
+$theme-padding-left:  15px;
+
+// Transitions
+$transition-slow:     .5s;
+$transition-fast:     .15s;
