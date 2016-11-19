@@ -1,0 +1,277 @@
+/*
+# Navigation
+*/
+
+$navbar-background: $theme-background; // Background colour for navbar
+$navbar-border:     $theme-lines;
+$navcol-background: $theme-primary;
+$navcol-link:       #FFFFFF;
+$navcol-link-size:  1rem;
+$push-background:   $theme-primary;
+
+.wrapper-navbar {
+
+}
+
+.wrap-explore {
+  margin-left: -0.75rem;
+  button.navbar-toggler {
+    cursor: pointer;
+    cursor: hand;
+  }
+  .navbar-toggler {
+    position: relative;
+    float: left;
+    width: auto;
+    font-size: 1.5rem;
+    -webkit-transition: all $transition-slow ease;
+    -moz-transition: all $transition-slow ease;
+    transition: all $transition-slow ease;
+    .icon-bar {
+      display: block;
+      width: 26px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: $theme-primary;
+      -webkit-transition: all $transition-fast ease;
+      -moz-transition: all $transition-fast ease;
+      transition: all $transition-fast ease;
+    }
+    .icon-bar+.icon-bar {
+      margin-top: 5px;
+    }
+    .icon-bar.two {
+      &:after {
+        opacity: 0;
+        position: absolute;
+        padding: 0 0.75rem 0 1.5rem;
+        top: 0.95rem;
+        font-size: 1rem;
+        color: $theme-primary;
+        content: "explore";
+        -webkit-transition: all $transition-fast ease;
+        -moz-transition: all $transition-fast ease;
+        transition: all $transition-fast ease;
+      }
+    }
+  }
+  .navbar-toggler:hover {
+    .icon-bar.one {
+      transform: rotate(-45deg);
+      width: 10px;
+    }
+    .icon-bar.two {
+      width: 50px;
+      margin-top: 2px;
+      &:after {
+        padding: 0 0.75rem 0 2.25rem;
+      }
+    }
+    .icon-bar.three {
+      transform: rotate(45deg);
+      width: 10px;
+      margin-top: 2px;
+    }
+  }
+  .navbar-toggler.active {
+    opacity: 0;
+  }
+}
+
+.wrap-pushmenu {
+  .push-esc {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    margin-left: -0.75rem;
+    button.navbar-toggler {
+      cursor: pointer;
+      cursor: hand;
+    }
+    .navbar-toggler {
+      position: relative;
+      float: left;
+      width: auto;
+      font-size: 1.5rem;
+      -webkit-transition: all $transition-slow ease;
+      -moz-transition: all $transition-slow ease;
+      transition: all $transition-slow ease;
+      .icon-bar {
+        display: block;
+        width: 26px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $theme-positive;
+        -webkit-transition: all $transition-fast ease;
+        -moz-transition: all $transition-fast ease;
+        transition: all $transition-fast ease;
+      }
+      .icon-bar+.icon-bar {
+        margin-top: 5px;
+      }
+      .icon-bar.one {
+        transform: rotate(-45deg);
+      }
+      .icon-bar.two {
+        background-color: $theme-negative;
+        width: 0;
+        margin-top: -3px;
+        &:after {
+          opacity: 1;
+          position: absolute;
+          padding: 0 0.75rem 0 2rem;
+          top: 0.95rem;
+          font-size: 1rem;
+          color: $theme-positive;
+          content: "close";
+          -webkit-transition: all $transition-fast ease;
+          -moz-transition: all $transition-fast ease;
+          transition: all $transition-fast ease;
+        }
+      }
+      .icon-bar.three {
+        transform: rotate(45deg);
+        margin-top: -1px;
+      }
+    }
+    .navbar-toggler:hover {
+      .icon-bar.one {
+        transform: rotate(45deg);
+        width: 10px;
+        margin-left: 40px;
+      }
+      .icon-bar.two {
+        width: 50px;
+        margin-top: 2px;
+        background-color: $theme-positive;
+        &:after {
+          padding: 0 0.75rem 0 2.25rem;
+        }
+      }
+      .icon-bar.three {
+        transform: rotate(-45deg);
+        width: 10px;
+        margin-top: 2px;
+        margin-left: 40px;
+      }
+    }
+    .navbar-toggler.active {
+      opacity: 0;
+    }
+  } // push-esc
+  .push-block {
+    margin-top: 1rem;
+  }
+}
+
+.wrap-brand {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 128px;
+}
+
+.navbar-header {
+  min-height: 56px;
+}
+
+.exCollapsingNavbar {
+  padding: 0;
+  z-index: 99;
+  background: $navcol-background;
+  #main-menu {
+    margin: 0;
+  }
+  .nav-link {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: $navcol-link-size;
+    font-weight: bold;
+    color: $navcol-link;
+  }
+}
+
+.navbar-brand-wrapper {
+  text-align: center;
+}
+
+.navbar-brand {
+  float: none;
+  margin-right: 0;
+}
+
+.navbar-brand.custom-logo-link img {
+  max-width: 8rem;
+  height: auto;
+}
+
+// Push navigation
+.pushmenu {
+  background: $push-background;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+  position: fixed;
+}
+
+.pushmenu-left { left: -100%; }
+
+.pushmenu-left.pushmenu-open { left: 0; }
+
+.pushmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.pushmenu-push-toright { left: 100%; }
+
+.pushmenu, .pushmenu-push {
+  -webkit-transition: all $transition-fast ease;
+  -moz-transition: all $transition-fast ease;
+  transition: all $transition-fast ease;
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  .pushmenu { width: 70%; }
+  .pushmenu-left { left: -70%; }
+  .pushmenu-push-toright { left: 70%; }
+  button.navbar-toggler {
+    outline: 0;
+  }
+  .navbar-toggler {
+    position: relative;
+    left: 0;
+    outline: 0;
+  }
+  .navbar-toggler.active {
+    left: $theme-padding-left;
+    outline: none;
+  }
+}
+@include media-breakpoint-up(md) {
+  .pushmenu { width: 50%; }
+  .pushmenu-left { left: -50%; }
+  .pushmenu-push-toright { left: 50%; }
+  .wrap-explore .navbar-toggler {
+    .icon-bar.two {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .pushmenu { width: 50%; }
+  .pushmenu-left { left: -50%; }
+  .pushmenu-push-toright { left: 50%; }
+
+}
+@include media-breakpoint-up(xl) {
+  .pushmenu { width: 40%; }
+  .pushmenu-left { left: -40%; }
+  .pushmenu-push-toright { left: 40%; }
+}
