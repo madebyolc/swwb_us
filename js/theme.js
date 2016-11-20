@@ -5249,10 +5249,12 @@ $(document).ready(function() {
   $menuLeft = $('.pushmenu-left');
   $nav_list = $('.nav_list');
   $nav_close = $('.nav_close');
+  $navbar = $('.site-navigation');
   $site = $('.site');
 
   $nav_list.click(function() {
     $(this).toggleClass('active');
+    $navbar.toggleClass('active');
     $site.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
@@ -5260,8 +5262,22 @@ $(document).ready(function() {
 
   $nav_close.click(function() {
     $nav_list.toggleClass('active');
+    $navbar.toggleClass('active');
     $site.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
+  });
+});
+
+// Start layout specific JS
+$(document).ready(function() {
+  // Set elements to window height
+  function setHeight() {
+    windowHeight = $(window).innerHeight();
+    $('.hero').css('min-height', windowHeight);
+  };
+  setHeight();
+  $(window).resize(function() {
+    setHeight();
   });
 });
