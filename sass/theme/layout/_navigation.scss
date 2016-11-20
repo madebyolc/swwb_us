@@ -48,7 +48,7 @@ $push-background:   $theme-primary;
         top: 0.95rem;
         font-size: 1rem;
         color: $theme-primary;
-        content: "explore";
+        content: "menu";
         -webkit-transition: all $transition-fast ease;
         -moz-transition: all $transition-fast ease;
         transition: all $transition-fast ease;
@@ -171,8 +171,21 @@ $push-background:   $theme-primary;
   width: 128px;
 }
 
-.navbar-header {
-  min-height: 56px;
+.navbar {
+  min-height: $navbar-height;
+  max-height: $navbar-height;
+}
+
+.site-navigation {
+  opacity: 1;
+  -webkit-transition: all $transition-fast ease;
+  -moz-transition: all $transition-fast ease;
+  transition: all $transition-fast ease;
+  &.active {
+    .wrap-brand {
+      opacity: 0;
+    }
+  }
 }
 
 .exCollapsingNavbar {

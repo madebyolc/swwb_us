@@ -3,10 +3,15 @@
 */
 
 .site {
-  transition: all .333s ease;
+  transition: all $transition-slow ease;
   &.active {
-    opacity: .5;
+    opacity: .7;
   }
+}
+
+// Wrappers
+.wrapper {
+  padding-top: $theme-fixed-nav; // add padding for fixed-nav layout
 }
 
 // Responsive breakpoints

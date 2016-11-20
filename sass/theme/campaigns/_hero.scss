@@ -2,6 +2,37 @@
 # Heros
 */
 
+.hero {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 50px;
+  &.push-top {
+    margin-top: -$theme-fixed-nav; // Push to the top
+    padding-top: $theme-fixed-nav; // Padd that distance
+  }
+  &.campaign {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.hero-wrap {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hero-inner {
+  // if needed
+  &.center {
+    text-align: center;
+  }
+}
+
+.hero-cta {
+  text-align: center;
+}
+
 // Responsive breakpoints
 @include media-breakpoint-up(sm) { }
 @include media-breakpoint-up(md) { }
