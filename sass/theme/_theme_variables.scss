@@ -7,13 +7,16 @@
 
 $brand-primary:         #000; //#ff6d5a
 
+// Wrappers
+$theme-fixed-nav:     70px;
+
 // Basics of a navbar
-$navbar-height:                    60px;
+$navbar-height:                    $theme-fixed-nav;
 $navbar-margin-bottom:             0px;
 $navbar-border-radius:             0px;
 
 // Typography
-$font-family-sans-serif: "HK Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: "Now", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;

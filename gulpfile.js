@@ -10,7 +10,9 @@ var basePaths = {
 var browserSyncWatchFiles = [
     './css/*.min.css',
     './js/*.min.js',
-    './*.php'
+    './*.php',
+    './page-templates/*.php',
+    './src/js/*.js'
 ];
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
@@ -142,7 +144,8 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
-    basePaths.dev + 'js/ux.js'
+    basePaths.dev + 'js/ux.js',
+    basePaths.dev + 'js/layout.js'
     ])
     .pipe(concat('theme.min.js'))
     .pipe(uglify())
@@ -158,7 +161,8 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
-    basePaths.dev + 'js/ux.js'
+    basePaths.dev + 'js/ux.js',
+    basePaths.dev + 'js/layout.js'
     ])
     .pipe(concat('theme.js'))
     .pipe(gulp.dest('./js/'));
