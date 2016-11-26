@@ -13,6 +13,9 @@
 .wrapper {
   padding-top: $theme-fixed-nav; // add padding for fixed-nav layout
 }
+.wrapper.push-top { // Push this wrapper level with Navbar
+  padding-top: 0;
+}
 
 // Responsive breakpoints
 @include media-breakpoint-up(sm) { }

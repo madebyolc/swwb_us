@@ -1,19 +1,57 @@
 /*
 # Navigation
+# Push Menu, Sticky Nav, etc.
 */
 
-$navbar-background: $theme-background; // Background colour for navbar
-$navbar-border:     $theme-lines;
-$navcol-background: $theme-primary;
-$navcol-link:       #FFFFFF;
-$navcol-link-size:  1rem;
+// Local Variables
+$header-background: $theme-background;
+$header-color:      $theme-primary;
+
 $push-background:   $theme-primary;
+$push-color:        $theme-positive;
 
-.wrapper-navbar {
-
+// Start .page-header with auto hide
+.ah.page-header {
+  width: 100%;
+  height: $header-height;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  -webkit-transition-duration: $transition-slow;
+          transition-duration: $transition-slow;
+  -webkit-transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+          transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+  -webkit-transition-property: -webkit-transform;
+          transition-property: transform;
+  background-color: $header-background;
 }
 
+.ah.page-header.off-canvas {
+  -webkit-transform: translateY( -100% );
+      -ms-transform: translateY( -100% );
+          transform: translateY( -100% );
+}
+.ah.page-header.fixed {
+  top: 0;
+  z-index: 9999;
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+}
+// ------------------------------ end .page-header
+
+
+// start navbar
+.navbar {
+  min-height: $header-height;
+  max-height: $header-height;
+}
+// ------------------------------ end .navbar
+
+// start wrap-explore (left nav)
 .wrap-explore {
+  position: relative;
+  float: left;
   margin-left: -0.75rem;
   button.navbar-toggler {
     cursor: pointer;
@@ -24,15 +62,12 @@ $push-background:   $theme-primary;
     float: left;
     width: auto;
     font-size: 1.5rem;
-    -webkit-transition: all $transition-slow ease;
-    -moz-transition: all $transition-slow ease;
-    transition: all $transition-slow ease;
     .icon-bar {
       display: block;
       width: 26px;
       height: 2px;
       border-radius: 1px;
-      background-color: $theme-primary;
+      background-color: $header-color;
       -webkit-transition: all $transition-fast ease;
       -moz-transition: all $transition-fast ease;
       transition: all $transition-fast ease;
@@ -47,11 +82,8 @@ $push-background:   $theme-primary;
         padding: 0 0.75rem 0 1.5rem;
         top: 0.95rem;
         font-size: 1rem;
-        color: $theme-primary;
+        color: $header-color;
         content: "menu";
-        -webkit-transition: all $transition-fast ease;
-        -moz-transition: all $transition-fast ease;
-        transition: all $transition-fast ease;
       }
     }
   }
@@ -74,8 +106,65 @@ $push-background:   $theme-primary;
     }
   }
   .navbar-toggler.active {
-    opacity: 0;
+    display: none;
   }
+}
+// ------------------------ end wrap-explore
+
+// start wrap-brand (central nav)
+.wrap-brand {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 128px;
+}
+
+.navbar-brand {
+  float: none;
+  margin-right: 0;
+}
+
+.navbar-brand.custom-logo-link img {
+  max-width: 8rem;
+  height: auto;
+}
+// ------------------------ end wrap-brand
+
+// start wrap-meta (central nav)
+.wrap-meta {
+  display: block;
+  float: right;
+  margin-top: -2.5rem;
+  text-align: right;
+}
+// ------------------------ end wrap-meta
+
+// Push navigation
+.pushmenu {
+  background: $push-background;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+  position: fixed;
+}
+
+.pushmenu-left { left: -100%; }
+
+.pushmenu-left.pushmenu-open { left: 0; }
+
+.pushmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.pushmenu-push-toright { left: 100%; }
+
+.pushmenu, .pushmenu-push {
+  -webkit-transition: all $transition-fast ease;
+  -moz-transition: all $transition-fast ease;
+  transition: all $transition-fast ease;
 }
 
 .wrap-pushmenu {
@@ -93,15 +182,12 @@ $push-background:   $theme-primary;
       float: left;
       width: auto;
       font-size: 1.5rem;
-      -webkit-transition: all $transition-slow ease;
-      -moz-transition: all $transition-slow ease;
-      transition: all $transition-slow ease;
       .icon-bar {
         display: block;
         width: 26px;
         height: 2px;
         border-radius: 1px;
-        background-color: $theme-positive;
+        background-color: $push-color;
         -webkit-transition: all $transition-fast ease;
         -moz-transition: all $transition-fast ease;
         transition: all $transition-fast ease;
@@ -113,7 +199,7 @@ $push-background:   $theme-primary;
         transform: rotate(-45deg);
       }
       .icon-bar.two {
-        background-color: $theme-negative;
+        background-color: $push-color;
         width: 0;
         margin-top: -3px;
         &:after {
@@ -124,9 +210,6 @@ $push-background:   $theme-primary;
           font-size: 1rem;
           color: $theme-positive;
           content: "close";
-          -webkit-transition: all $transition-fast ease;
-          -moz-transition: all $transition-fast ease;
-          transition: all $transition-fast ease;
         }
       }
       .icon-bar.three {
@@ -162,89 +245,6 @@ $push-background:   $theme-primary;
   .push-block {
     margin-top: 1rem;
   }
-}
-
-.wrap-brand {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  width: 128px;
-}
-
-.navbar {
-  min-height: $navbar-height;
-  max-height: $navbar-height;
-}
-
-.site-navigation {
-  opacity: 1;
-  -webkit-transition: all $transition-fast ease;
-  -moz-transition: all $transition-fast ease;
-  transition: all $transition-fast ease;
-  &.active {
-    .wrap-brand {
-      opacity: 0;
-    }
-  }
-}
-
-.exCollapsingNavbar {
-  padding: 0;
-  z-index: 99;
-  background: $navcol-background;
-  #main-menu {
-    margin: 0;
-  }
-  .nav-link {
-    margin: 0;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    font-size: $navcol-link-size;
-    font-weight: bold;
-    color: $navcol-link;
-  }
-}
-
-.navbar-brand-wrapper {
-  text-align: center;
-}
-
-.navbar-brand {
-  float: none;
-  margin-right: 0;
-}
-
-.navbar-brand.custom-logo-link img {
-  max-width: 8rem;
-  height: auto;
-}
-
-// Push navigation
-.pushmenu {
-  background: $push-background;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 1000;
-  position: fixed;
-}
-
-.pushmenu-left { left: -100%; }
-
-.pushmenu-left.pushmenu-open { left: 0; }
-
-.pushmenu-push {
-  overflow-x: hidden;
-  position: relative;
-  left: 0;
-}
-
-.pushmenu-push-toright { left: 100%; }
-
-.pushmenu, .pushmenu-push {
-  -webkit-transition: all $transition-fast ease;
-  -moz-transition: all $transition-fast ease;
-  transition: all $transition-fast ease;
 }
 
 // Responsive breakpoints
