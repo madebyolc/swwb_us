@@ -137,6 +137,7 @@ gulp.task('scripts', function() {
   gulp.src([
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
+    basePaths.dev + 'js/ux.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
@@ -144,7 +145,6 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
-    basePaths.dev + 'js/ux.js',
     basePaths.dev + 'js/layout.js'
     ])
     .pipe(concat('theme.min.js'))
@@ -154,6 +154,7 @@ gulp.task('scripts', function() {
   gulp.src([
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
+    basePaths.dev + 'js/ux.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
@@ -161,7 +162,6 @@ gulp.task('scripts', function() {
     // End - All BS4 stuff
 
     basePaths.dev + 'js/skip-link-focus-fix.js',
-    basePaths.dev + 'js/ux.js',
     basePaths.dev + 'js/layout.js'
     ])
     .pipe(concat('theme.js'))

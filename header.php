@@ -69,43 +69,60 @@
 
   <div id="page" class="hfeed site">
 
-    <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+    <header class="ah page-header">
 
-      <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
+      <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
 
-      <nav class="navbar navbar-fixed-top site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+        <a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content', 'understrap' ); ?></a>
 
-        <div class="container">
+        <div class="sw-notice">
 
-          <div class="wrap-explore">
+        </div>
 
-            <button class="nav_list navbar-toggler visible-xs-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      				<span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar one"></span>
-              <span class="icon-bar two"></span>
-              <span class="icon-bar three"></span>
-            </button>
+        <nav class="navbar site-navigation" data-toggle="sticky-onscroll" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-          </div> <!-- .wrap-explore -->
+          <div class="container">
 
-          <div class="wrap-brand">
+            <div class="wrap-explore">
 
-            <?php if (!has_custom_logo()) { ?>
-              <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-              	<?php bloginfo( 'name' ); ?>
+              <button class="nav_list navbar-toggler visible-xs-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        				<span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar one"></span>
+                <span class="icon-bar two"></span>
+                <span class="icon-bar three"></span>
+              </button>
+
+            </div> <!-- .wrap-explore -->
+
+            <div class="wrap-brand">
+
+              <?php if (!has_custom_logo()) { ?>
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                	<?php bloginfo( 'name' ); ?>
+                </a>
+              <?php } else { the_custom_logo(); } ?><!-- end custom logo -->
+
+            </div> <!-- .wrap-brand -->
+
+            <div class="wrap-meta">
+
+              <a class="btn btn-secondary btn-sm" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
+                <?php
+                  if ( get_post_meta($post->ID, 'call_to_action', true) ) {
+                    echo get_post_meta($post->ID, 'call_to_action', true);
+                  }
+                  else {
+                    echo 'Contextual Button';
+                  }
+                ?>
               </a>
-            <?php } else { the_custom_logo(); } ?><!-- end custom logo -->
 
-          </div> <!-- .wrap-brand -->
+            </div> <!-- .wrap-meta -->
 
-          <div class="wrap-meta">
+          </div> <!-- .container -->
 
+        </nav><!-- .site-navigation -->
 
+    </div><!-- .wrapper-navbar end -->
 
-          </div> <!-- .wrap-meta -->
-
-        </div> <!-- .container -->
-
-      </nav><!-- .site-navigation -->
-
-  </div><!-- .wrapper-navbar end -->
+  </header><!-- header end -->
