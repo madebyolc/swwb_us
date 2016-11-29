@@ -106,7 +106,7 @@
 
             <div class="wrap-meta">
 
-              <a class="btn btn-secondary btn-sm" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
+              <!--<a class="btn btn-secondary btn-sm" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
                 <?php
                   if ( get_post_meta($post->ID, 'call_to_action', true) ) {
                     echo get_post_meta($post->ID, 'call_to_action', true);
@@ -115,7 +115,7 @@
                     echo 'Contextual Button';
                   }
                 ?>
-              </a>
+              </a>-->
 
             </div> <!-- .wrap-meta -->
 

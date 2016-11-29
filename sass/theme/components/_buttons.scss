@@ -2,6 +2,16 @@
 # Buttons
 */
 
+.btn {
+  &.btn-secondary {
+    &.negative-wire {
+      color: $theme-negative;
+      border: 1px solid $theme-negative;
+      background: transparent;
+    }
+  }
+}
+
 // Responsive breakpoints
 @include media-breakpoint-up(sm) { }
 @include media-breakpoint-up(md) { }

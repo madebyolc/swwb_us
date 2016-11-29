@@ -1,0 +1,30 @@
+/*
+# Article
+# Article section, post-navigation, etc.
+*/
+
+.article {
+  &.container {
+    width: 100%;
+  }
+  .entry-header, .entry-content {
+    z-index: 1;
+    background-color: $article-background;
+  }
+  .entry-content {
+    padding-bottom: 1rem;
+  }
+  .entry-footer {
+    background-color: $article-background;
+  }
+}
+
+.post-navigation {
+  background: $article-background;
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) { }
+@include media-breakpoint-up(md) { }
+@include media-breakpoint-up(lg) { }
+@include media-breakpoint-up(xl) { }

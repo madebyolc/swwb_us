@@ -5,7 +5,7 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
-$brand-primary:         #000; //#ff6d5a
+$brand-primary:         #1D1D1D; //#ff6d5a
 
 // Typography
 $font-family-sans-serif: "HK Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
@@ -52,6 +52,8 @@ $theme-positive:      #FFFFFF;
 
 $theme-fixed-nav:     70px;
 
+$theme-text-header:   $brand-primary;
+
 // Header
 $header-height:       $theme-fixed-nav;
 
@@ -67,3 +69,6 @@ $theme-padding-lg:    4rem;
 // Transitions
 $transition-slow:     .5s;
 $transition-fast:     .15s;
+
+// Article
+$article-background: #FFFFFF;

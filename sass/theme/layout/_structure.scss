@@ -12,9 +12,15 @@
 // Wrappers
 .wrapper {
   padding-top: $theme-fixed-nav; // add padding for fixed-nav layout
+  &.push-top { // Push this wrapper level with Navbar
+    padding-top: 0;
+  }
 }
-.wrapper.push-top { // Push this wrapper level with Navbar
-  padding-top: 0;
+#single-wrapper {
+  padding-bottom: 0;
+}
+#wrapper-footer {
+  background-color: $theme-positive;
 }
 
 // Responsive breakpoints

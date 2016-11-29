@@ -7,6 +7,10 @@
   display: table;
   width: 100%;
   height: 50px;
+  &.push-top { // when it's not wrapped to comp for Nav
+    margin-top: -$theme-fixed-nav;
+    padding-top: $theme-fixed-nav;
+  }
   &.campaign {
     background-size: cover;
     background-position: center;
