@@ -15,7 +15,8 @@ span#typed {
   padding-left: .25rem;
 }
 
-.typed-cursor.blink{
+// REMOVE -- too slow
+/*.typed-cursor.blink{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
@@ -35,4 +36,4 @@ span#typed {
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
-}
+}*/

@@ -141,6 +141,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
     basePaths.dev + 'js/ScrollMagic.js',
+    basePaths.dev + 'js/odometer.min.js',
     basePaths.dev + 'js/article.js',
 
     // Start - All BS4 stuff
@@ -162,6 +163,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
     basePaths.dev + 'js/ScrollMagic.js',
+    basePaths.dev + 'js/odometer.min.js',
     basePaths.dev + 'js/article.js',
 
     // Start - All BS4 stuff

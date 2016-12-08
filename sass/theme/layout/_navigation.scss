@@ -45,6 +45,14 @@ $push-color:        $theme-positive;
 .navbar {
   min-height: $header-height;
   max-height: $header-height;
+  &.active {
+    .navbar-brand {
+      opacity: 0;
+    }
+  }
+  .container {
+    width: 100%;
+  }
 }
 // ------------------------------ end .navbar
 
@@ -138,18 +146,13 @@ $push-color:        $theme-positive;
   text-align: right;
 }
 // ------------------------ end wrap-meta
-
-// Push navigation
 .pushmenu {
   background: $push-background;
-  width: 100%;
   height: 100%;
   top: 0;
   z-index: 1000;
   position: fixed;
 }
-
-.pushmenu-left { left: -100%; }
 
 .pushmenu-left.pushmenu-open { left: 0; }
 
@@ -159,13 +162,16 @@ $push-color:        $theme-positive;
   left: 0;
 }
 
-.pushmenu-push-toright { left: 100%; }
-
 .pushmenu, .pushmenu-push {
   -webkit-transition: all $transition-fast ease;
   -moz-transition: all $transition-fast ease;
   transition: all $transition-fast ease;
 }
+
+// Push navigation
+.pushmenu { width: 90%; }
+.pushmenu-left { left: -90%; }
+.pushmenu-push-toright { left: 90%; }
 
 .wrap-pushmenu {
   .push-esc {

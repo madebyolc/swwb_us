@@ -1,25 +1,49 @@
-<hero class="hero campaign" style="background-color: <?php if ( get_post_meta($post->ID, 'hero_colour', true) ) : echo get_post_meta($post->ID, 'hero_colour', true); endif; ?>; background-image: url('<?php if ( get_post_meta($post->ID, 'hero_image', true) ) : echo get_post_meta($post->ID, 'hero_image', true); endif; ?>')">
+<div class="hero feature push-top <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>" style="background-color: <?php if ( get_post_meta($post->ID, 'feature_background', true) ) : echo get_post_meta($post->ID, 'feature_background', true); endif; ?>;">
 
-  <div class="hero-wrap">
+  <div class="feature-background nofix" style="background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>');"></div>
 
-    <div class="hero-inner center container">
+  <div class="feature-wrap">
 
-      <h1>
-        <?php if ( get_post_meta($post->ID, 'header', true) ) : echo get_post_meta($post->ID, 'header', true); endif; ?>
-      </h1>
+    <div class="feature-inner container">
 
-      <p class="lead">
-        <?php if ( get_post_meta($post->ID, 'subheader', true) ) : echo get_post_meta($post->ID, 'subheader', true); endif; ?>
-      </p>
+      <div id="typed-strings">
 
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
-          <?php if ( get_post_meta($post->ID, 'call_to_action', true) ) : echo get_post_meta($post->ID, 'call_to_action', true); endif; ?>
-        </a>
+        <p><a href="#read"><?php the_title(); ?></a></p>
+
       </div>
 
-    </div><!-- .hero-inner end -->
+      <h1 class="entry-title <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
+
+        <span id="typed"></span>
+
+      </h1>
+
+      <h2>
+
+        <?php if ( get_post_meta($post->ID, 'subheader', true) ) : echo get_post_meta($post->ID, 'subheader', true); endif; ?>
+
+      </h2>
+
+    </div>
+
+    <div class="feature-buttons container">
+
+      <div class="entry-meta">
+
+        <span class="feature-meta continue"><a href="#read" class="btn btn-secondary btn-lg negative-wire  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">Continue to Article</a></span>
+
+        <span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> category"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_category(' '); ?></span>
+
+        <span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> date"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="<?php echo get_month_link('', ''); ?>"><?php the_date() ?></a></span>
+
+        <span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <?php the_author_posts_link(); ?></span>
+
+      </div><!-- .entry-meta -->
+
+    </div>
+
+    <!--<div class="article-pseudo-header"></div>-->
 
   </div>
 
-</hero> <!-- hero -->
+</div>

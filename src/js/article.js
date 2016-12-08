@@ -10,10 +10,10 @@ jQuery(function($){
 		typeSpeed: 10,
 		callback: function() {
 			//$('.ah.page-header').toggleClass('off-canvas');
-			$('.feature-continue').toggleClass('active');
 			$('.feature-buttons').toggleClass('active');
 			$('.typed-cursor').toggleClass('blink');
 			$('.ah.page-header').toggleClass('fixed');
+			$('.article-pseudo-header').toggleClass('active');
 		}
 	});
 });
