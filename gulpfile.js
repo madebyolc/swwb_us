@@ -140,7 +140,8 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/jquery.localScroll.js',
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-    basePaths.dev + 'js/ScrollMagic.js',
+    basePaths.dev + 'js/ScrollMagic.min.js',
+    basePaths.dev + 'js/ScrollControl.js',
     basePaths.dev + 'js/odometer.min.js',
     basePaths.dev + 'js/article.js',
 
@@ -162,7 +163,8 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/jquery.localScroll.js',
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-    basePaths.dev + 'js/ScrollMagic.js',
+    basePaths.dev + 'js/ScrollMagic.min.js',
+    basePaths.dev + 'js/ScrollControl.js',
     basePaths.dev + 'js/odometer.min.js',
     basePaths.dev + 'js/article.js',
 

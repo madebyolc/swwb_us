@@ -2,7 +2,7 @@
 * # UX JS
 * Auto-hide Header, Push Menu, etc.
 */
-
+//alert("UX Loaded");
 // Start Auto-hide Header
 (function($){
   $(function(){
