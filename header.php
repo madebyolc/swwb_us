@@ -18,7 +18,9 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script src="//code.jquery.com/jquery.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 <?php wp_head(); ?>
 </head
 
@@ -106,7 +108,7 @@
 
             <div class="wrap-meta">
 
-              <a class="btn btn-secondary btn-sm" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
+              <!--<a class="btn btn-secondary btn-sm" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
                 <?php
                   if ( get_post_meta($post->ID, 'call_to_action', true) ) {
                     echo get_post_meta($post->ID, 'call_to_action', true);
@@ -115,7 +117,7 @@
                     echo 'Contextual Button';
                   }
                 ?>
-              </a>
+              </a>-->
 
             </div> <!-- .wrap-meta -->
 

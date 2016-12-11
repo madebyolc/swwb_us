@@ -5,7 +5,7 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
-$brand-primary:         #000; //#ff6d5a
+$brand-primary:         #1D1D1D; //#ff6d5a
 
 // Typography
 $font-family-sans-serif: "HK Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
@@ -33,6 +33,8 @@ $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;
 $display3-size: 4.5rem !default;
 $display4-size: 3.5rem !default;
+$display5-size: 2.5rem !default;
+$display6-size: 1.5rem !default;
 
 $display1-weight: 300 !default;
 $display2-weight: 300 !default;
@@ -41,8 +43,10 @@ $display4-weight: 300 !default;
 
 // Theme
 $theme-background:    #FFFFFF;
+$theme-background-shadow: rgb(241, 240, 238);
 $theme-lines:         #2F277D;
 $theme-shadow:        #2F277D;
+$theme-color:         rgb(81, 80, 78);
 
 $theme-primary:       $brand-primary;
 $theme-secondary:     #DDD;
@@ -52,11 +56,16 @@ $theme-positive:      #FFFFFF;
 
 $theme-fixed-nav:     70px;
 
+$theme-text-header:   $brand-primary;
+
 // Header
 $header-height:       $theme-fixed-nav;
 
 $navbar-margin-bottom:  0px;
 $navbar-border-radius:  0px;
+
+// Footer
+$footer-background:     $theme-background-shadow;
 
 // Paddings
 $theme-padding-left:  15px;
@@ -67,3 +76,12 @@ $theme-padding-lg:    4rem;
 // Transitions
 $transition-slow:     .5s;
 $transition-fast:     .15s;
+
+// Article
+$article-background:      $theme-background-shadow;
+$article-reader-background: $article-background;
+$article-entry-padding:   2rem;
+$article-block-padding:   1rem;
+$article-p-size:          $font-size-h4;
+$article-caption-size:    $font-size-h5;
+$article-caption-colour:  #BBB;

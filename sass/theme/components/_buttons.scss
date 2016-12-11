@@ -2,6 +2,42 @@
 # Buttons
 */
 
+.btn {
+  -webkit-transition: all $transition-fast ease;
+  -moz-transition: all $transition-fast ease;
+  transition: all $transition-fast ease;
+  &.btn-secondary {
+    color: $theme-negative;
+    border: 1px solid $theme-negative;
+    background: transparent;
+    &:hover {
+      color: $theme-positive;
+      border-color: $theme-negative;
+      background: $theme-negative;
+    }
+    &.dark {
+      color: $theme-negative;
+      border: 1px solid $theme-negative;
+      background: transparent;
+      &:hover {
+        color: $theme-positive;
+        border-color: $theme-negative;
+        background: $theme-negative;
+      }
+    }
+    &.light {
+      color: $theme-positive;
+      border: 1px solid $theme-positive;
+      background: transparent;
+      &:hover {
+        color: $theme-negative;
+        border-color: $theme-positive;
+        background: $theme-positive;
+      }
+    }
+  }
+}
+
 // Responsive breakpoints
 @include media-breakpoint-up(sm) { }
 @include media-breakpoint-up(md) { }

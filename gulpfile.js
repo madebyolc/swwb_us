@@ -135,9 +135,15 @@ gulp.task('watch-bs', ['browser-sync', 'watch', 'cssnano'], function () { });
 // Uglifies and concat all JS files into one
 gulp.task('scripts', function() {
   gulp.src([
+    basePaths.dev + 'js/ux.js',
+    basePaths.dev + 'js/typed.js',
+    basePaths.dev + 'js/jquery.localScroll.js',
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-    basePaths.dev + 'js/ux.js',
+    basePaths.dev + 'js/ScrollMagic.min.js',
+    basePaths.dev + 'js/ScrollControl.js',
+    basePaths.dev + 'js/odometer.min.js',
+    basePaths.dev + 'js/article.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
@@ -152,9 +158,15 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./js/'));
 
   gulp.src([
+    basePaths.dev + 'js/ux.js',
+    basePaths.dev + 'js/typed.js',
+    basePaths.dev + 'js/jquery.localScroll.js',
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-    basePaths.dev + 'js/ux.js',
+    basePaths.dev + 'js/ScrollMagic.min.js',
+    basePaths.dev + 'js/ScrollControl.js',
+    basePaths.dev + 'js/odometer.min.js',
+    basePaths.dev + 'js/article.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
