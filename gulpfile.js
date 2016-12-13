@@ -94,8 +94,9 @@ gulp.task('sass', function () {
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
+    gulp.watch('./sass/**/**/*.scss', ['sass']);
     gulp.watch('./css/theme.css', ['cssnano']);
+    gulp.watch('./src/js/*.js', ['scripts']);
 });
 
 // Run:
@@ -128,7 +129,7 @@ gulp.task('browser-sync', function() {
 // Run:
 // gulp watch-bs
 // Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task('watch-bs', ['browser-sync', 'watch', 'cssnano'], function () { });
+gulp.task('watch-bs', ['browser-sync', 'watch', 'cssnano', 'scripts'], function () { });
 
 // Run:
 // gulp scripts.
@@ -137,13 +138,16 @@ gulp.task('scripts', function() {
   gulp.src([
     basePaths.dev + 'js/ux.js',
     basePaths.dev + 'js/typed.js',
+    basePaths.dev + 'js/greensock/TweenMax.min.js',
+    basePaths.dev + 'js/greensock/plugins/ScrollToPlugin.min.js',
     basePaths.dev + 'js/jquery.localScroll.js',
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-    basePaths.dev + 'js/ScrollMagic.min.js',
-    basePaths.dev + 'js/ScrollControl.js',
-    basePaths.dev + 'js/odometer.min.js',
     basePaths.dev + 'js/article.js',
+    basePaths.dev + 'js/scrollmagic/minified/ScrollMagic.min.js',
+    basePaths.dev + 'js/scrollmagic/minified/plugins/animation.gsap.min.js',
+    basePaths.dev + 'js/scrollmagic/minified/plugins/debug.addIndicators.min.js',
+    basePaths.dev + 'js/scrollControl.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
@@ -160,13 +164,16 @@ gulp.task('scripts', function() {
   gulp.src([
     basePaths.dev + 'js/ux.js',
     basePaths.dev + 'js/typed.js',
+    basePaths.dev + 'js/greensock/TweenMax.min.js',
+    basePaths.dev + 'js/greensock/plugins/ScrollToPlugin.min.js',
     basePaths.dev + 'js/jquery.localScroll.js',
     basePaths.dev + 'js/owl.carousel.min.js', // Must be loaded before BS4
     basePaths.dev + 'js/tether.js', // Must be loaded before BS4
-    basePaths.dev + 'js/ScrollMagic.min.js',
-    basePaths.dev + 'js/ScrollControl.js',
-    basePaths.dev + 'js/odometer.min.js',
     basePaths.dev + 'js/article.js',
+    basePaths.dev + 'js/scrollmagic/minified/ScrollMagic.min.js',
+    basePaths.dev + 'js/scrollmagic/minified/plugins/animation.gsap.min.js',
+    basePaths.dev + 'js/scrollmagic/minified/plugins/debug.addIndicators.min.js',
+    basePaths.dev + 'js/scrollControl.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
