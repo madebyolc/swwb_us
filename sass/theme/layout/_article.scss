@@ -52,12 +52,14 @@ $article-entry-width:    100%;
   background: $article-reader-background;
 }
 
-.article.entry .article-nav {
-  float:left;
-  width: 0%;
+.article-nav {
+  z-index: 999;
+  background: $article-background;
 }
 
 .article.entry .article-content {
+  //float: left;
+  width: 100%;
   // Styles
   h1 { font-size: $font-size-h1; padding-bottom: $font-size-h1; }
   h2 { font-size: $font-size-h2; padding-bottom: $font-size-h2; }
@@ -70,6 +72,7 @@ $article-entry-width:    100%;
   padding-bottom: $article-entry-padding;
   font-size: $article-p-size;
   line-height: 1.8;
+  overflow-y: hidden;
   p {
     margin-left: auto;
     margin-right: auto;

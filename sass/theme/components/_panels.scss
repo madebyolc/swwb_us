@@ -1,11 +1,14 @@
 /*
-# Campaign: GTEM
+# Panels
 */
 
-#panel-1 .gtem {
-  background: #CCC;
+.panel {
+  opacity: 0;
+  transition: all 1s ease-out;
 }
-
+.panel.fade-in {
+  opacity: 1;
+}
 // Responsive breakpoints
 @include media-breakpoint-up(sm) { }
 @include media-breakpoint-up(md) { }
