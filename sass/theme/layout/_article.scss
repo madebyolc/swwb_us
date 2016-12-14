@@ -15,6 +15,7 @@
   .entry-content {
   }
   .entry-footer {
+    padding: 0 0 3rem;
     background-color: $article-background;
   }
 }
@@ -52,14 +53,20 @@ $article-entry-width:    100%;
   background: $article-reader-background;
 }
 
+.article.footer.container {
+  background: transparent;
+}
+
 .article-nav {
   z-index: 999;
-  background: $article-background;
 }
 
 .article.entry .article-content {
   //float: left;
   width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
   // Styles
   h1 { font-size: $font-size-h1; padding-bottom: $font-size-h1; }
   h2 { font-size: $font-size-h2; padding-bottom: $font-size-h2; }
@@ -119,6 +126,7 @@ $article-entry-width:    100%;
   $article-entry-width:    80%;
   .article-pseudo-header { width: 95%; }
   .article.entry.container,
+  .article-nav.container,
   .article.footer.container { width: $article-entry-width; }
 
 
@@ -128,11 +136,13 @@ $article-entry-width:    100%;
   $article-entry-width:    70%;
   .article-pseudo-header { width: 95%; }
   .article.entry.container,
+  .article-nav.container,
   .article.footer.container { width: $article-entry-width; }
 }
 @include media-breakpoint-up(xl) {
   $article-entry-width:    60%;
   .article-pseudo-header { width: 65%; }
   .article.entry.container,
+  .article-nav.container,
   .article.footer.container { width: $article-entry-width; }
 }

@@ -10,11 +10,11 @@
 .article.entry h3,
 .article.entry h4 {
   opacity: 0;
-  transform: translateY(50px);
+  transform: scale(.95);
   transition: all $transition-slow ease-out;
   &.fade-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 

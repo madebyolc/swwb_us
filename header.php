@@ -15,6 +15,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script src="//code.jquery.com/jquery.min.js"></script>
@@ -28,7 +29,7 @@
 
 <swwbwrap class="pushmenu-push">
 
-  <nav class="pushmenu pushmenu-left">
+  <nav class="pushmenu pushmenu-left"><!-- remove .pushmenu-open -->
 
     <div class="wrap-pushmenu container">
 
@@ -45,31 +46,46 @@
 
         </div> <!-- .push-esc -->
 
+
+
+      </nav> <!-- .site-navigation -->
+      <div class="push-block-wrapper">
+
         <div class="push-block">
 
           <form method="get" id="searchform" class="form lg lines-dark" action="//localhost:3000/swwb/" role="search" _lpchecked="1">
-        		<label for="s" class="assistive-text sr-only">Search</label>
-        		<div class="input-group">
-        			<input type="text" class="field form-control" name="s" id="s" placeholder="Search …">
-        			<span class="input-group-btn">
-        				<input type="submit" class="submit btn btn-primary" name="submit" id="searchsubmit" value="Search">
-        			</span>
-        		</div>
-        	</form>
+            <label for="s" class="assistive-text sr-only">Search</label>
+            <div class="input-group">
+              <input type="text" class="field form-control" name="s" id="s" placeholder="Search …">
+              <span class="input-group-btn">
+                <input type="submit" class="submit btn btn-primary" name="submit" id="searchsubmit" value="Search">
+              </span>
+            </div>
+          </form>
 
         </div> <!-- .push-block .search -->
 
-        <div class="push-block">
+        <div class="push-block push-nav">
+
+            <?php	wp_nav_menu( array('theme_location' => 'global-menu', 'container_class' => 'global-menu' ) );?>
 
         </div> <!-- .push-block -->
 
-      </nav> <!-- .site-navigation -->
+        <div class="push-block push-nav">
 
+          <span class="title">Share:</span>
+          <?php	wp_nav_menu( array('theme_location' => 'global-social-menu', 'container_class' => 'global-social-menu' ) );?>
+
+        </div> <!-- .push-block -->
+
+      </div> <!-- .push-block-wrapper -->
     </div>
 
   </nav>
 
   <div id="page" class="hfeed site">
+
+    <div class="page-button"></div>
 
     <header class="ah page-header">
 

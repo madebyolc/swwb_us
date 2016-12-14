@@ -7,7 +7,7 @@
 $header-background: $theme-background;
 $header-color:      $theme-primary;
 
-$push-background:   $theme-primary;
+$push-background:   $nav-background;
 $push-color:        $theme-positive;
 
 // Start .page-header with auto hide
@@ -97,8 +97,9 @@ $push-color:        $theme-positive;
   }
   .navbar-toggler:hover {
     .icon-bar.one {
-      transform: rotate(-45deg);
+      transform: rotate(45deg);
       width: 10px;
+      margin-left: 40px;
     }
     .icon-bar.two {
       width: 50px;
@@ -108,9 +109,10 @@ $push-color:        $theme-positive;
       }
     }
     .icon-bar.three {
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
       width: 10px;
       margin-top: 2px;
+      margin-left: 40px;
     }
   }
   .navbar-toggler.active {
@@ -150,8 +152,9 @@ $push-color:        $theme-positive;
   background: $push-background;
   height: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 999999999;
   position: fixed;
+  overflow-x: hidden;
 }
 
 .pushmenu-left.pushmenu-open { left: 0; }
@@ -169,16 +172,24 @@ $push-color:        $theme-positive;
 }
 
 // Push navigation
-.pushmenu { width: 90%; }
-.pushmenu-left { left: -90%; }
-.pushmenu-push-toright { left: 90%; }
+.pushmenu { width: 70%; }
+.pushmenu-left { left: -70%; }
+.pushmenu-push-toright { left: 70%; }
 
 .wrap-pushmenu {
+  overflow-x: hidden;
+  &.container {
+    display: block;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+  }
   .push-esc {
     position: relative;
     width: 100%;
     height: 3rem;
-    margin-left: -0.75rem;
+    margin-left: -0.5rem;
     button.navbar-toggler {
       cursor: pointer;
       cursor: hand;
@@ -214,7 +225,7 @@ $push-color:        $theme-positive;
           padding: 0 0.75rem 0 2rem;
           top: 0.95rem;
           font-size: 1rem;
-          color: $theme-positive;
+          color: $nav-primary;
           content: "close";
         }
       }
@@ -225,38 +236,150 @@ $push-color:        $theme-positive;
     }
     .navbar-toggler:hover {
       .icon-bar.one {
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
         width: 10px;
-        margin-left: 40px;
       }
       .icon-bar.two {
         width: 50px;
         margin-top: 2px;
-        background-color: $theme-positive;
         &:after {
           padding: 0 0.75rem 0 2.25rem;
         }
       }
       .icon-bar.three {
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
         width: 10px;
         margin-top: 2px;
-        margin-left: 40px;
       }
     }
     .navbar-toggler.active {
       opacity: 0;
     }
   } // push-esc
+}
+
+// Start push-block
+.push-block {
+  padding: 1rem .5rem .5rem;
+  font-size: $display6-size;
+  color: $nav-primary;
+  span.title {
+    display: block;
+    padding: 0 .75rem;
+    margin-bottom: 1rem;
+  }
+  form {
+    padding: 0 .333rem;
+  }
+  form.lines-dark {
+    .form-control, .btn-primary {
+      border-color: $nav-primary;
+      color: $nav-primary;
+    }
+  }
+}
+
+/*.push-block-wrapper {
+  overflow-y: scroll;
+}*/
+
+/*.push-grid {
   .push-block {
+    padding: 0;
+    &:nth-child(odd) {
+      padding-right: .25rem;
+    }
+    &:nth-child(even) {
+      padding-left: .25rem;
+    }
     margin-top: 1rem;
+  }
+  .push-block-square {
+    border: 1px solid $theme-positive;
+    border-radius: .5rem;
+  }
+}*/
+
+.push-nav {
+  float: left;
+  padding: 0;
+  padding-bottom: 1.5rem;
+  .global-menu {
+    $nav-font: .9rem;
+    float: left;
+    ul {
+      padding: 0;
+      li {
+        display: inline-block;
+        width: 50%;
+        padding: .5rem;
+        a {
+          display: block;
+          padding: 1rem;
+          width: 100%;
+          border: 1px solid $nav-primary;
+          border-radius: .25rem;
+          color: $nav-primary;
+          font-size: $nav-font;
+          text-align: center;
+          transform: scale(.95);
+          transition: transform $transition-fast ease-out;
+        }
+        a:hover {
+          text-decoration: none;
+          transform: scale(1);
+        }
+        a:before {
+          padding-bottom: .25rem;
+          font-family: "FontAwesome";
+          font-size: 2.125rem;
+          line-height: 3rem;
+          color: $nav-primary;
+        }
+        a:hover::before {
+          border-bottom: none;
+        }
+        &.about-us a:before {
+          display: block;
+          content: "\f19c";
+        }
+        &.news a:before {
+          display: block;
+          content: "\f1ea";
+        }
+        &.our-work a:before {
+          display: block;
+          content: "\f0c0";
+        }
+        &.get-involved a:before {
+          display: block;
+          content: "\f12e";
+        }
+        &.campaigns a:before {
+          display: block;
+          content: "\f1d9";
+        }
+        &.resources a:before {
+          display: block;
+          content: "\f0f6";
+        }
+        &.direct-work a:before {
+          display: block;
+          content: "\f018";
+        }
+        ul.children {
+          display: none;
+        }
+      }
+    }
   }
 }
 
 // start social-menu
-.social-menu {
+.social-menu,
+.global-social-menu {
   text-align: left;
-  ul#menu-social {
+  ul {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -266,13 +389,24 @@ $push-color:        $theme-positive;
       padding: 1rem .5rem;
       a {
         display: inline-block;
+        position: relative;
         overflow: hidden;
         text-indent: -9999px;
+        border-bottom: 0;
+        transform: scale(.9);
+        transition: transform $transition-fast ease-out;
+        &:hover {
+          border-bottom: 0;
+          transform: scale(1);
+        }
       }
       a:before {
         float: left;
+        position: relative;
         margin: 0;
+        min-width: 45px;
         text-indent: 0;
+        text-align: center;
         font-family: "FontAwesome";
         font-size: 2.125rem;
         line-height: 2.125rem;
@@ -314,11 +448,27 @@ $push-color:        $theme-positive;
 }
 // ------------------------ end social-menu
 
+.global-social-menu {
+  ul {
+    li {
+      padding: .5rem;
+      a:before {
+        font-size: 1.75rem;
+        color: $nav-primary!important;
+      }
+    }
+  }
+}
+// ------------------------ end global-social-menu
+
 // Responsive breakpoints
 @include media-breakpoint-up(sm) {
   .pushmenu { width: 70%; }
   .pushmenu-left { left: -70%; }
   .pushmenu-push-toright { left: 70%; }
+  .wrap-pushmenu.container {
+    padding: 0 1rem;
+  }
   button.navbar-toggler {
     outline: 0;
   }
@@ -336,6 +486,9 @@ $push-color:        $theme-positive;
   .pushmenu { width: 50%; }
   .pushmenu-left { left: -50%; }
   .pushmenu-push-toright { left: 50%; }
+  .wrap-pushmenu.container {
+    padding: 0 1.5rem;
+  }
   .wrap-explore .navbar-toggler {
     .icon-bar.two {
       &:after {
@@ -348,10 +501,36 @@ $push-color:        $theme-positive;
   .pushmenu { width: 50%; }
   .pushmenu-left { left: -50%; }
   .pushmenu-push-toright { left: 50%; }
+  .push-nav {
+    .global-menu {
+      $nav-font: 1.1rem;
+      ul {
+        li {
+          width: 33.333%;
+          a {
+            font-size: $nav-font;
+          }
+        }
+      }
+    }
+  }
 
 }
 @include media-breakpoint-up(xl) {
-  .pushmenu { width: 40%; }
-  .pushmenu-left { left: -40%; }
-  .pushmenu-push-toright { left: 40%; }
+  .pushmenu { width: 50%; }
+  .pushmenu-left { left: -50%; }
+  .pushmenu-push-toright { left: 50%; }
+  .push-nav {
+    .global-menu {
+      $nav-font: 1.25rem;
+      ul {
+        li {
+          width: 33.333%;
+          a {
+            font-size: $nav-font;
+          }
+        }
+      }
+    }
+  }
 }

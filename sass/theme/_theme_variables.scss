@@ -61,11 +61,15 @@ $theme-text-header:   $brand-primary;
 // Header
 $header-height:       $theme-fixed-nav;
 
+// Navigations
 $navbar-margin-bottom:  0px;
 $navbar-border-radius:  0px;
 
+$nav-primary:         lightgrey;
+$nav-background:      $brand-primary;
+
 // Footer
-$footer-background:     $theme-background-shadow;
+$footer-background:     #EFEFEF;
 
 // Paddings
 $theme-padding-left:  15px;

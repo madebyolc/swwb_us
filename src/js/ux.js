@@ -36,22 +36,44 @@ $(document).ready(function() {
   $nav_close = $('.nav_close');
   $navbar = $('.site-navigation');
   $site = $('.site');
+  $page = $('.page-button');
 
   $nav_list.click(function() {
     $(this).toggleClass('active');
     $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
     $site.toggleClass('active');
+    $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
+    $('.ah.page-header').removeClass('fixed');
+    $('.ah.page-header').addClass('off-canvas');
   });
 
   $nav_close.click(function() {
     $nav_list.toggleClass('active');
     $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
     $site.toggleClass('active');
+    $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
+    $('.ah.page-header').addClass('fixed');
+    $('.ah.page-header').removeClass('off-canvas');
   });
+
+  $page.click(function() {
+    $nav_list.toggleClass('active');
+    $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
+    $site.toggleClass('active');
+    $page.toggleClass('active');
+    $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+    $menuLeft.toggleClass('pushmenu-open');
+    $('.ah.page-header').addClass('fixed');
+    $('.ah.page-header').removeClass('off-canvas');
+  });
+
 });
 // ----------------------------- end Push Menu
 
