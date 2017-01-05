@@ -16,9 +16,11 @@ get_header(); ?>
       <h1>Hero</h1>
 
       <div style="text-align: center; padding: 10rem 0;">
+
         <a class="btn btn-info btn-lg" style="padding: 2rem 5rem; font-weight: bold; font-size: 2rem;" href="<?php if ( get_post_meta($post->ID, 'call_to_action_link', true) ) : echo get_post_meta($post->ID, 'call_to_action_link', true); endif; ?>">
           <?php if ( get_post_meta($post->ID, 'call_to_action', true) ) : echo get_post_meta($post->ID, 'call_to_action', true); endif; ?>
         </a>
+
       </div>
 
       <?php while ( have_posts() ) : the_post(); ?>
@@ -39,6 +41,46 @@ get_header(); ?>
     </div><!-- Container end -->
 
   </hero> <!-- hero -->
+
+  <div id="content" class="container">
+
+     <div class="row">
+
+      <div id="primary" class="content-area">
+
+              <main id="main" class="site-main" role="main">
+
+             <?php if ( have_posts() ) : ?>
+
+                 <?php /* Start the Loop */ ?>
+
+                 <?php while ( have_posts() ) : the_post(); ?>
+
+                         <?php
+                             /* Include the Post-Format-specific template for the content.
+                              * If you want to override this in a child theme, then include a file
+                              * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                              */
+                             get_template_part( 'loop-templates/content', get_post_format() );
+                         ?>
+
+                 <?php endwhile; ?>
+
+                 <?php the_posts_navigation(); ?>
+
+             <?php else : ?>
+
+                 <?php get_template_part( 'loop-templates/content', 'none' ); ?>
+
+             <?php endif; ?>
+
+             </main><!-- #main -->
+
+      </div><!-- #primary -->
+
+     </div><!-- .row -->
+
+    </div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

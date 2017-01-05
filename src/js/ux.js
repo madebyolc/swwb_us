@@ -37,6 +37,8 @@ $(document).ready(function() {
   $navbar = $('.site-navigation');
   $site = $('.site');
   $page = $('.page-button');
+  $nav_panel = $('global-menu ul li a');
+  $slide = $('#menu-global a');
 
   $nav_list.click(function() {
     $(this).toggleClass('active');
@@ -46,8 +48,8 @@ $(document).ready(function() {
     $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
-    $('.ah.page-header').removeClass('fixed');
     $('.ah.page-header').addClass('off-canvas');
+    $('.ah.page-header').removeClass('fixed');
   });
 
   $nav_close.click(function() {
@@ -72,6 +74,10 @@ $(document).ready(function() {
     $menuLeft.toggleClass('pushmenu-open');
     $('.ah.page-header').addClass('fixed');
     $('.ah.page-header').removeClass('off-canvas');
+  });
+
+  $slide.click(function() {
+    $('body').addClass('slide_out');
   });
 
 });

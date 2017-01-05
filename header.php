@@ -31,22 +31,32 @@
 
   <nav class="pushmenu pushmenu-left"><!-- remove .pushmenu-open -->
 
-    <div class="wrap-pushmenu container">
+    <div class="wrap-pushmenu">
 
       <nav class="navbar site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
-        <div class="push-esc">
+        <div class="container">
 
-          <button class="nav_close navbar-toggler visible-xs-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Close navigation</span>
-            <span class="icon-bar one"></span>
-            <span class="icon-bar two"></span>
-            <span class="icon-bar three"></span>
-          </button>
+          <div class="push-esc">
 
-        </div> <!-- .push-esc -->
+            <button class="nav_close navbar-toggler visible-xs-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="sr-only">Close navigation</span>
+              <span class="icon-bar one"></span>
+              <span class="icon-bar two"></span>
+              <span class="icon-bar three"></span>
+            </button>
 
+          </div> <!-- .push-esc -->
 
+        </div>
+
+        <div class="wrap-brand">
+
+          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+          	<img title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" src="<?php echo esc_url( home_url( '/wp-content/uploads/lib/' ) ); ?>logo/exp/swwb_logo_light.png"/>
+          </a>
+
+        </div> <!-- .wrap-brand -->
 
       </nav> <!-- .site-navigation -->
       <div class="push-block-wrapper">
@@ -114,11 +124,15 @@
 
             <div class="wrap-brand">
 
-              <?php if (!has_custom_logo()) { ?>
+              <!--<?php if (!has_custom_logo()) { ?>
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                 	<?php bloginfo( 'name' ); ?>
                 </a>
-              <?php } else { the_custom_logo(); } ?><!-- end custom logo -->
+              <?php } else { the_custom_logo(); } ?>!--><!-- end custom logo -->
+
+              <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+              	<img title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" src="<?php echo esc_url( home_url( '/wp-content/uploads/lib/' ) ); ?>logo/exp/swwb_logo_dark.png"/>
+              </a>
 
             </div> <!-- .wrap-brand -->
 

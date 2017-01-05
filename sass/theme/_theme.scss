@@ -16,6 +16,12 @@ body {
   &.overflow {
     overflow: hidden;
   }
+  -webkit-transition: opacity $transition-slow ease;
+  -moz-transition: opacity $transition-slow ease;
+  transition: opacity $transition-slow ease;
+  &.slide_out {
+    opacity: 0;
+  }
 }
 
 // Start Typographical Styles
@@ -58,7 +64,6 @@ p {
 i.fa {
 	color: $theme-color;
 }
-
 
 @import "layout/layout";
 @import "components/components";

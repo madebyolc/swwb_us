@@ -4,11 +4,11 @@
 */
 
 // Local Variables
-$header-background: $theme-background;
+$header-background: transparent;
 $header-color:      $theme-primary;
 
 $push-background:   $nav-background;
-$push-color:        $theme-positive;
+$push-color:        $nav-primary;
 
 // Start .page-header with auto hide
 .ah.page-header {
@@ -25,7 +25,6 @@ $push-color:        $theme-positive;
           transition-property: transform;
   background-color: $header-background;
 }
-
 .ah.page-header.off-canvas {
   -webkit-transform: translateY( -100% );
       -ms-transform: translateY( -100% );
@@ -45,22 +44,33 @@ $push-color:        $theme-positive;
 .navbar {
   min-height: $header-height;
   max-height: $header-height;
-  &.active {
-    .navbar-brand {
-      opacity: 0;
-    }
-  }
   .container {
+    padding: 0;
     width: 100%;
   }
 }
+
+.navbar-brand {
+  -webkit-transition: all $transition-fast ease;
+  -moz-transition: all $transition-fast ease;
+  transition: all $transition-fast ease;
+}
+
+
+.site-navigation.active .navbar-brand {
+  opacity: 0;
+}
+
+.wrap-pushmenu .site-navigation.active .navbar-brand {
+  opacity: 1;
+}
+
 // ------------------------------ end .navbar
 
 // start wrap-explore (left nav)
 .wrap-explore {
   position: relative;
   float: left;
-  margin-left: -0.75rem;
   button.navbar-toggler {
     cursor: pointer;
     cursor: hand;
@@ -127,6 +137,9 @@ $push-color:        $theme-positive;
   display: block;
   margin: 0 auto;
   width: 128px;
+  .navbar-brand {
+    opacity: 1;
+  }
 }
 
 .navbar-brand {
@@ -157,39 +170,59 @@ $push-color:        $theme-positive;
   overflow-x: hidden;
 }
 
-.pushmenu-left.pushmenu-open { left: 0; }
+.pushmenu-left.pushmenu-open { //left: 0;
+  perspective-origin: right;
+  transform: translateX(0);
+}
 
 .pushmenu-push {
+  position: relative;
+  z-index: 999999;
   overflow-x: hidden;
   position: relative;
   left: 0;
+  //transform: translateX(0);
 }
+
 
 .pushmenu, .pushmenu-push {
-  -webkit-transition: all $transition-fast ease;
-  -moz-transition: all $transition-fast ease;
-  transition: all $transition-fast ease;
+  -webkit-transition: transform $transition-slow ease-in-out;
+  -moz-transition: transform $transition-slow ease-in-out;
+  transition: transform $transition-slow ease-in-out;
 }
 
+$push: 100%;
+
 // Push navigation
-.pushmenu { width: 70%; }
-.pushmenu-left { left: -70%; }
-.pushmenu-push-toright { left: 70%; }
+.pushmenu { width: $push;}
+.pushmenu-left { //left: -80%;
+  transform: translateX(-100%);
+}
+.pushmenu-push-toright { //left: 80%;
+  transform: translateX(100%);
+}
+.pushmenu-push-toright #page {
+  transform: translateX($push);
+}
 
 .wrap-pushmenu {
   overflow-x: hidden;
-  &.container {
+  &.navbar .container {
     display: block;
+    padding: 0;
+    width: 100%;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 0;
+  }
+  .navbar-brand {
+    opacity: 1;
   }
   .push-esc {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    float: left;
     height: 3rem;
-    margin-left: -0.5rem;
+    margin-left: -0.25rem;
     button.navbar-toggler {
       cursor: pointer;
       cursor: hand;
@@ -260,16 +293,20 @@ $push-color:        $theme-positive;
 
 // Start push-block
 .push-block {
-  padding: 1rem .5rem .5rem;
+  padding: .5rem .75rem .75rem;
+  margin: .25rem 0;
+  width: 100%;
   font-size: $display6-size;
   color: $nav-primary;
+  /*border-bottom: 1px dashed white;
+  &:first-child {
+    border-top: 1px dashed white;
+  } Add lines */
   span.title {
     display: block;
-    padding: 0 .75rem;
-    margin-bottom: 1rem;
+    opacity: .5;
   }
   form {
-    padding: 0 .333rem;
   }
   form.lines-dark {
     .form-control, .btn-primary {
@@ -302,20 +339,26 @@ $push-color:        $theme-positive;
 
 .push-nav {
   float: left;
-  padding: 0;
-  padding-bottom: 1.5rem;
+  padding: 0rem .5rem .5rem;
+  width: 100%;
   .global-menu {
     $nav-font: .9rem;
     float: left;
+    width: 100%;
     ul {
       padding: 0;
       li {
         display: inline-block;
-        width: 50%;
-        padding: .5rem;
+        width: 33.333%;
+        $n: 0;
+        $ntb: .125rem;
+        padding: $ntb $n;
+        /*3xn 1st column*/&:nth-child(3n+1) { padding: $ntb $n $ntb 0; }
+        /*3xn 2nd column*/&:nth-child(3n+2) { padding: $ntb $n; }
+        /*3xn 3rd column*/&:nth-child(3n+0) { padding: $ntb 0 $ntb $n; }
         a {
           display: block;
-          padding: 1rem;
+          padding: .125rem;
           width: 100%;
           border: 1px solid $nav-primary;
           border-radius: .25rem;
@@ -329,12 +372,15 @@ $push-color:        $theme-positive;
           text-decoration: none;
           transform: scale(1);
         }
+        a:focus, a:active {
+          background: $nav-primary;
+          color: $theme-negative;
+        }
         a:before {
           padding-bottom: .25rem;
           font-family: "FontAwesome";
           font-size: 2.125rem;
           line-height: 3rem;
-          color: $nav-primary;
         }
         a:hover::before {
           border-bottom: none;
@@ -451,7 +497,14 @@ $push-color:        $theme-positive;
 .global-social-menu {
   ul {
     li {
-      padding: .5rem;
+      margin-bottom: .45rem;
+      padding: 0;
+      height: 55px;
+      border: 1px solid white;
+      border-radius: .25rem;
+      a {
+        padding: .5rem;
+      }
       a:before {
         font-size: 1.75rem;
         color: $nav-primary!important;
@@ -463,12 +516,24 @@ $push-color:        $theme-positive;
 
 // Responsive breakpoints
 @include media-breakpoint-up(sm) {
-  .pushmenu { width: 70%; }
+  /*.pushmenu { width: 70%; }
   .pushmenu-left { left: -70%; }
-  .pushmenu-push-toright { left: 70%; }
-  .wrap-pushmenu.container {
-    padding: 0 1rem;
+  .pushmenu-push-toright { left: 70%; }*/
+
+  $push: 80%;
+
+  // Push navigation
+  .pushmenu { width: $push; }
+  .pushmenu-left { //left: -80%;
+    transform: translateX(-100%);
   }
+  .pushmenu-push-toright { //left: 80%;
+    transform: translateX(100%);
+  }
+  .pushmenu-push-toright #page {
+    transform: translateX($push);
+  }
+
   button.navbar-toggler {
     outline: 0;
   }
@@ -481,14 +546,40 @@ $push-color:        $theme-positive;
     left: $theme-padding-left;
     outline: none;
   }
+  .push-nav {
+    .global-menu {
+      $nav-font: 1.25rem;
+      ul {
+        li {
+          a {
+            font-size: $nav-font;
+            word-wrap: normal;
+            padding: 1rem .125rem;
+          }
+        }
+      }
+    }
+  }
 }
 @include media-breakpoint-up(md) {
-  .pushmenu { width: 50%; }
+  /*.pushmenu { width: 50%; }
   .pushmenu-left { left: -50%; }
-  .pushmenu-push-toright { left: 50%; }
-  .wrap-pushmenu.container {
-    padding: 0 1.5rem;
+  .pushmenu-push-toright { left: 50%; }*/
+
+  $push: 50%;
+
+  // Push navigation
+  .pushmenu { width: $push; }
+  .pushmenu-left { //left: -80%;
+    transform: translateX(-100%);
   }
+  .pushmenu-push-toright { //left: 80%;
+    transform: translateX(100%);
+  }
+  .pushmenu-push-toright #page {
+    transform: translateX($push);
+  }
+
   .wrap-explore .navbar-toggler {
     .icon-bar.two {
       &:after {
@@ -496,30 +587,47 @@ $push-color:        $theme-positive;
       }
     }
   }
-}
-@include media-breakpoint-up(lg) {
-  .pushmenu { width: 50%; }
-  .pushmenu-left { left: -50%; }
-  .pushmenu-push-toright { left: 50%; }
   .push-nav {
     .global-menu {
-      $nav-font: 1.1rem;
+      $nav-font: 1rem;
       ul {
         li {
+          $n: .25rem;
+          $ntb: .25rem;
+          padding: $ntb $n;
+          /*3xn 1st column*/&:nth-child(3n+1) { padding: $ntb $n $ntb 0; }
+          /*3xn 2nd column*/&:nth-child(3n+2) { padding: $ntb $n; }
+          /*3xn 3rd column*/&:nth-child(3n+0) { padding: $ntb 0 $ntb $n; }
           width: 33.333%;
           a {
             font-size: $nav-font;
+            word-wrap: normal;
+            padding: .125rem;
           }
         }
       }
     }
   }
-
 }
-@include media-breakpoint-up(xl) {
-  .pushmenu { width: 50%; }
+@include media-breakpoint-up(lg) {
+  /*.pushmenu { width: 50%; }
   .pushmenu-left { left: -50%; }
-  .pushmenu-push-toright { left: 50%; }
+  .pushmenu-push-toright { left: 50%; }*/
+
+  $push: 50%;
+
+  // Push navigation
+  .pushmenu { width: $push; }
+  .pushmenu-left { //left: -80%;
+    transform: translateX(-100%);
+  }
+  .pushmenu-push-toright { //left: 80%;
+    transform: translateX(100%);
+  }
+  .pushmenu-push-toright #page {
+    transform: translateX($push);
+  }
+
   .push-nav {
     .global-menu {
       $nav-font: 1.25rem;
@@ -528,6 +636,38 @@ $push-color:        $theme-positive;
           width: 33.333%;
           a {
             font-size: $nav-font;
+            word-wrap: normal;
+            padding: 1.5rem .5rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+@include media-breakpoint-up(xl) {
+  /*.pushmenu { width: 45%; }
+  .pushmenu-left { left: -45%; }
+  .pushmenu-push-toright { left: 45%; }*/
+  .push-block {
+    padding: .5rem 1.75rem .75rem;
+  }
+  .push-nav {
+    padding: .5rem 1.25rem .75rem;
+    .global-menu {
+      $nav-font: 1.5rem;
+      ul {
+        li {
+          $n: .5rem;
+          $ntb: .5rem;
+          padding: $ntb $n;
+          /*3xn 1st column*/&:nth-child(3n+1) { padding: $ntb $n $ntb 0; }
+          /*3xn 2nd column*/&:nth-child(3n+2) { padding: $ntb $n; }
+          /*3xn 3rd column*/&:nth-child(3n+0) { padding: $ntb 0 $ntb $n; }
+          width: 33.333%;
+          a {
+            font-size: $nav-font;
+            padding: 2rem .5rem;
           }
         }
       }

@@ -7,7 +7,8 @@
 $(document).ready(function() {
   // Set elements to window height
   function setHeight() {
-    windowHeight = $(window).innerHeight();
+    windowHeight = $(window).innerHeight()-50;
+    //alert(windowHeight);
     $('.hero').css('min-height', windowHeight);
   };
   setHeight();

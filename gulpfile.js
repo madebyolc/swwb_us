@@ -76,7 +76,7 @@ gulp.task('scss-for-dev', function() {
 });
 
 gulp.task('watch-scss', ['browser-sync'], function () {
-    gulp.watch('./sass/**/*.scss', ['scss-for-dev']);
+    gulp.watch('./sass/**/**/**.scss', ['scss-for-dev']);
 });
 
 
