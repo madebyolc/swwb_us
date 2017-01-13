@@ -36,22 +36,44 @@ $(document).ready(function() {
   $nav_close = $('.nav_close');
   $navbar = $('.site-navigation');
   $site = $('.site');
+  $page = $('.page-button');
+  $nav_panel = $('global-menu ul li a');
+  $slide = $('#menu-global a');
 
   $nav_list.click(function() {
     $(this).toggleClass('active');
     $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
     $site.toggleClass('active');
-    $('.pushmenu-push').toggleClass('pushmenu-push-toright');
-    $menuLeft.toggleClass('pushmenu-open');
+    $page.toggleClass('active'); // Page Button
+    $('.pushmenu-push').toggleClass('pushmenu-push-toright'); // Move Site
+    $menuLeft.toggleClass('pushmenu-open'); // Show Menu
   });
 
   $nav_close.click(function() {
     $nav_list.toggleClass('active');
     $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
     $site.toggleClass('active');
+    $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
   });
+
+  $page.click(function() {
+    $nav_list.toggleClass('active');
+    $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
+    $site.toggleClass('active');
+    $page.toggleClass('active');
+    $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+    $menuLeft.toggleClass('pushmenu-open');
+  });
+
+  $slide.click(function() {
+    $('body').addClass('slide_out');
+  });
+
 });
 // ----------------------------- end Push Menu
 

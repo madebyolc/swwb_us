@@ -3,28 +3,30 @@
 */
 
 .form {
-  &.sm {
-    .form-control, .btn-primary { font-size: $font-size-h6; }
-  }
-  &.md {
-    .form-control, .btn-primary { font-size: $font-size-h5; }
-  }
-  &.lg {
-    .form-control, .btn-primary { font-size: $font-size-h4; }
-  }
+  .form-control, .btn-primary { font-size: $font-size-h6; }
   &.lines-dark {
     .form-control, .btn-primary {
       background: transparent;
-      border-width: 0 0 1px 0;
+      border-width: 0 0 2px 0;
       border-radius: 0;
-      border-color: $theme-positive;
-      color: $theme-positive;
     }
   }
 }
 
 // Responsive breakpoints
-@include media-breakpoint-up(sm) { }
-@include media-breakpoint-up(md) { }
-@include media-breakpoint-up(lg) { }
+@include media-breakpoint-up(sm) {
+  .form {
+    .form-control, .btn-primary { font-size: $font-size-h5; }
+  }
+}
+@include media-breakpoint-up(md) {
+  .form {
+    .form-control, .btn-primary { font-size: $font-size-h4; }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .form {
+    .form-control, .btn-primary { font-size: $font-size-h2; }
+  }
+}
 @include media-breakpoint-up(xl) { }

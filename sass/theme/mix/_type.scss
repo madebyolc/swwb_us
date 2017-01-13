@@ -1,0 +1,71 @@
+/*
+#   TYPE
+#   _type.scss
+#
+#   INDEX
+#
+#   1 - TYPR
+*/
+
+.typr {
+  font-size: $g-type-t-xs;
+  color: $g-type-co-2;
+  h1 { font-size: $g-type-h-xs*$g-typr-multi-1;
+       color: $g-type-co-1; }
+  h2 { font-size: $g-type-h-xs*$g-typr-multi-2;
+       color: $g-type-co-2; }
+  h3 { font-size: $g-type-h-xs*$g-typr-multi-3;
+       color: $g-type-co-3; }
+  h4 { font-size: $g-type-h-xs*$g-typr-multi-4;
+       color: $g-type-co-4; }
+  h5 { font-size: $g-type-h-xs*$g-typr-multi-5;
+       color: $g-type-co-5; }
+  h6 { font-size: $g-type-h-xs*$g-typr-multi-6;
+       color: $g-type-co-6; }
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  .typr {
+    font-size: $g-type-t-sm;
+    h1 { font-size: $g-type-h-sm*$g-typr-multi-1; }
+    h2 { font-size: $g-type-h-sm*$g-typr-multi-2; }
+    h3 { font-size: $g-type-h-sm*$g-typr-multi-3; }
+    h4 { font-size: $g-type-h-sm*$g-typr-multi-4; }
+    h5 { font-size: $g-type-h-sm*$g-typr-multi-5; }
+    h6 { font-size: $g-type-h-sm*$g-typr-multi-6; }
+  }
+}
+@include media-breakpoint-up(md) {
+  .typr {
+    font-size: $g-type-t-md;
+    h1 { font-size: $g-type-h-md*$g-typr-multi-1; }
+    h2 { font-size: $g-type-h-md*$g-typr-multi-2; }
+    h3 { font-size: $g-type-h-md*$g-typr-multi-3; }
+    h4 { font-size: $g-type-h-md*$g-typr-multi-4; }
+    h5 { font-size: $g-type-h-md*$g-typr-multi-5; }
+    h6 { font-size: $g-type-h-md*$g-typr-multi-6; }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .typr {
+    font-size: $g-type-t-lg;
+    h1 { font-size: $g-type-h-lg*$g-typr-multi-1; }
+    h2 { font-size: $g-type-h-lg*$g-typr-multi-2; }
+    h3 { font-size: $g-type-h-lg*$g-typr-multi-3; }
+    h4 { font-size: $g-type-h-lg*$g-typr-multi-4; }
+    h5 { font-size: $g-type-h-lg*$g-typr-multi-5; }
+    h6 { font-size: $g-type-h-lg*$g-typr-multi-6; }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .typr {
+    font-size: $g-type-t-xl;
+    h1 { font-size: $g-type-h-xl*$g-typr-multi-1; }
+    h2 { font-size: $g-type-h-xl*$g-typr-multi-2; }
+    h3 { font-size: $g-type-h-xl*$g-typr-multi-3; }
+    h4 { font-size: $g-type-h-xl*$g-typr-multi-4; }
+    h5 { font-size: $g-type-h-xl*$g-typr-multi-5; }
+    h6 { font-size: $g-type-h-xl*$g-typr-multi-6; }
+  }
+}

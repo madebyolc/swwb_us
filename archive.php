@@ -10,23 +10,33 @@
 get_header(); ?>
 
 <div class="wrapper" id="archive-wrapper">
-    
-    <div  id="content" class="container">
+
+    <div id="content" class="container archive">
 
         <div class="row">
-        
-    	    <div id="primary" class="<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area">
-               
+
+    	    <div id="primary" class="content-area">
+
             <main id="main" class="site-main" role="main">
 
                       <?php if ( have_posts() ) : ?>
 
-                        <header class="page-header">
+                        <header class="page-header typr">
                             <?php
-                                the_archive_title( '<h1 class="page-title">', '</h1>' );
-                                the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                                echo '<h1 class="page-title">' . single_cat_title( 'News from ', false ) . '</h1>';
+                                the_archive_description( '<h3 class="taxonomy-description">', '</h3>' );
                             ?>
                         </header><!-- .page-header -->
+
+                        <span class="typr">
+                          <?php
+                          $args = array(
+                            'current_category' => 3,
+                            'title_li' => 'Jump to group: '
+                          );
+                            wp_list_categories($args);
+                          ?>
+                        </span>
 
                         <?php /* Start the Loop */ ?>
                         <?php while ( have_posts() ) : the_post(); ?>
@@ -50,15 +60,13 @@ get_header(); ?>
                         <?php endif; ?>
 
             </main><!-- #main -->
-               
+
     	    </div><!-- #primary -->
 
-        <?php get_sidebar(); ?>
-
     </div> <!-- .row -->
-        
+
     </div><!-- Container end -->
-    
+
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

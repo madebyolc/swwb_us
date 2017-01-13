@@ -9,7 +9,7 @@
   height: 50px;
   overflow: hidden;
   &.push-top { // when it's not wrapped to comp for Nav
-    margin-top: -$theme-fixed-nav;
+    margin-top: 0;
     padding-top: $theme-fixed-nav;
   }
   &.squash {

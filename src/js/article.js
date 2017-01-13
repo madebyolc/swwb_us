@@ -11,9 +11,6 @@ jQuery(function($){
 		callback: function() {
 			//$('.ah.page-header').toggleClass('off-canvas');
 			$('.feature-buttons').toggleClass('active');
-			$('.typed-cursor').toggleClass('blink');
-			$('.ah.page-header').toggleClass('fixed');
-			$('.article-pseudo-header').toggleClass('active');
 		}
 	});
 });
