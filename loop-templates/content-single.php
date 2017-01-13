@@ -67,10 +67,6 @@
 
 		<div class="article entry container">
 
-			<div class="article-nav">
-
-			</div>
-
 			<div class="article-content">
 
 				<?php the_content(); ?>
@@ -90,15 +86,25 @@
 
 	<footer class="entry-footer">
 
+		<div class="article-nav container">
+
+			<div class="inner">
+
+				<?php	wp_nav_menu( array('theme_location' => 'social-menu', 'container_class' => 'social-menu' ) );?>
+
+			</div>
+
+		</div>
+
 		<div class="article footer container">
 
 			<div class="entry-meta">
 
-				<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> Filed by <?php the_category(' '); ?></span>
+				<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_category(' '); ?></span>
 
-				<span class="feature-meta date"><i class="fa fa-calendar-o" aria-hidden="true"></i>  Posted on <a href="<?php echo get_month_link('', ''); ?>"><?php echo get_the_date() ?></a></span>
+				<span class="feature-meta date"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="<?php echo get_month_link('', ''); ?>"><?php echo get_the_date() ?></a></span>
 
-				<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
+				<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> by <?php the_author_posts_link(); ?></span>
 
 			</div><!-- .entry-meta -->
 

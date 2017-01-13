@@ -253,6 +253,67 @@ $push-color:        $theme-positive;
   }
 }
 
+// start social-menu
+.social-menu {
+  text-align: left;
+  ul#menu-social {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    li {
+      margin: 0 .25rem;
+      padding: 1rem .5rem;
+      a {
+        display: inline-block;
+        overflow: hidden;
+        text-indent: -9999px;
+      }
+      a:before {
+        float: left;
+        margin: 0;
+        text-indent: 0;
+        font-family: "FontAwesome";
+        font-size: 2.125rem;
+        line-height: 2.125rem;
+      }
+      &.facebook a:before {
+        content: "\f230";
+        color: #3b5998;
+      }
+      &.instagram a:before {
+        content: "\f16d";
+        color: #fb3958;
+      }
+      &.twitter a:before {
+        content: "\f099";
+        color: #1dcaff;
+      }
+      &.email a:before {
+        content: "\f064";
+        color: #555;
+      }
+      &.linkedin a:before {
+        content: "\f0e1";
+        color: #0077B5;
+      }
+      &.pinterest a:before {
+        content: "\f231";
+        color: #bd081c;
+      }
+      &.googleplus a:before {
+        content: "\f0d5";
+        color: #d34836;
+      }
+      &.whatsapp a:before {
+        content: "\f232";
+        color: #25D366;
+      }
+    }
+  }
+}
+// ------------------------ end social-menu
+
 // Responsive breakpoints
 @include media-breakpoint-up(sm) {
   .pushmenu { width: 70%; }

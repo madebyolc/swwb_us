@@ -9,8 +9,14 @@ get_header(); ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-  <?php include("components/hero.php"); ?>
+  <div id="panel-0" class="panel">
+    <?php include("components/hero.php"); ?>
+  </div>
   <div id="continue"></div>
+  <?php include("components/panel-1.php"); ?>
+  <?php include("components/panel-1.php"); ?>
+  <?php include("components/panel-1.php"); ?>
+  <?php include("components/panel-1.php"); ?>
   <?php include("components/panel-1.php"); ?>
   <?php include("components/twitter-latest-tweet.php") ?>
 
