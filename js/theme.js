@@ -36,22 +36,44 @@ $(document).ready(function() {
   $nav_close = $('.nav_close');
   $navbar = $('.site-navigation');
   $site = $('.site');
+  $page = $('.page-button');
+  $nav_panel = $('global-menu ul li a');
+  $slide = $('#menu-global a');
 
   $nav_list.click(function() {
     $(this).toggleClass('active');
     $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
     $site.toggleClass('active');
-    $('.pushmenu-push').toggleClass('pushmenu-push-toright');
-    $menuLeft.toggleClass('pushmenu-open');
+    $page.toggleClass('active'); // Page Button
+    $('.pushmenu-push').toggleClass('pushmenu-push-toright'); // Move Site
+    $menuLeft.toggleClass('pushmenu-open'); // Show Menu
   });
 
   $nav_close.click(function() {
     $nav_list.toggleClass('active');
     $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
     $site.toggleClass('active');
+    $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
   });
+
+  $page.click(function() {
+    $nav_list.toggleClass('active');
+    $navbar.toggleClass('active');
+    $('body').toggleClass('overflow');
+    $site.toggleClass('active');
+    $page.toggleClass('active');
+    $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+    $menuLeft.toggleClass('pushmenu-open');
+  });
+
+  $slide.click(function() {
+    $('body').addClass('slide_out');
+  });
+
 });
 // ----------------------------- end Push Menu
 
@@ -2478,9 +2500,6 @@ jQuery(function($){
 		callback: function() {
 			//$('.ah.page-header').toggleClass('off-canvas');
 			$('.feature-buttons').toggleClass('active');
-			$('.typed-cursor').toggleClass('blink');
-			$('.ah.page-header').toggleClass('fixed');
-			$('.article-pseudo-header').toggleClass('active');
 		}
 	});
 });
@@ -2532,32 +2551,6 @@ $(document).ready(function() {
     })
     .addTo(controller);
   });
-
-  // Control GTEM Page
-
-  function pathPrepare ($el) {
-		var lineLength = $el[0].getTotalLength();
-		$el.css("stroke-dasharray", lineLength);
-		$el.css("stroke-dashoffset", lineLength);
-	}
-
-	var $word = $("path#word");
-	var $dot = $("path#dot");
-
-	// prepare SVG
-	pathPrepare($word);
-	pathPrepare($dot);
-
-	// build tween
-	var tween = new TimelineMax()
-		.add(TweenMax.to($word, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-		.add(TweenMax.to($dot, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
-		.add(TweenMax.to("path", 1, {stroke: "#33629c", ease:Linear.easeNone}), 0);			// change color during the whole thing
-
-	// build scene
-	var scene = new ScrollMagic.Scene({triggerElement: "#panel-1", duration: "90%", tweenChanges: true})
-					.setTween(tween)
-					.addTo(controller);
 
 });
 
@@ -6001,8 +5994,14 @@ var Popover = function ($) {
 $(document).ready(function() {
   // Set elements to window height
   function setHeight() {
+    windowWidth = $(window).innerWidth();
     windowHeight = $(window).innerHeight();
+    windowHeightShort = $(window).innerHeight()-50;
+    //alert(windowHeight);
+    $('#page').css('max-width', windowWidth);
+    $('.pushmenu').css('max-width', windowWidth);
     $('.hero').css('min-height', windowHeight);
+    $('.hero-short').css('min-height', windowHeight);
   };
   setHeight();
   $(window).resize(function() {

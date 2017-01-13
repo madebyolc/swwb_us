@@ -4,9 +4,12 @@
  */
 ?>
 
+<?php $archive_year  = get_the_time('Y'); ?>
+<?php $archive_month = get_the_time('m'); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="hero push-top feature <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>" style="background-color: <?php if ( get_post_meta($post->ID, 'feature_background', true) ) : echo get_post_meta($post->ID, 'feature_background', true); endif; ?>;">
+	<div class="hero push-top feature theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>" style="background-color: <?php if ( get_post_meta($post->ID, 'feature_background', true) ) : echo get_post_meta($post->ID, 'feature_background', true); endif; ?>;">
 
 		<div class="feature-background" style="background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>');"></div>
 
@@ -32,13 +35,13 @@
 
 				<div class="entry-meta">
 
-					<span class="feature-meta continue"><a href="#read" class="btn btn-secondary btn-lg negative-wire  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">Continue to Article</a></span>
-
 					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> category"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_category(' '); ?></span>
 
-					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> date"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="<?php echo get_month_link('', ''); ?>"><?php the_date() ?></a></span>
+					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> date"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="<?php echo get_month_link( $archive_year, $archive_month ); ?>"><?php the_date() ?></a></span>
 
 					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <?php the_author_posts_link(); ?></span>
+
+					<span class="feature-meta continue"><a href="#read" class="btn btn-secondary btn-lg theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">Continue to Article</a></span>
 
 				</div><!-- .entry-meta -->
 
@@ -82,10 +85,6 @@
 
 		</div>
 
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
 		<div class="article-nav container">
 
 			<div class="inner">
@@ -96,15 +95,19 @@
 
 		</div>
 
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+
 		<div class="article footer container">
 
 			<div class="entry-meta">
 
-				<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_category(' '); ?></span>
+				<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> View more articles listed in <?php the_category(' '); ?></span>
 
-				<span class="feature-meta date"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="<?php echo get_month_link('', ''); ?>"><?php echo get_the_date() ?></a></span>
+				<span class="feature-meta date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Article archive for <a href="<?php echo get_month_link( $archive_year, $archive_month ); ?>"><?php echo get_the_date() ?></a></span>
 
-				<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> by <?php the_author_posts_link(); ?></span>
+				<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
 
 			</div><!-- .entry-meta -->
 

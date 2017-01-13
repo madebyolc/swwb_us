@@ -9,6 +9,7 @@ get_header(); ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
 
+  <div class="panel push-top"><?php include("components/panel-posts-latest.php"); ?></div>
   <div id="panel-0" class="panel">
     <?php include("components/hero.php"); ?>
   </div>

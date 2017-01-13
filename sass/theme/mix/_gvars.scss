@@ -1,0 +1,98 @@
+/*
+#   GLOBAL VARIABLES
+#   _gvars.scss
+#
+#   INDEX
+#
+#   1 - BRANDING
+#   2 - NAVIGATION
+#   3 - TRANSITIONS
+#   4 - TYPOGRAPHY
+#   5 -
+#   6 -
+#   7 -
+#   8 -
+*/
+
+/*
+#   1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING
+*/
+
+$g-brand-primary: #242529;//ff6d5a
+$g-brand-secondary: #555;
+$g-brand-reading: #555;
+$g-logo-color: $g-brand-primary;
+$g-logo-size: 110px;
+$g-logo-size-small: 50px;
+
+/*
+#   2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION
+*/
+
+$g-nav-size: $g-logo-size;
+$g-nav-size-small: $g-logo-size-small;
+$g-nav-background: white;
+$g-nav-explore-color: $g-logo-color;
+
+$g-nav-push-color: white;
+$g-nav-push-background: $g-brand-primary;
+$g-nav-push-esc-color: $g-nav-push-color;
+$g-nav-push-logo-color: $g-nav-push-color;
+
+$g-nav-d-xs: .9rem;
+$g-nav-d-sm: 1.5rem;
+$g-nav-d-md: 1.5rem;
+$g-nav-d-lg: 1.75rem;
+$g-nav-d-xl: 2rem;
+
+/*
+#   3 - TRANSITIONS    3 - TRANSITIONS    3 - TRANSITIONS    3 - TRANSITIONS    3 - TRANSITIONS    3 - TRANSITIONS
+*/
+
+$g-trans-slow: .5s;
+$g-trans-medium: .15s;
+$g-trans-fast: .15s;
+
+/*
+#   4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY
+*/
+
+$g-type-d-xs: 1.25rem;
+$g-type-d-sm: 1.5rem;
+$g-type-d-md: 3.5rem;
+$g-type-d-lg: 3rem;
+$g-type-d-xl: 4rem;
+
+$g-type-p-xs: 1rem;
+$g-type-p-sm: 1rem;
+$g-type-p-md: 1rem;
+$g-type-p-lg: 1.25rem;
+$g-type-p-xl: 1.5rem;
+
+// Typr
+// Multipliers
+$g-typr-multi-1: 1;
+$g-typr-multi-2: .8;
+$g-typr-multi-3: .6;
+$g-typr-multi-4: .5;
+$g-typr-multi-5: .4;
+$g-typr-multi-6: .4;
+// Type
+$g-type-t-xs: 1rem;
+$g-type-t-sm: 1.5rem;
+$g-type-t-md: 1.25rem;
+$g-type-t-lg: 1.5rem;
+$g-type-t-xl: 1.75rem;
+// Headers
+$g-type-h-xs: 1.5rem;
+$g-type-h-sm: 1.75rem;
+$g-type-h-md: 2rem;
+$g-type-h-lg: 2.75rem;
+$g-type-h-xl: 2.75rem;
+// Typr colours
+$g-type-co-1: lighten($g-brand-reading, 0%);
+$g-type-co-2: lighten($g-brand-reading, 10%);
+$g-type-co-3: lighten($g-brand-reading, 30%);
+$g-type-co-4: lighten($g-brand-reading, 40%);
+$g-type-co-5: lighten($g-brand-reading, 20%);
+$g-type-co-6: lighten($g-brand-reading, 10%);
