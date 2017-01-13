@@ -45,11 +45,9 @@ $(document).ready(function() {
     $navbar.toggleClass('active');
     $('body').toggleClass('overflow');
     $site.toggleClass('active');
-    $page.toggleClass('active');
-    $('.pushmenu-push').toggleClass('pushmenu-push-toright');
-    $menuLeft.toggleClass('pushmenu-open');
-    $('.ah.page-header').addClass('off-canvas');
-    $('.ah.page-header').removeClass('fixed');
+    $page.toggleClass('active'); // Page Button
+    $('.pushmenu-push').toggleClass('pushmenu-push-toright'); // Move Site
+    $menuLeft.toggleClass('pushmenu-open'); // Show Menu
   });
 
   $nav_close.click(function() {
@@ -60,8 +58,6 @@ $(document).ready(function() {
     $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
-    $('.ah.page-header').addClass('fixed');
-    $('.ah.page-header').removeClass('off-canvas');
   });
 
   $page.click(function() {
@@ -72,8 +68,6 @@ $(document).ready(function() {
     $page.toggleClass('active');
     $('.pushmenu-push').toggleClass('pushmenu-push-toright');
     $menuLeft.toggleClass('pushmenu-open');
-    $('.ah.page-header').addClass('fixed');
-    $('.ah.page-header').removeClass('off-canvas');
   });
 
   $slide.click(function() {

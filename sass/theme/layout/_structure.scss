@@ -11,6 +11,10 @@
   }
 }
 
+#page {
+  overflow-x: hidden;
+}
+
 .page-button {
   position: fixed;
   width: 100%;
@@ -26,7 +30,7 @@
     z-index: 555555;
     opacity: .5;
     &:hover {
-      cursor: w-resize;
+      cursor: e-resize;
       opacity: .25;
     }
   }

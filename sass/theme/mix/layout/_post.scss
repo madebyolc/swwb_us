@@ -1,0 +1,283 @@
+/*
+#   POST
+#   _post.scss
+#
+#   INDEX
+#
+#   1 - HERO
+#   2 - FEATURE
+*/
+
+/*
+#   1 - HERO    1 - HERO    1 - HERO    1 - HERO    1 - HERO    1 - HERO    1 - HERO    1 - HERO    1 - HERO
+*/
+
+.hero {
+position: relative;
+display: table;
+width: 100%;
+height: 50px;
+overflow: hidden;
+padding-top: $g-nav-size-small;
+background: #F0F0F0;
+&.push-top {
+  padding-top: $g-nav-size-small;
+}
+  .wrap {
+    display: table-cell;
+    &.left { text-align: left; }
+    &.center { text-align: center; }
+    &.right { text-align: right; }
+    &.top { vertical-align: top; }
+    &.middle { vertical-align: middle; }
+    &.bottom { vertical-align: bottom; }
+  }
+}
+
+/*
+#   2 - FEATURE    2 - FEATURE    2 - FEATURE    2 - FEATURE    2 - FEATURE    2 - FEATURE    2 - FEATURE    2 - FEATURE
+*/
+
+.feature {
+  position: relative;
+  display: table;
+  width: 100%;
+  min-height: 650px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.75);
+  &.light {
+    background: rgba(0,0,0,0.7);
+  }
+}
+
+.feature-background {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  right: 0; bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: content-box;
+  background-size: 100%;
+  background-origin: content-box;
+  background-blend-mode: lighten;
+  -webkit-transition: all $g-trans-slow ease;
+  -moz-transition: all $g-trans-slow ease;
+  transition: all $g-trans-slow ease;
+  -webkit-box-shadow: inset 0px -100px 400px -150px #000;
+     -moz-box-shadow: inset 0px -100px 400px -150px #000;
+          box-shadow: inset 0px -100px 400px -150px #000;
+  &.nofix {
+    position: absolute;
+  }
+}
+
+.feature-wrap {
+  display: table-cell;
+  vertical-align: top;
+  overflow-y: hidden;
+  padding: 0rem .5rem;
+  text-align: left;
+}
+
+.feature-inner {
+  padding-top: 2rem;
+  // if needed
+  .entry-title {
+    line-height: .6;
+    margin-bottom: 1rem;
+  }
+  .entry-title span, .entry-title a {
+    font-size: $g-type-d-xs;
+    line-height: $g-type-d-xs*1.2;
+    border-bottom: none;
+    //text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+    -webkit-transition: all $g-trans-slow ease;
+    -moz-transition: all $g-trans-slow ease;
+    transition: all $g-trans-slow ease;
+    a:hover, a:focus {
+      text-decoration: none;
+    }
+  }
+  .feature-meta, .feature-meta .btn {
+    font-size: $g-type-d-xs;
+  }
+  h2, h2 span, h2 a {
+    font-size: $g-type-d-xs;
+  }
+}
+
+.feature-buttons {
+  .feature-meta {
+    display: none;
+    position: relative;
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition-duration: $g-trans-slow;
+            transition-duration: $g-trans-slow;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+    -webkit-transition-property: all;
+            transition-property: all;
+    -webkit-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  &.active {
+    .feature-meta {
+      opacity: 1;
+      z-index: 1;
+      -webkit-transform: translateY(0%);
+          -ms-transform: translateY(0%);
+              transform: translateY(0%);
+      &:nth-child(1) { transition-delay: .3s; }
+      &:nth-child(2) { transition-delay: .5s; }
+      &:nth-child(3) { transition-delay: .7s; }
+      &:nth-child(4) { transition-delay: .9s; }
+      &:nth-child(5) { transition-delay: 1.1s; }
+      &:nth-child(6) { transition-delay: 1.3; }
+      &:nth-child(7) { transition-delay: 1.5s; }
+      &:nth-child(8) { transition-delay: 1.7; }
+      &:nth-child(9) { transition-delay: 1.9s; }
+      &:nth-child(10) { transition-delay: 2.1s; }
+    }
+  }
+}
+
+.feature-meta {
+  padding: .5rem .5rem .5rem 0;
+  i {
+    min-width: 1.5rem;
+    text-align: center;
+  }
+  &:first-child {
+    padding-left: 0;
+  }
+  display: inline-block;
+  //border: 1px solid $theme-negative;
+  //border-radius: .25rem;
+  margin-right: .5rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.continue {
+    display: block;
+    margin: 1rem 0;
+    //width: 100%;
+  }
+  a {
+    border-bottom-width: 0px;
+  }
+  &.category {
+    a {
+      &:after {
+        display: inline-block;
+        content: ",";
+      }
+    }
+    a:last-child {
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+
+.entry-footer .entry-meta {
+  text-align: left;
+  .feature-meta {
+    display: block;
+    padding-left: 0;
+    font-size: 1.5rem;
+    i {
+      min-width: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+
+.entry-meta .social-menu {
+  display: inline-block;
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  .hero {
+    &.push-top {
+      padding-top: $g-nav-size-small;
+    }
+  }
+  .feature-wrap {
+    vertical-align: middle;
+    padding: 0;
+  }
+  .feature-inner {
+    padding-top: 0;
+    .entry-title span, .entry-title a {
+      font-size: $g-type-d-sm;
+      line-height: $g-type-d-sm*1.2;
+    }
+  }
+  .feature-buttons .feature-meta {
+    display: block;
+  }
+  .feature-meta, .feature-meta .btn {
+    font-size: $g-type-p-sm;
+  }
+  .feature-buttons .feature-meta {
+    display: none;
+  }
+  .feature-meta.continue {
+    display: block;
+  }
+}
+@include media-breakpoint-up(md) {
+  .hero {
+    &.push-top {
+      padding-top: $g-nav-size;
+    }
+  }
+  .feature-wrap {
+    vertical-align: middle;
+    padding: 0 0 $g-nav-size;
+  }
+  .feature-inner {
+    .entry-title span, .entry-title a {
+      font-size: $g-type-d-md;
+      line-height: $g-type-d-md*1.2;
+    }
+  }
+  .feature-meta, .feature-meta .btn {
+    font-size: $g-type-p-md;
+  }
+  .feature-buttons .feature-meta {
+    display: inline-block;
+  }
+  .feature-meta.continue {
+    display: block;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .feature-inner {
+    .entry-title span, .entry-title a {
+      font-size: $g-type-d-lg;
+      line-height: $g-type-d-lg*1.2;
+    }
+  }
+  .feature-meta, .feature-meta .btn {
+    font-size: $g-type-p-lg;
+  }
+}
+@include media-breakpoint-up(xl) {
+  .feature-inner {
+    .entry-title span, .entry-title a {
+      font-size: $g-type-d-xl;
+      line-height: $g-type-d-xl*1.2;
+    }
+  }
+  .feature-meta, .feature-meta .btn {
+    font-size: $g-type-p-xl;
+  }
+}
