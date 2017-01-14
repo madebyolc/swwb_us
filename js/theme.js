@@ -70,10 +70,6 @@ $(document).ready(function() {
     $menuLeft.toggleClass('pushmenu-open');
   });
 
-  $slide.click(function() {
-    $('body').addClass('slide_out');
-  });
-
 });
 // ----------------------------- end Push Menu
 

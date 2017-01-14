@@ -22,21 +22,71 @@ get_header(); ?>
                       <?php if ( have_posts() ) : ?>
 
                         <header class="page-header typr">
-                            <?php
-                                echo '<h1 class="page-title">' . single_cat_title( 'News from ', false ) . '</h1>';
-                                the_archive_description( '<h3 class="taxonomy-description">', '</h3>' );
-                            ?>
-                        </header><!-- .page-header -->
 
-                        <span class="typr">
-                          <?php
-                          $args = array(
-                            'current_category' => 3,
-                            'title_li' => 'Jump to group: '
-                          );
-                            wp_list_categories($args);
-                          ?>
-                        </span>
+                            <?php if ( is_category() ) :
+
+                              echo '<h1 class="page-title">' . single_cat_title( 'News from ', false ) . '</h1>';
+                              the_archive_description( '<h3 class="taxonomy-description">', '</h3>' );
+
+                              elseif ( is_archive() ) :
+
+                              echo '<h1 class="page-title">' . str_replace('Month: ','News in ',get_the_archive_title()) . '</h1>';
+
+                            endif; ?>
+
+                            <span class="list-archive-nav">
+                              <a href="#" class="button" data-toggle="collapse" data-target="#list-archive-filter" data-parent="#list-archive-group" aria-expanded="false" aria-controls="list-archive-filter">
+                                Filter
+                              </a>
+                            </span>
+
+                            <div class="list-archive-container collapse" id="list-archive-filter">
+
+                              <div class="wrap">
+                                <div class="list-archive typr">
+                                  <div class="row">
+                                    <div class="col-sm-6">
+                                      <span class="title">Group</span>
+                                      <?php
+                                      $args = array(
+                                        'current_category' => 3,
+                                        'title_li' => ' '
+                                      );
+                                        wp_list_categories($args);
+                                      ?>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <span class="title">Date</span>
+                                      <?php
+                                        global $wpdb;
+                                        $limit = 0;
+                                        $year_prev = null;
+                                        $months = $wpdb->get_results("SELECT DISTINCT MONTH( post_date ) AS month ,	YEAR( post_date ) AS year, COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'post' GROUP BY month , year ORDER BY post_date DESC");
+                                        foreach($months as $month) :
+                                          $year_current = $month->year;
+                                          if ($year_current != $year_prev){
+                                            if ($year_prev != null){?>
+
+                                            <?php } ?>
+
+                                          <li class="archive-year"><a href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/"><?php echo $month->year; ?></a></li>
+
+                                          <?php } ?>
+                                          <li class="archive-date"><a href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>"><span class="archive-month"><?php echo date_i18n("F", mktime(0, 0, 0, $month->month, 1, $month->year)) ?></span></a></li>
+                                        <?php $year_prev = $year_current;
+
+                                        if(++$limit >= 18) { break; }
+
+                                        endforeach; ?>
+                                    </div>
+                                </div>
+
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </header><!-- .page-header -->
 
                         <?php /* Start the Loop */ ?>
                         <?php while ( have_posts() ) : the_post(); ?>

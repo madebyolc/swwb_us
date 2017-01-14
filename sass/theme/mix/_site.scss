@@ -6,7 +6,7 @@
 #
 #   1 - SITE
 #   2 - CONTAINER
-#   3 - ARCHIVE
+#   3 - WRAPPER
 */
 
 /*
@@ -120,14 +120,20 @@
 }
 
 /*
-#   3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE
+#   3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER
 */
 
-#archive-wrapper {
+#wrapper-index
+#archive-wrapper,
+#author-wrapper,
+.search-wrapper {
   padding-top: $g-nav-size-small;
 }
 @media (min-width: 768px) {
-  #archive-wrapper {
+  #wrapper-index
+  #archive-wrapper,
+  #author-wrapper,
+  .search-wrapper {
     padding-top: $g-nav-size;
   }
 }

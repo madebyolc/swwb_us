@@ -22,13 +22,7 @@
   z-index: 1000;
   top: 0; left: 0;
   overflow-y: hidden;
-  -webkit-transition-duration: $g-trans-slow;
-          transition-duration: $g-trans-slow;
-  -webkit-transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
-          transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
-  -webkit-transition-property: -webkit-all;
-          transition-property: all;
-}
+  }
 .ah.page-header.off-canvas {
   background-color: transparent;
   -webkit-transform: translateY( 0% );
