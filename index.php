@@ -27,7 +27,7 @@ get_header(); ?>
 
     <div class="wrapper index" id="wrapper-index">
 
-	   <div id="content" class="container">
+	   <div id="content" class="container index">
 
             <div class="row">
 
@@ -51,7 +51,13 @@ get_header(); ?>
 
                         <?php endwhile; ?>
 
-                        <?php the_posts_navigation(); ?>
+                        <div class="pagination">
+
+                          <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
+
+                          <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
+
+                        </div>
 
                     <?php else : ?>
 

@@ -7,13 +7,13 @@
 
 get_header(); ?>
 <div class="wrapper search-wrapper">
-    
-    <div class="container">
+
+    <div class="container search">
 
         <div class="row">
-        
-            <section id="primary" class="<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area">
-                
+
+            <section id="primary" class="content-area">
+
                 <main id="main" class="site-main" role="main">
 
                 <?php if ( have_posts() ) : ?>
@@ -21,7 +21,7 @@ get_header(); ?>
                     <header class="page-header">
 
                         <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'understrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-                        
+
                     </header><!-- .page-header -->
 
                     <?php /* Start the Loop */ ?>
@@ -38,7 +38,13 @@ get_header(); ?>
 
                     <?php endwhile; ?>
 
-                    <?php the_posts_navigation(); ?>
+                    <div class="pagination">
+
+                      <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
+
+                      <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
+
+                    </div>
 
                 <?php else : ?>
 
@@ -47,15 +53,13 @@ get_header(); ?>
                 <?php endif; ?>
 
                 </main><!-- #main -->
-                
+
             </section><!-- #primary -->
 
-            <?php get_sidebar(); ?>
-
         </div><!-- .row -->
-    
+
     </div><!-- Container end -->
-    
+
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

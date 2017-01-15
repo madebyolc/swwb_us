@@ -20,7 +20,13 @@ get_header(); ?>
 
                         <?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-                        <?php the_post_navigation(); ?>
+                        <div class="pagination">
+
+                          <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
+
+                          <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
+
+                        </div>
 
                     <?php endwhile; // end of the loop. ?>
 

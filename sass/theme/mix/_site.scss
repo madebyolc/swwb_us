@@ -4,9 +4,10 @@
 #
 #   INDEX
 #
-#   1 - SITE
+#   1 - SITE + PAGE BUTTON
 #   2 - CONTAINER
-#   3 - ARCHIVE
+#   3 - WRAPPER
+#   4 - ROWS
 */
 
 /*
@@ -14,11 +15,30 @@
 */
 
 .site {
-  -webkit-transition: all $g-trans-slow ease-in-out;
-  -moz-transition: all $g-trans-slow ease-in-out;
+}
+
+#page {
+  overflow-x: hidden;
+}
+
+.page-button {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(0,0,0);
+  -webkit-transition: opacity $g-trans-slow ease-in-out;
+  -moz-transition: opacity $g-trans-slow ease-in-out;
   transition: all $g-trans-slow ease-in-out;
+  opacity: 0;
+  z-index: -99;
   &.active {
-    opacity: 1;
+    display: block;
+    z-index: 555555;
+    opacity: .5;
+    &:hover {
+      cursor: e-resize;
+      opacity: .25;
+    }
   }
 }
 
@@ -41,33 +61,57 @@
   padding: 0;
   width: 100%;
 }
-.navbar .container {
-  padding: 0 1.75rem;
-}
+.navbar .container,
 #content.container,
 .feature-inner.container,
 .feature-buttons.container,
 .article-nav.container,
 .article.entry.container,
-.article.footer.container {
+.article.footer.container,
+.search-wrapper .container {
   width: 100%;
   padding-left: 2.25rem;
   padding-right: 2.25rem;
 }
+.wrap-pushmenu .navbar .container {
+  margin: 0;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  .push-esc {
+    padding-right: .5rem;
+  }
+}
+#content.article.container {
+  width: 100%;
+  padding: 0;
+}
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
     max-width: 100%;
   }
+  .navbar .container,
   #content.container,
   .feature-inner.container,
   .feature-buttons.container,
   .article-nav.container,
   .article.entry.container,
-  .article.footer.container {
+  .article.footer.container,
+  .search-wrapper .container {
     width: 100%;
     padding-left: 2.75rem;
     padding-right: 2.75rem;
+  }
+  .wrap-pushmenu .navbar .container {
+    margin: 0;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    .push-esc {
+      padding-right: .5rem;
+    }
   }
 }
 @media (min-width: 768px) {
@@ -75,15 +119,26 @@
     width: 720px;
     max-width: 100%;
   }
+  .navbar .container,
   #content.container,
   .feature-inner.container,
   .feature-buttons.container,
   .article-nav.container,
   .article.entry.container,
-  .article.footer.container {
-    width: 70%;
+  .article.footer.container,
+  .search-wrapper .container {
+    width: 100%;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+  .wrap-pushmenu .navbar .container {
+    margin: 0;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    .push-esc {
+      padding-right: .5rem;
+    }
   }
 }
 @media (min-width: 992px) {
@@ -91,15 +146,26 @@
     width: 960px;
     max-width: 100%;
   }
+  .navbar .container,
   #content.container,
   .feature-inner.container,
   .feature-buttons.container,
   .article-nav.container,
   .article.entry.container,
-  .article.footer.container {
-    width: 80%;
+  .article.footer.container,
+  .search-wrapper .container {
+    width: 100%;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
+  }
+  .wrap-pushmenu .navbar .container {
+    margin: 0;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    .push-esc {
+      padding-right: .5rem;
+    }
   }
 }
 @media (min-width: 1200px) {
@@ -107,29 +173,65 @@
     width: 1140px;
     max-width: 100%;
   }
+  .navbar .container,
   #content.container,
   .feature-inner.container,
   .feature-buttons.container,
   .article-nav.container,
   .article.entry.container,
-  .article.footer.container {
-    width: 60%;
+  .article.footer.container,
+  .search-wrapper .container {
+    width: 80%;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
+  }
+  .wrap-pushmenu .navbar .container {
+    margin: 0;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    .push-esc {
+      padding-right: .5rem;
+    }
   }
 }
 
 /*
-#   3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE    3 - ARCHIVE
+#   3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER
 */
 
-#archive-wrapper {
-  padding-top: $g-nav-size-small;
+#wrapper-index,
+#page-wrapper,
+#archive-wrapper,
+#author-wrapper,
+.search-wrapper {
+  padding-top: $g-nav-size-small+$g-header-margin;
+    background: $g-wrapper-background;
 }
 @media (min-width: 768px) {
-  #archive-wrapper {
-    padding-top: $g-nav-size;
+  #wrapper-index,
+  #page-wrapper,
+  #archive-wrapper,
+  #author-wrapper,
+  .search-wrapper {
+    padding-top: $g-nav-size+$g-header-margin;
   }
+}
+
+#single-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/*
+#   4 - ROWS    4 - ROWS    4 - ROWS    4 - ROWS    4 - ROWS    4 - ROWS
+*/
+
+.article.container .row,
+.search-wrapper .container .row,
+#content.container .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 // Responsive breakpoints
