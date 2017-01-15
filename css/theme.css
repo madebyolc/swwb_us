@@ -26,100 +26,6 @@
 /*
 #   4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY    4 - TYPOGRAPHY
 */
-/*
-$brand-primary:         #444; //#ff6d5a
-$brand-secondary:         #888; //#ff6d5a
-
-// Typography
-$font-family-sans-serif: "HK Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:       $font-family-sans-serif !default;
-
-$font-size-root: 16px !default;
-
-$font-size-base: 1rem !default;
-$font-size-lg:   1.25rem !default;
-$font-size-sm:   .875rem !default;
-$font-size-xs:   .75rem !default;
-
-$line-height-base: 1.5 !default;
-
-$font-size-h1: 2.5rem !default;
-$font-size-h2: 2rem !default;
-$font-size-h3: 1.75rem !default;
-$font-size-h4: 1.5rem !default;
-$font-size-h5: 1.25rem !default;
-$font-size-h6: 1rem !default;
-
-$font-read-xs: 1.25rem;
-$font-read-sm: 1.25rem;
-$font-read-md: 1.25rem;
-$font-read-lg: 1.5rem;
-$font-read-xl: 1.75rem;
-
-
-$display1-size: 6rem !default;
-$display2-size: 5.5rem !default;
-$display3-size: 4.5rem !default;
-$display4-size: 3.5rem !default;
-$display5-size: 2.5rem !default;
-$display6-size: 1.5rem !default;
-
-$display1-weight: 300 !default;
-$display2-weight: 300 !default;
-$display3-weight: 300 !default;
-$display4-weight: 300 !default;
-
-// Theme
-$theme-background:    #FFFFFF;
-$theme-background-shadow: rgb(247, 246, 244);
-$theme-lines:         #2F277D;
-$theme-shadow:        #2F277D;
-$theme-color:         rgb(81, 80, 78);
-
-$theme-primary:       $brand-primary;
-$theme-secondary:     #DDD;
-
-$theme-negative:      $theme-primary; // Where scheme is needed to offer contrasts (i.e. dark background, light text)
-$theme-positive:      #FFFFFF;
-
-$theme-fixed-nav:     70px;
-
-$theme-text-header:   $brand-primary;
-
-// Header
-$header-height:       $theme-fixed-nav;
-
-// Navigations
-$navbar-margin-bottom:  0px;
-$navbar-border-radius:  0px;
-
-$nav-primary:         #FFF;
-$nav-background:      #2E2A7B;
-
-// Footer
-$footer-background:     #EFEFEF;
-
-// Paddings
-$theme-padding-left:  15px;
-$theme-padding-right: 15px;
-$theme-padding-md:    2rem;
-$theme-padding-lg:    4rem;
-
-// Transitions
-$transition-slow:     .5s;
-$transition-fast:     .15s;
-
-// Article
-$article-background:      $theme-background-shadow;
-$article-reader-background: $article-background;
-$article-entry-padding:   2rem;
-$article-block-padding:   1rem;
-$article-p-size:          $font-size-h4;
-$article-caption-size:    $font-size-h5;
-$article-caption-colour:  #BBB;
-*/
 @font-face {
   font-family: 'HK Grotesk';
   src: url("../fonts/HKGrotesk-Light.eot");
@@ -8236,7 +8142,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   transition-property: all; }
 
 .ah.page-header.off-canvas {
-  background-color: transparent;
+  background-color: white;
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   transform: translateY(0%);
@@ -8272,9 +8178,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   padding-top: 0px;
   height: 50px; }
   .ah.page-header.off-canvas.fixed .navbar-brand {
-    fill: #ff6d5a; }
+    fill: #555; }
   .ah.page-header.off-canvas.fixed .navbar-toggler .icon-bar {
-    background-color: #ff6d5a !important; }
+    background-color: #555 !important; }
 
 /*
 #   2 - NAVBAR    2 - NAVBAR    2 - NAVBAR    2 - NAVBAR    2 - NAVBAR    2 - NAVBAR    2 - NAVBAR    2 - NAVBAR
@@ -8354,7 +8260,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       width: 26px;
       height: 2px;
       border-radius: 1px;
-      background-color: #ff6d5a;
+      background-color: #555;
       -webkit-transition: all 0.15s ease;
       -moz-transition: all 0.15s ease;
       transition: all 0.15s ease; }
@@ -8369,7 +8275,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       top: 50%;
       left: -100%;
       font-size: 1rem;
-      color: #ff6d5a;
+      color: #555;
       content: "menu"; }
   .wrap-explore .navbar-toggler:hover .icon-bar.one {
     transform: rotate(-45deg);
@@ -8558,7 +8464,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       padding: 0;
       float: left; }
       .push-nav .global-menu ul:hover li a {
-        opacity: .35; }
+        opacity: .6; }
       .push-nav .global-menu ul li {
         display: inline-block;
         padding-right: 1rem;
@@ -8661,12 +8567,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       .global-social-menu ul li a:hover:before {
         border-bottom: 2px solid white; }
   .global-social-menu ul li a:before {
+    border-bottom: 2px solid transparent;
     font-size: 0.9rem;
     color: white !important;
     padding-bottom: .25rem; }
 
 .social-menu ul li a:before {
-  font-size: 1.5rem; }
+  font-size: 1.4rem; }
 
 @media (min-height: 376px) {
   .push-block {
@@ -8703,7 +8610,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     .global-social-menu ul li a:before, .social-menu ul li a:before {
       font-size: 1.5rem; }
   .social-menu ul li a:before {
-    font-size: 1.5rem; } }
+    font-size: 1.4rem; } }
 
 @media (min-width: 768px) {
   .pushmenu {
@@ -8737,15 +8644,15 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   .wrap-pushmenu .push-esc .navbar-toggler {
     height: 110px; }
   .push-block {
-    font-size: 1.5rem; }
+    font-size: 1.4rem; }
     .push-block .form#searchform .form-control, .push-block .form#searchform .btn-primary {
-      font-size: 1.5rem; }
+      font-size: 1.4rem; }
   .global-social-menu ul li, .social-menu ul li {
-    min-height: 2.5rem; }
+    min-height: 2.4rem; }
     .global-social-menu ul li a, .social-menu ul li a {
-      min-width: 2.5rem; }
+      min-width: 2.4rem; }
     .global-social-menu ul li a:before, .social-menu ul li a:before {
-      font-size: 1.5rem; } }
+      font-size: 1.4rem; } }
 
 @media (min-width: 992px) {
   .pushmenu {
