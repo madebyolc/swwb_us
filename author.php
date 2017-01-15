@@ -9,22 +9,20 @@
 get_header(); ?>
 
 <div class="wrapper" id="author-wrapper">
-    
-    <div  id="content" class="container">
+
+    <div  id="content" class="container author">
 
         <div class="row">
-        
-            <div id="primary" class="<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area">
-               
+
+            <div id="primary" class="content-area">
+
                 <main id="main" class="site-main" role="main">
-                        
+
                     <header class="page-header author-header">
-                        
+
                         <?php
                             $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
                         ?>
-
-                        <h1><?php esc_html_e( 'About:', 'understrap' ); ?> <?php echo $curauth->nickname; ?></h1>
 
                         <?php if ( ! empty( $curauth->ID ) ) : ?>
                             <?php echo get_avatar($curauth->ID); ?>
@@ -41,45 +39,51 @@ get_header(); ?>
                                 <dd><?php echo $curauth->user_description; ?></dd>
                             <?php endif; ?>
                         </dl>
-                        
-                        <h2><?php esc_html_e( 'Posts by', 'understrap' ); ?> <?php echo $curauth->nickname; ?>:</h2>
-                            
+
+                        <h2><?php esc_html_e( 'Articles by', 'understrap' ); ?> <?php echo $curauth->nickname; ?></h2>
+
                     </header><!-- .page-header -->
-                    
-                    <ul>
+
                         <!-- The Loop -->
-                        
+
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                               <li>
-                                    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>">
-                                    <?php the_title(); ?></a>,
-                                    <?php the_time('d M Y'); ?> in <?php the_category('&');?>
-                            </li>
-                        
+
+                          <?php
+                              /* Include the Post-Format-specific template for the content.
+                               * If you want to override this in a child theme, then include a file
+                               * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                               */
+                              get_template_part( 'loop-templates/content', get_post_format() );
+                          ?>
+
                         <?php endwhile; ?>
 
-                            <?php the_posts_navigation(); ?>
+                        <div class="pagination">
+
+                          <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
+
+                          <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
+
+                        </div>
 
                         <?php else : ?>
 
                             <?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
                         <?php endif; ?>
-                        
+
                         <!-- End Loop -->
-        
-                    </ul>
 
                 </main><!-- #main -->
-               
+
             </div><!-- #primary -->
 
             <?php get_sidebar(); ?>
 
         </div> <!-- .row -->
-        
+
     </div><!-- Container end -->
-    
+
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

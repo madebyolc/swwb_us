@@ -1,5 +1,15 @@
 /*
-# Forms
+#   FORMS
+#   _forms.scss
+#
+#   INDEX
+#
+#   1 -
+#
+*/
+
+/*
+#   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
 */
 
 .form {
@@ -29,4 +39,4 @@
     .form-control, .btn-primary { font-size: $font-size-h2; }
   }
 }
-@include media-breakpoint-up(xl) { }
+@include media-breakpoint-up(xl) {}

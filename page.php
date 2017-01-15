@@ -12,13 +12,13 @@
 
 get_header(); ?>
 
-<div class="wrapper fixed-nav" id="page-wrapper pad-top">
+<div class="wrapper" id="page-wrapper">
 
     <div  id="content" class="container">
 
         <div class="row">
 
-    	   <div id="primary" class="<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>col-md-8<?php else : ?>col-md-12<?php endif; ?> content-area">
+    	   <div id="primary" class="content-area">
 
                  <main id="main" class="site-main" role="main">
 

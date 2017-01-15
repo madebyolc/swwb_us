@@ -9,7 +9,7 @@
 #   3 - DARK
 */
 
-$g-theme-light: #C6C6C6;
+$g-theme-light: #f7f6f4;
 $g-theme-dark: #55575d;
 
 /*.navbar-brand {
@@ -26,8 +26,9 @@ $g-theme-dark: #55575d;
   a:hover, a:focus, a:active, a:active:hover
   { color: lighten($g-theme-dark, 20%); border-color: lighten($g-theme-dark, 20%); background: transparent; }
   &.btn {
-    background: transparent;
+    background: $g-theme-dark;
     border: 2px solid $g-theme-dark;
+    color: $g-theme-light;
   }
   &.icon-bar {
     background-color: $g-theme-dark!important;
@@ -46,10 +47,11 @@ $g-theme-dark: #55575d;
   h1, h2, h3, h4, h5, h6
   { color: $g-theme-light; border-color: $g-theme-light; border-width: 2px; }
   a:hover, a:focus, a:active, a:active:hover
-  { color: lighten($g-theme-light, 20%); border-color: lighten($g-theme-light, 20%); background: transparent; }
+  { background-color: lighten($g-theme-light, 20%); color: lighten($g-theme-light, 20%); border-color: lighten($g-theme-light, 20%); background: transparent; }
   &.btn {
-    background: transparent;
+    background: $g-theme-light;
     border: 2px solid $g-theme-light;
+    color: $g-theme-dark;
   }
   &.icon-bar {
     background-color: $g-theme-light!important;

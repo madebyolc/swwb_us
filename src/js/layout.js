@@ -15,6 +15,10 @@ $(document).ready(function() {
     $('.pushmenu').css('max-width', windowWidth);
     $('.hero').css('min-height', windowHeight);
     $('.hero-short').css('min-height', windowHeight);
+    $('#wrapper-footer').css('min-height', windowHeight);
+    $('.wrapper.search-wrapper').css('min-height', windowHeight);
+    $('.feature-background').css('max-height', windowHeight);
+    //REVIEW might need to add the above function to all wrappers
   };
   setHeight();
   $(window).resize(function() {

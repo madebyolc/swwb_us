@@ -19,6 +19,7 @@
 
 				<div id="typed-strings">
 
+					<p><a href="#read"><small>Article</small></a></p>
 					<p><a href="#read"><?php the_title(); ?></a></p>
 
 				</div>
@@ -70,7 +71,7 @@
 
 		<div class="article entry container">
 
-			<div class="article-content">
+			<div class="article-content typr">
 
 				<?php the_content(); ?>
 
@@ -101,7 +102,7 @@
 
 		<div class="article footer container">
 
-			<div class="entry-meta">
+			<div class="entry-meta typr">
 
 				<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> View more articles listed in <?php the_category(' '); ?></span>
 

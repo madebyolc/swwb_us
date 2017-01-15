@@ -10,60 +10,37 @@ html, body {
 
 body {
   position: relative;
-  background-color: $theme-background;
-  color: $theme-color;
+  background-color: $g-body-background;
+  color: $g-body-colour;
   // Stop body scrolling when nav is activated
   &.overflow {
     overflow: hidden;
-  }
-  -webkit-transition: opacity $transition-slow ease;
-  -moz-transition: opacity $transition-slow ease;
-  transition: opacity $transition-slow ease;
-  &.slide_out {
-    opacity: 0;
   }
 }
 
 // Start Typographical Styles
 
 // Links
-span a, p a, figure a, li a,
+a {
+  color: $g-type-link-color;
+  &:hover { color: $g-type-link-color-hover; }
+}
+
+.link a, span a, p a, figure a, li a,
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
-  border-bottom: 2px solid rgba(0,0,0,0.125);
+  border-bottom: 2px solid $g-type-link-underline;
   &:hover {
     text-decoration: none;
-    border-bottom-color: rgba(0,0,0,0.5);
+    border-bottom-color: $g-type-link-underline-hover;
   }
   &:focus {
     text-decoration: none;
   }
 }
 
-// Headers
-
-// Display headers
-h1, h2, h3 {
-  letter-spacing: 3px;
-  line-height: 1.3;
-}
-
-.hero .entry-title {
-  font-size: $display4-size;
-}
-
-// Paragraphs
-p {
-  text-align: left;
-}
-
-// Icons
-i.fa {
-	color: $theme-color;
-}
-
-@import "layout/layout";
-@import "components/components";
+//@import "layout/layout";
+//@import "components/components";
 //@import "campaigns/campaigns";
 
 @import "mix/mix";
