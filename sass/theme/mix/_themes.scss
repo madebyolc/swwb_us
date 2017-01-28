@@ -9,8 +9,8 @@
 #   3 - DARK
 */
 
-$g-theme-light: #f7f6f4;
-$g-theme-dark: #55575d;
+$g-theme-light: $g-type-pos;
+$g-theme-dark: $g-type-neg;
 
 /*.navbar-brand {
   fill: $g-logo-color;
@@ -20,7 +20,7 @@ $g-theme-dark: #55575d;
   border-width: 2px;
   //&.navbar { border-bottom-color: $g-theme-dark; }
   &.navbar-brand { fill: $g-theme-dark; }
-  div,span, i, a,
+  div,span, i, a, p,
   h1, h2, h3, h4, h5, h6
   { color: $g-theme-dark; border-color: $g-theme-dark; border-width: 2px; }
   a:hover, a:focus, a:active, a:active:hover
@@ -43,7 +43,7 @@ $g-theme-dark: #55575d;
   border-width: 2px;
   //&.navbar { border-bottom-color: $g-theme-light; }
   &.navbar-brand { fill: $g-theme-light; }
-  div,span, i, a,
+  div,span, i, a, p,
   h1, h2, h3, h4, h5, h6
   { color: $g-theme-light; border-color: $g-theme-light; border-width: 2px; }
   a:hover, a:focus, a:active, a:active:hover

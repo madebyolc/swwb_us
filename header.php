@@ -181,6 +181,14 @@
 
             </div> <!-- .wrap-brand -->
 
+            <?php if (is_single()) { ?>
+            <div class="wrap-title">
+              <span class="title"><?php the_title(); ?></span>
+              <span class="dots">...</span>
+            </div>
+            <?php } else { ?>
+            <?php } ?>
+
             <div class="wrap-explore">
 
               <button class="nav_list navbar-toggler visible-xs-up" type="button" data-toggle="collapse" data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">

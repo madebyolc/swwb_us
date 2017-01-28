@@ -10,6 +10,7 @@
 .typr {
   font-size: $g-type-t-xs;
   color: $g-type-co-2;
+  letter-spacing: .5px;
   h1 { font-size: $g-type-h-xs*$g-typr-multi-1;
        color: $g-type-co-1;
        line-height: $g-type-h-xs*1.25; }
@@ -28,6 +29,30 @@
   h6 { font-size: $g-type-h-xs*$g-typr-multi-6;
        color: $g-type-co-6;
        line-height: $g-type-h-xs*1.25; }
+
+  &.d {
+    font-family: "SWWBDisplay";
+  }
+
+  &.lead {
+    font-size: 120%;
+    line-height: 150%;
+  }
+
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+
+  &.b {
+    font-weight: bold;
+  }
+
 }
 
 // Responsive breakpoints
@@ -63,6 +88,10 @@
          line-height: $g-type-h-md*1.25; }
     h6 { font-size: $g-type-h-md*$g-typr-multi-6;
          line-height: $g-type-h-md*1.25; }
+    &.lead {
+     font-size: 250%;
+     line-height: 150%;
+    }
   }
 }
 @include media-breakpoint-up(lg) {

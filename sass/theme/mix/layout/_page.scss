@@ -36,7 +36,8 @@ main {
 
   article {
     margin-top: 2rem;
-    background: #eee;
+    border: 1px solid #888;
+    border-width: 0 0 1px 0;
     &:first-child {
       margin-top: 0;
     }
@@ -47,7 +48,6 @@ main {
       .wp-post-img-link {
         display: block;
         width: 100%;
-        max-height: 500px;
         overflow-y: hidden;
         img {
           width: 100%;
@@ -62,30 +62,27 @@ main {
     }
   }
 
-  article.entry-content {
-    background: green;
-  }
-
   .list-archive-nav {
     display: block;
     .button {
       padding: .25rem .5rem;
       border-radius: .125rem;
-      background: #F0F0F0;
-      color: $g-type-neg;
+      background: $g-light-grey;
+      color: $g-brand-primary;
       &.collapsed {
         background: transparent;
-        color: $g-type-neg;
+        color: $g-brand-primary;
       }
     }
   }
 
   .list-archive-container {
     position: relative;
-    border-bottom: 2px solid #CCC;
-    background: #F0F0F0;
+    border-bottom: 2px solid darken($g-grey, 10%);
+    background: $g-light-grey;
     z-index: 1;
     min-height: 0;
+    top: 0px;
     .wrap {
       padding: 1rem 1rem 1.5rem;
     }

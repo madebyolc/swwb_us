@@ -51,6 +51,24 @@
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  &.center, .center {
+    text-align: center;
+  }
+  &.right, .right {
+    text-align: right;
+  }
+
+  // container paddings
+  &.tp-nav { padding-top: $g-nav-size; } // top padding nav
+  &.np, .np { padding: 0; }
+  .container-wrapper-100 {
+    width: 100%;
+  }
+  .container-wrapper-50 {
+    width: 50%;
+    &.right { right: 0; }
+  }
+
 }
 .container::after {
   content: "";
@@ -68,10 +86,13 @@
 .article-nav.container,
 .article.entry.container,
 .article.footer.container,
-.search-wrapper .container {
+.search-wrapper .container,
+#wrapper-page .container,
+#wrapper-footer .container,
+#wrapper-footer-full .container {
   width: 100%;
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .wrap-pushmenu .navbar .container {
   margin: 0;
@@ -99,7 +120,10 @@
   .article-nav.container,
   .article.entry.container,
   .article.footer.container,
-  .search-wrapper .container {
+  .search-wrapper .container,
+  #wrapper-page .container,
+  #wrapper-footer .container,
+  #wrapper-footer-full .container {
     width: 100%;
     padding-left: 2.75rem;
     padding-right: 2.75rem;
@@ -126,7 +150,10 @@
   .article-nav.container,
   .article.entry.container,
   .article.footer.container,
-  .search-wrapper .container {
+  .search-wrapper .container,
+  #wrapper-page .container,
+  #wrapper-footer .container,
+  #wrapper-footer-full .container {
     width: 100%;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -153,8 +180,11 @@
   .article-nav.container,
   .article.entry.container,
   .article.footer.container,
-  .search-wrapper .container {
-    width: 100%;
+  .search-wrapper .container,
+  #wrapper-page .container,
+  #wrapper-footer .container,
+  #wrapper-footer-full .container {
+    width: 90%;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
   }
@@ -180,10 +210,16 @@
   .article-nav.container,
   .article.entry.container,
   .article.footer.container,
-  .search-wrapper .container {
-    width: 80%;
+  .search-wrapper .container,
+  #wrapper-page .container,
+  #wrapper-footer .container,
+  #wrapper-footer-full .container {
+    width: 70%;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
+  }
+  .navbar .container {
+    width: 100%;
   }
   .wrap-pushmenu .navbar .container {
     margin: 0;
@@ -200,17 +236,27 @@
 #   3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER    3 - WRAPPER
 */
 
+// Padding for nav
 #wrapper-index,
 #page-wrapper,
+#wrapper-page,
 #archive-wrapper,
 #author-wrapper,
 .search-wrapper {
   padding-top: $g-nav-size-small+$g-header-margin;
-    background: $g-wrapper-background;
+  background: $g-wrapper-background;
+  padding-bottom: 0;
 }
+
+// Padding = 0
+#wrapper-page.top {
+  padding-top: 0;
+}
+
 @media (min-width: 768px) {
   #wrapper-index,
   #page-wrapper,
+  #wrapper-page,
   #archive-wrapper,
   #author-wrapper,
   .search-wrapper {

@@ -11,9 +11,9 @@
 
 	<div class="hero push-top feature theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>" style="background-color: <?php if ( get_post_meta($post->ID, 'feature_background', true) ) : echo get_post_meta($post->ID, 'feature_background', true); endif; ?>;">
 
-		<div class="feature-background" style="background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>');"></div>
+		<div class="feature-background" style="background-image: url('<?php if ( !get_post_meta($post->ID, 'feature_background', false) ) :echo get_the_post_thumbnail_url( $post->ID, 'large' ); endif; ?>');"></div>
 
-		<div class="feature-wrap center">
+		<div class="feature-wrap">
 
 			<div class="feature-inner container">
 
@@ -24,11 +24,15 @@
 
 				</div>
 
-				<h1 class="entry-title <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
+				<span class="typr d">
 
-					<span id="typed"></span>
+					<h1 class="entry-title <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
 
-				</h1>
+						<span id="typed"></span>
+
+					</h1>
+
+				</span>
 
 			</div>
 
@@ -86,16 +90,6 @@
 
 		</div>
 
-		<div class="article-nav container">
-
-			<div class="inner">
-
-				<?php	wp_nav_menu( array('theme_location' => 'social-menu', 'container_class' => 'social-menu' ) );?>
-
-			</div>
-
-		</div>
-
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
@@ -103,14 +97,27 @@
 		<div class="article footer container">
 
 			<div class="entry-meta typr">
-
-				<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> View more articles listed in <?php the_category(' '); ?></span>
-
-				<span class="feature-meta date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Article archive for <a href="<?php echo get_month_link( $archive_year, $archive_month ); ?>"><?php echo get_the_date() ?></a></span>
-
-				<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
-
+				<span class="feature-meta share"><h3 class="typr">Support us by sharing this article</h3><?php	wp_nav_menu( array('theme_location' => 'social-menu', 'container_class' => 'feature-meta-share' ) );?></span><h3 class="explore">Explore our news network</h3><span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> View articles also listed in <?php the_category(' '); ?></span><span class="feature-meta date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Article archive for <a href="<?php echo get_month_link( $archive_year, $archive_month ); ?>"><?php echo get_the_date() ?></a></span><span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
 			</div><!-- .entry-meta -->
+
+			<div class="pagination">
+				<div class="previous typr">
+					<?php  $prevPost = get_previous_post(true);
+						if($prevPost) {?>
+						<h3>Previous Article</h3>
+						<span class="link"><?php previous_post_link( '%link' ); ?></span>
+					<?php } else { ?>
+					<?php } ?>
+				</div>
+				<div class="next typr">
+					<?php  $nextPost = get_next_post(true);
+	    			if($nextPost) {?>
+						<h3>Next Article</h3>
+						<span class="link"><?php next_post_link( '%link' ); ?></span>
+					<?php } else { ?>
+					<?php } ?>
+				</div>
+			</div>
 
 		</div>
 

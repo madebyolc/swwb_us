@@ -12,6 +12,10 @@ body {
   position: relative;
   background-color: $g-body-background;
   color: $g-body-colour;
+  -moz-font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   // Stop body scrolling when nav is activated
   &.overflow {
     overflow: hidden;
@@ -23,6 +27,9 @@ body {
 // Links
 a {
   color: $g-type-link-color;
+  -webkit-transition: all $g-trans-medium ease;
+  -moz-transition: all $g-trans-medium ease;
+  transition: all $g-trans-medium ease;
   &:hover { color: $g-type-link-color-hover; }
 }
 

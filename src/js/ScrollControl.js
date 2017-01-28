@@ -7,9 +7,7 @@ $(document).ready(function() {
       triggerHook: 0.9
     })
     .setClassToggle(this, 'fade-in')
-    .addIndicators({
-      name: 'fade scene'
-    })
+    .addIndicators()
     .addTo(controller);
   });
 
@@ -19,9 +17,7 @@ $(document).ready(function() {
       triggerHook: 0.9
     })
     .setClassToggle(this, 'fade-in')
-    .addIndicators({
-      name: 'fade article elements'
-    })
+    .addIndicators()
     .addTo(controller);
   });
 

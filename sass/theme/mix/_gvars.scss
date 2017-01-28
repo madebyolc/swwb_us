@@ -18,12 +18,24 @@
 #   1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING
 */
 
-$g-brand-primary: #ff6d5a;//ff6d5a
-$g-brand-secondary: #555;
-$g-brand-reading: #555;
-$g-logo-color: $g-brand-secondary;
+$g-black: #2b2b29;
+$g-dark-grey: #c5c4c6;
+$g-grey: #CCC;
+$g-light-grey: #EEE;
+$g-white: #FFFFFF;
+$g-brand-primary: #2b2b29;//ff6d5a
+$g-brand-secondary: #ff6d5a;
+$g-brand-reading: #2b2b29;
+$g-logo-color: $g-brand-primary;
 $g-logo-size: 110px;
 $g-logo-size-small: 50px;
+
+$g-body-background: rbg(247, 246, 244);
+$g-body-colour: #444;
+$g-wrapper-background: $g-white;
+$g-post-background: $g-white;
+
+$g-btn-primary: $g-brand-primary;
 
 /*
 #   2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION
@@ -31,10 +43,10 @@ $g-logo-size-small: 50px;
 
 $g-nav-size: $g-logo-size;
 $g-nav-size-small: $g-logo-size-small;
-$g-nav-background: white;
+$g-nav-background: ;
 $g-nav-explore-color: $g-logo-color;
 
-$g-nav-push-color: white;
+$g-nav-push-color: $g-white;
 $g-nav-push-background: $g-brand-primary;
 $g-nav-push-esc-color: $g-nav-push-color;
 $g-nav-push-logo-color: $g-nav-push-color;
@@ -43,7 +55,7 @@ $g-nav-d-xs: .9rem;
 $g-nav-d-sm: 1.5rem;
 $g-nav-d-md: 1.4rem;
 $g-nav-d-lg: 1.75rem;
-$g-nav-d-xl: 2rem;
+$g-nav-d-xl: 1.5rem;
 
 $g-header-margin: 15px;
 
@@ -84,21 +96,28 @@ $g-typr-multi-3: .6;
 $g-typr-multi-4: .5;
 $g-typr-multi-5: .4;
 $g-typr-multi-6: .4;
+// Multipliers
+$g-typr-lead-multi-1: 2;
+$g-typr-lead-multi-2: 1.8;
+$g-typr-lead-multi-3: 1.6;
+$g-typr-lead-multi-4: 1.5;
+$g-typr-lead-multi-5: 1.4;
+$g-typr-lead-multi-6: 1.4;
 // Type
 $g-type-t-xs: 1rem;
 $g-type-t-sm: 1.5rem;
 $g-type-t-md: 1.25rem;
-$g-type-t-lg: 1.5rem;
-$g-type-t-xl: 1.75rem;
+$g-type-t-lg: 1.33rem;
+$g-type-t-xl: 1.5rem;
 // Headers
 $g-type-h-xs: 1.5rem;
 $g-type-h-sm: 1.75rem;
-$g-type-h-md: 2rem;
-$g-type-h-lg: 2.75rem;
-$g-type-h-xl: 2.75rem;
+$g-type-h-md: 1.75rem;
+$g-type-h-lg: 2.5rem;
+$g-type-h-xl: 2rem;
 
 // Typography colours
-$g-type-link-color: #333;
+$g-type-link-color: #222;
 $g-type-link-color-hover: #111;
 $g-type-link-underline: rgba(0, 0, 0, 0.25);
 $g-type-link-underline-hover: rgba(0, 0, 0, .5);
@@ -108,10 +127,7 @@ $g-type-co-3: lighten($g-brand-reading, 30%);
 $g-type-co-4: lighten($g-brand-reading, 40%);
 $g-type-co-5: lighten($g-brand-reading, 20%);
 $g-type-co-6: lighten($g-brand-reading, 10%);
-$g-type-pos:  #FFF;
-$g-type-neg:  #000;
 
-$g-body-background: rbg(247, 246, 244);
-$g-body-colour: #444;
-$g-wrapper-background: rgb(247, 246, 244);
-$g-post-background: rgb(247, 246, 244);
+$g-type-pos:  #efeae5;
+$g-type-pos-dark:  #ccc;
+$g-type-neg:  #2b2b29;

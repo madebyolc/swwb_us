@@ -9,6 +9,8 @@ $(document).ready(function() {
   function setHeight() {
     windowWidth = $(window).innerWidth();
     windowHeight = $(window).innerHeight();
+    windowHeightHalf = $(window).innerHeight()/2;
+    windowHeightThreeQuarters = $(window).innerHeight()/4*3;
     windowHeightShort = $(window).innerHeight()-50;
     //alert(windowHeight);
     $('#page').css('max-width', windowWidth);
@@ -18,10 +20,20 @@ $(document).ready(function() {
     $('#wrapper-footer').css('min-height', windowHeight);
     $('.wrapper.search-wrapper').css('min-height', windowHeight);
     $('.feature-background').css('max-height', windowHeight);
+    // Pages
+    $('.panel.h100').css('min-height', windowHeight);
+    $('.panel.h100').css('height', windowHeight);
+    $('.panel.h75').css('min-height', windowHeightThreeQuarters);
+    $('.panel.h75').css('height', windowHeightThreeQuarters);
+    $('.panel.h50').css('min-height', windowHeightHalf);
+    $('.panel.h50').css('height', windowHeightHalf);
+    $('.panel.hShort').css('min-height', windowHeightShort);
+    $('.panel.hShort').css('height', windowHeightShort);
     //REVIEW might need to add the above function to all wrappers
   };
   setHeight();
   $(window).resize(function() {
     setHeight();
   });
+
 });
