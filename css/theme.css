@@ -8346,7 +8346,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       width: 26px;
       height: 2px;
       border-radius: 1px;
-      background-color: #2b2b29;
+      background-color: #ff6d5a;
       -webkit-transition: all 0.15s ease;
       -moz-transition: all 0.15s ease;
       transition: all 0.15s ease; }
@@ -8361,7 +8361,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       top: 50%;
       left: -100%;
       font-size: 1rem;
-      color: #2b2b29;
+      color: #ff6d5a;
       content: "menu"; }
   .wrap-explore .navbar-toggler:hover .icon-bar.one {
     transform: rotate(-45deg);
@@ -8406,7 +8406,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 #   5 - PUSH    5 - PUSH    5 - PUSH    5 - PUSH    5 - PUSH    5 - PUSH    5 - PUSH    5 - PUSH    5 - PUSH
 */
 .pushmenu {
-  background: #2b2b29;
+  background: #ff6d5a;
   height: 100%;
   top: 0;
   z-index: 999999999;
@@ -8711,9 +8711,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     padding-top: 0px;
     height: 50px; }
     .ah.page-header.off-canvas.fixed .navbar-brand {
-      fill: #2b2b29; }
+      fill: #ff6d5a; }
     .ah.page-header.off-canvas.fixed .navbar-toggler .icon-bar {
-      background-color: #2b2b29 !important; }
+      background-color: #ff6d5a !important; }
     .ah.page-header.off-canvas.fixed .wrap-title {
       opacity: 1; } }
 
@@ -9323,10 +9323,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     padding: .25rem .5rem;
     border-radius: .125rem;
     background: #EEE;
-    color: #2b2b29; }
+    color: #ff6d5a; }
     .archive .list-archive-nav .button.collapsed, .search .list-archive-nav .button.collapsed, .index .list-archive-nav .button.collapsed, .author .list-archive-nav .button.collapsed {
       background: transparent;
-      color: #2b2b29; }
+      color: #ff6d5a; }
 
 .archive .list-archive-container, .search .list-archive-container, .index .list-archive-container, .author .list-archive-container {
   position: relative;
@@ -9592,7 +9592,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       border-bottom-color: rgba(0, 0, 0, 0.5); }
   .btn.btn-primary, .btn.btn-primary:hover {
     color: white;
-    background: #2b2b29; }
+    background: #ff6d5a; }
   .btn.btn-success, .btn.btn-success:hover {
     color: white;
     background: green; }
