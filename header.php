@@ -95,13 +95,13 @@
 
             <label for="s" class="assistive-text sr-only">Search</label>
 
-            <div class="input-group">
+            <div class="input-group typr">
 
               <input type="text" class="field form-control" name="s" id="s" placeholder="Search …">
 
               <span class="input-group-btn">
 
-                <input type="submit" class="submit btn btn-primary" name="submit" id="searchsubmit" value="Search">
+                <input type="submit" class="submit btn btn-search" name="submit" id="searchsubmit" value="Search">
 
               </span>
 
@@ -182,10 +182,10 @@
             </div> <!-- .wrap-brand -->
 
             <?php if (is_single()) { ?>
-            <div class="wrap-title">
+            <!--<div class="wrap-title">
               <span class="title"><?php the_title(); ?></span>
               <span class="dots">...</span>
-            </div>
+            </div>-->
             <?php } else { ?>
             <?php } ?>
 
