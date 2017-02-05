@@ -11,6 +11,9 @@
   font-size: $g-type-t-xs;
   color: $g-type-co-2;
   letter-spacing: .5px;
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+  }
   h1 { font-size: $g-type-h-xs*$g-typr-multi-1;
        color: $g-type-co-1;
        line-height: $g-type-h-xs*1.25; }
@@ -34,7 +37,20 @@
     font-family: "SWWBDisplay";
   }
 
-  &.lead {
+  &.spaced {
+    letter-spacing: 1.5px;
+  }
+
+  &.lead, .lead {
+    font-size: 150%;
+    line-height: 150%;
+  }
+
+  &.lighten, .lighten {
+    opacity: .75;
+  }
+
+  p.lead {
     font-size: 120%;
     line-height: 150%;
   }
@@ -51,6 +67,10 @@
 
   &.b {
     font-weight: bold;
+  }
+
+  &.c {
+    text-transform: uppercase;
   }
 
 }
@@ -89,8 +109,8 @@
     h6 { font-size: $g-type-h-md*$g-typr-multi-6;
          line-height: $g-type-h-md*1.25; }
     &.lead {
-     font-size: 250%;
-     line-height: 150%;
+      font-size: 250%;
+      line-height: 150%;
     }
   }
 }

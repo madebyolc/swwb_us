@@ -36,6 +36,9 @@ $g-wrapper-background: $g-white;
 $g-post-background: $g-white;
 
 $g-btn-primary: $g-brand-primary;
+$g-btn-secondary: $g-brand-secondary;
+$g-btn-tertiary: #555;
+$g-btn-success: green;
 
 /*
 #   2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION
@@ -106,14 +109,14 @@ $g-typr-lead-multi-6: 1.4;
 // Type
 $g-type-t-xs: 1rem;
 $g-type-t-sm: 1.5rem;
-$g-type-t-md: 1.25rem;
-$g-type-t-lg: 1.33rem;
+$g-type-t-md: 1.5rem;
+$g-type-t-lg: 1.125rem;
 $g-type-t-xl: 1.5rem;
 // Headers
 $g-type-h-xs: 1.5rem;
-$g-type-h-sm: 1.75rem;
+$g-type-h-sm: 1.5rem;
 $g-type-h-md: 1.75rem;
-$g-type-h-lg: 2.5rem;
+$g-type-h-lg: 1.75rem;
 $g-type-h-xl: 2rem;
 
 // Typography colours

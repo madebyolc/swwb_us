@@ -14,8 +14,6 @@
 */
 
 section {
-  border: 1px solid blue;
-  position: absolute;
   top: 0;
   .section-bg {
     position: absolute;
@@ -32,22 +30,35 @@ section {
     position: absolute;
     bottom: 0; left: 50%;
     margin-left: -50px;
-    border: 1px solid blue;
     width: 100px;
     height: 100px;
-    border: solid black;
-    border-width: 0 .5rem .5rem 0;
+    border: solid $g-theme-dark;
+    border-width: 0 .25rem .25rem 0;
     &.up {
-      transform: rotate(-135deg) scale(.5);
+      transform: rotate(-135deg) scale(.25);
     }
     &.right {
-      transform: rotate(-45deg) scale(.5);
+      transform: rotate(-45deg) scale(.25);
     }
     &.down {
+      transform: rotate(45deg) scale(.25);
       transform: rotate(45deg) scale(.5);
+      animation: down .5s infinite;
+      animation-direction: alternate-reverse;
+      animation-iteration-count: 4;
+      @keyframes down {
+        0% {
+          opacity: 0;
+          transform: rotate(45deg) scale(.5) translate(-50px, -50px);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(45deg) scale(.5) translate(0px, 0px);
+        }
+      }
     }
     &.left {
-      transform: rotate(135deg) scale(.5);
+      transform: rotate(135deg) scale(.25);
     }
   }
 }
@@ -58,7 +69,10 @@ section {
 
 section.panel {
   position: relative;
-
+  padding-bottom: 2rem;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
   // Pinning
   &.pin, .pin {
     padding-bottom: 3rem;
@@ -67,16 +81,16 @@ section.panel {
     }
 
     &.slideY {
-      transform: translate3d(0, -100px, 0);
+      transform: translate(0, -100px);
     }
   }
 
   // Padding
-  &.pd-top, .pd-top { padding-top: $g-nav-size-small; }
-  &.pd-top-nav, .pd-top-nav { padding-top: $g-nav-size; }
+  &.pd-top, .pd-top { padding: $g-nav-size-small 0; }
+  &.pd-top-nav, .pd-top-nav { padding-top: $g-nav-size-small; }
 
   // Height
-  &.h100, &.hShort, &.h75, &.h50 {
+  &.h100, &.hShort, &.h75, &.h50, &.hNone {
     overflow-x: hidden;
     position: relative;
     display: table;
@@ -113,6 +127,9 @@ section.panel {
       top: 0; left: 0;
     }
     // Vertical Alignment
+    &.va-hero.va-middle {
+      vertical-align: middle;
+    }
     &.va-top {
       vertical-align: top;
     }
@@ -128,12 +145,63 @@ section.panel {
   // Inside the Wrapper
   .panel-inner {
     position: relative;
-  }
+    overflow-x: hidden;
 
+    // Rows
+    .panel-row {
+      padding-bottom: 2rem;
+    }
+
+    // Boxes
+    .panel-boxes {
+      padding: 1rem;
+      .panel-box {
+      }
+    }
+  }
+}
+
+// Posters
+
+.poster {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.clear { clear: both; }
+  &.center {
+    margin: 0 auto;
+  }
+  display: block;
 }
 
 // Responsive breakpoints
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+  section {
+    .scroll-this-way {
+      &.up {
+        transform: rotate(-135deg) scale(.5);
+      }
+      &.right {
+        transform: rotate(-45deg) scale(.5);
+      }
+      &.down {
+        transform: rotate(45deg) scale(.5);
+      }
+      &.left {
+        transform: rotate(135deg) scale(.5);
+      }
+    }
+    &.panel {
+      background-size: cover;
+      &.pd-top-nav, .pd-top-nav { padding: $g-nav-size 0; }
+      .panel-wrapper {
+        &.va-hero.va-middle {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
 @include media-breakpoint-up(md) {}
 @include media-breakpoint-up(lg) {}
 @include media-breakpoint-up(xl) {}

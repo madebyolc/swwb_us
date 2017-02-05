@@ -52,9 +52,19 @@ $g-theme-dark: $g-type-neg;
     background: $g-theme-light;
     border: 2px solid $g-theme-light;
     color: $g-theme-dark;
+    &.btn-plain {
+      text-decoration: underline;
+      &:after {
+        content: "";
+        border-bottom: 2px solid $g-theme-light;
+      }
+    }
   }
   &.icon-bar {
     background-color: $g-theme-light!important;
+  }
+  &.scroll-this-way {
+    border-color: $g-theme-light;
   }
 }
 

@@ -33,9 +33,9 @@
   .wrap-title { opacity: 0; }
 }
 .ah.page-header.off-canvas {
-  -webkit-transform: translateY( 0% );
-      -ms-transform: translateY( 0% );
-          transform: translateY( 0% );
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
   opacity: 0;
   z-index: -1000;
   height: $g-nav-size-small;
@@ -67,16 +67,9 @@
 }
 
 .ah.page-header.off-canvas.fixed {
-  background-color: rgba(255,255,255,1);
-  //border-bottom: 1px solid $g-brand-secondary;
   padding-top: 0px;
   height: $g-nav-size-small;
-  .navbar-brand {
-    fill: $g-logo-color;
-  }
-  .navbar-toggler .icon-bar {
-    background-color: $g-logo-color!important;
-  }
+  background-color: rgba(255,255,255,1);
   .wrap-title { opacity: 1; }
 }
 
@@ -406,9 +399,9 @@ $push: -100%;
   font-size: $g-nav-d-xs;
   color: $g-nav-push-color;
   .form#searchform {
-    .form-control, .btn-primary { font-size: $g-nav-d-xs; }
+    .form-control, .btn-search { font-size: $g-nav-d-xs; }
     &.lines-dark {
-      .form-control, .btn-primary {
+      .form-control, .btn-search {
         padding-left: 0;
         padding-right: 0;
         color: $g-nav-push-color;
@@ -630,7 +623,7 @@ $push: -100%;
     margin-top: 1rem;
     font-size: $g-nav-d-xs;
     .form#searchform {
-      .form-control, .btn-primary { font-size: $g-nav-d-xs; }
+      .form-control, .btn-search { font-size: $g-nav-d-xs; }
     }
   }
   .global-social-menu {
@@ -648,8 +641,50 @@ $push: -100%;
   }
   .push-nav .global-menu { &:before { display: block; } }
   .global-social-menu { &:before { display: block; } }
+  .ah.page-header.off-canvas.fixed {
+    //border-bottom: 1px solid $g-brand-secondary;
+    padding-top: 0px;
+    height: $g-nav-size-small;
+    .navbar-brand {
+      fill: $g-logo-color;
+    }
+    .navbar-toggler .icon-bar {
+      background-color: $g-logo-color!important;
+    }
+    .wrap-title { opacity: 1; }
+  }
 }
 @include media-breakpoint-up(sm) {
+  .ah.page-header.off-canvas {
+    mix-blend-mode: difference;
+    -webkit-transform: translateY( 0% );
+        -ms-transform: translateY( 0% );
+            transform: translateY( 0% );
+    opacity: 1;
+    z-index: 1000;
+    height: $g-nav-size;
+    .navbar, .wrap-explore, .wrap-explore .navbar-toggler {
+      min-height: $g-nav-size;
+      height: $g-nav-size;
+      max-height: $g-nav-size;
+      -webkit-transition: all $g-trans-fast ease;
+      -moz-transition: all $g-trans-fast ease;
+      transition: all $g-trans-fast ease;
+    }
+    .wrap-brand {
+    -webkit-transition-duration: $g-trans-slow;
+            transition-duration: $g-trans-slow;
+    -webkit-transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+            transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+    -webkit-transition-property: -webkit-width;
+            transition-property: width;
+      width: $g-nav-size;
+    }
+  }
+  .ah.page-header.off-canvas.fixed {
+    height: $g-nav-size;
+    background-color: transparent;
+  }
   .wrap-title {
     opacity: 1;
     .title {
@@ -660,7 +695,7 @@ $push: -100%;
     margin-top: 1rem;
     font-size: $g-nav-d-sm;
     .form#searchform {
-      .form-control, .btn-primary { font-size: $g-nav-d-sm; }
+      .form-control, .btn-search { font-size: $g-nav-d-sm; }
     }
   }
   .push-nav .global-menu {
@@ -754,7 +789,7 @@ $push: -100%;
   .push-block {
     font-size: $g-nav-d-md;
     .form#searchform {
-      .form-control, .btn-primary { font-size: $g-nav-d-md; }
+      .form-control, .btn-search { font-size: $g-nav-d-md; }
     }
   }
   .global-social-menu, .social-menu {
@@ -794,7 +829,7 @@ $push: -100%;
   .push-block {
     font-size: $g-nav-d-lg;
     .form#searchform {
-      .form-control, .btn-primary { font-size: $g-nav-d-lg; }
+      .form-control, .btn-search { font-size: $g-nav-d-lg; }
     }
   }
   .global-social-menu, .social-menu {
@@ -812,15 +847,10 @@ $push: -100%;
   }
 }
 @include media-breakpoint-up(xl) {
-  .wrap-title {
-    .title {
-      max-width: 780px;
-    }
-  }
   .push-block {
     font-size: $g-nav-d-xl;
     .form#searchform {
-      .form-control, .btn-primary { font-size: $g-nav-d-xl; }
+      .form-control, .btn-search { font-size: $g-nav-d-xl; }
     }
   }
   .global-social-menu, .social-menu { // REVIEW: Maybe add menus to separate _nav scss ?
