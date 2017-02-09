@@ -18,15 +18,14 @@
 			<div class="feature-inner container">
 
 				<div id="typed-strings">
-
-					<p><a href="#read"><small>Article</small></a></p>
-					<p><a href="#read"><?php the_title(); ?></a></p>
+					
+					<p><a href="#read" role="button"><?php the_title(); ?></a></p>
 
 				</div>
 
-				<span class="typr d">
+				<span class="">
 
-					<h1 class="entry-title <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
+					<h1 class="entry-title typr d <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
 
 						<span id="typed"></span>
 
@@ -46,7 +45,7 @@
 
 					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <?php the_author_posts_link(); ?></span>
 
-					<span class="feature-meta continue"><a href="#read" class="btn btn-secondary btn-lg theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">Continue to Article</a></span>
+					<span class="feature-meta continue"><a href="#read" role="button" class="btn btn-primary btn-lg go bottom typr theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">Continue to Article</a></span>
 
 				</div><!-- .entry-meta -->
 

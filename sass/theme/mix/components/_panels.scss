@@ -21,7 +21,7 @@ section {
     width: 100%;
     height: 100%;
     background-position: top center;
-    background-size: cover;
+    background-size: contain;
     &.right {
       background-position: top right;
     }
@@ -45,7 +45,6 @@ section {
       transform: rotate(45deg) scale(.5);
       animation: down .5s infinite;
       animation-direction: alternate-reverse;
-      animation-iteration-count: 4;
       @keyframes down {
         0% {
           opacity: 0;
@@ -70,18 +69,20 @@ section {
 section.panel {
   position: relative;
   padding-bottom: 2rem;
-  background-size: cover;
+  background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
+  opacity: 1;
+  cursor: default;
   // Pinning
   &.pin, .pin {
     padding-bottom: 3rem;
     .section-bg {
       margin-bottom: 200px;
     }
-
     &.slideY {
-      transform: translate(0, -100px);
+      opacity: 0;
+      transform: translate(0, -50px);
     }
   }
 
@@ -103,11 +104,20 @@ section.panel {
   &.black { background-color: black; }
 
   // Background
+  .section-mob-bg {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .panel-bg {
     opacity: 0;
     position: absolute;
     top: 0;
-    background-size: cover;
+    background-size: auto;
     background-position: center top;
     width: 100%;
     height: 100%;
@@ -192,7 +202,7 @@ section.panel {
       }
     }
     &.panel {
-      background-size: cover;
+      background-size: 100% auto;
       &.pd-top-nav, .pd-top-nav { padding: $g-nav-size 0; }
       .panel-wrapper {
         &.va-hero.va-middle {
@@ -202,6 +212,12 @@ section.panel {
     }
   }
 }
-@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(md) {
+  section.panel {
+    .section-mob-bg {
+      display: none;
+    }
+  }
+}
 @include media-breakpoint-up(lg) {}
 @include media-breakpoint-up(xl) {}

@@ -89,6 +89,37 @@
   }
 }
 
+
+// Search
+
+.search {
+  form {
+  }
+
+  &.search-lg {
+    form {
+      label { display: none; }
+      .input-group {
+        .form-control {
+          font-size: 1.5rem;
+          border: 2px solid $g-grey;
+          border-right: 0px;
+        }
+      }
+      .input-group-btn {
+        background: $g-grey;
+        font-size: 1.5rem;
+        border: 2px solid $g-grey;
+        border-left: 0px;
+        input {
+          background: transparent;
+          color: $g-white;
+        }
+      }
+    }
+  }
+}
+
 // Responsive breakpoints
 @include media-breakpoint-up(sm) {
   .form.get-involved {
@@ -103,6 +134,34 @@
     }
     #crm-container.crm-public input[type="text"], #crm-container.crm-public input[type="password"], #crm-container.crm-public input[type="email"], #crm-container.crm-public select {
 
+    }
+  }
+
+  .search {
+    form {
+    }
+
+    &.search-lg {
+      form {
+        label { display: none; }
+        .input-group {
+          .form-control {
+            font-size: 2rem;
+            border: 2px solid $g-grey;
+            border-right: 0px;
+          }
+        }
+        .input-group-btn {
+          background: $g-grey;
+          font-size: 2rem;
+          border: 2px solid $g-grey;
+          border-left: 0px;
+          input {
+            background: transparent;
+            color: $g-white;
+          }
+        }
+      }
     }
   }
 }

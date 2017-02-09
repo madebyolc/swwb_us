@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   var controller = new ScrollMagic.Controller();
 
   $('.panel').each(function(){
@@ -22,3 +22,4 @@ $(document).ready(function() {
   });
 
 });
+*/
