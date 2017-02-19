@@ -188,7 +188,7 @@
     }
   }
   .navbar-toggler.active {
-    display: none;
+    //display: none;
   }
   .navbar-toggler:focus {
     outline: 0;
@@ -244,10 +244,10 @@
   left: 0;
 }
 
-.pushmenu, .pushmenu-push {
-  -webkit-transition: transform $g-trans-slow ease;
-  -moz-transition: transform $g-trans-slow ease;
-  transition: transform $g-trans-slow ease;
+.pushmenu, .pushmenu-push, .pushmenu-push-toright #page, #page {
+  -webkit-transition: all $g-trans-slow ease;
+  -moz-transition: all $g-trans-slow ease;
+  transition: all $g-trans-slow ease;
 }
 
 $push: -100%;
@@ -259,9 +259,9 @@ $push: -100%;
 .pushmenu-push-toright {
   transform: translateX(-100%);
 }
-.pushmenu-push-toright #page {
+/*.pushmenu-push-toright #page {
   transform: translateX(0%);
-}
+}*/
 
 .wrap-pushmenu {
   overflow-x: hidden;
@@ -353,7 +353,7 @@ $push: -100%;
       }
     }
     .navbar-toggler.active {
-      opacity: 0;
+      //opacity: 0;
     }
     .navbar-toggler:focus {
       outline: 0;
@@ -426,7 +426,7 @@ $push: -100%;
       &:hover {
         li {
           a {
-            opacity: .6;
+            //opacity: .6;
           }
         }
       }
@@ -439,7 +439,7 @@ $push: -100%;
           float: right;
           content: "/";
           margin: 0 .5rem;
-          opacity: .35;
+          //opacity: .35;
         }
         a {
           display: inline-block;
@@ -540,7 +540,7 @@ $push: -100%;
     &:hover {
       li {
         a {
-          opacity: .35;
+          //opacity: .35;
         }
       }
     }
@@ -693,11 +693,11 @@ $push: -100%;
       width: $g-nav-size;
     }
   }
-  .ah.page-header.off-canvas.fixed {
+  /*.ah.page-header.off-canvas.fixed {
     .navbar {
       background-color: transparent;
     }
-  }
+  }*/
   $push: 50%;
   .pushmenu { width: $push; }
   .pushmenu-left {
@@ -707,7 +707,7 @@ $push: -100%;
     transform: translateX(-100%);
   }
   .pushmenu-push-toright #page {
-    transform: translateX(0%);
+    //transform: translateX(0%);
   }
   .pushmenu-left.pushmenu-open {
     transform: translateX(100%);
@@ -768,7 +768,7 @@ $push: -100%;
     transform: translateX(-100%);
   }
   .pushmenu-push-toright #page {
-    transform: translateX(0%);
+    //transform: translateX(-$push);
   }
   .pushmenu-left.pushmenu-open {
     transform: translateX(100%);
