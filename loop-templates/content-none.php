@@ -9,11 +9,11 @@
 
 ?>
 
-<article id="post-0" class="post no-results not-found">
+<article id="post-0" class="post no-results not-found" style="border-bottom: 0px;">
 
-	<header class="page-header">
+	<header class="page-header typr">
 
-		<h2 class="page-title"><?php _e( 'Nothing Found', 'understrap' ); ?></h2>
+		<h1 class="page-title"><?php _e( 'Nothing Found', 'understrap' ); ?></h1>
 
 	</header><!-- .page-header -->
 
@@ -25,8 +25,17 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'understrap' ); ?></p>
-			<?php get_search_form(); ?>
+			<header class="page-header typr">
+
+					<p class="page-title"><?php _e( 'Sorry, nothing matched your search. Please try again or browse from the main menu.', 'understrap' ); ?></p>
+
+			</header><!-- .page-header -->
+
+			<div class="search search-lg typr">
+
+				<?php get_search_form(); ?>
+
+			</div>
 
 		<?php else : ?>
 
@@ -37,5 +46,5 @@
 		<?php endif; ?>
 
 	</div><!-- .page-content -->
-	
+
 </article><!-- .no-results -->

@@ -1,0 +1,223 @@
+/*
+#   SECTIONS
+#   _sections.scss
+#
+#   INDEX
+#
+#   1 - SECTION
+#   2 - PANELS
+#
+*/
+
+/*
+#   1 - SECTION   1 - SECTION   1 - SECTION   1 - SECTION   1 - SECTION   1 - SECTION   1 - SECTION
+*/
+
+section {
+  top: 0;
+  .section-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-size: contain;
+    &.right {
+      background-position: top right;
+    }
+  }
+  .scroll-this-way {
+    position: absolute;
+    bottom: 0; left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    border: solid $g-theme-dark;
+    border-width: 0 .25rem .25rem 0;
+    &.up {
+      transform: rotate(-135deg) scale(.25);
+    }
+    &.right {
+      transform: rotate(-45deg) scale(.25);
+    }
+    &.down {
+      transform: rotate(45deg) scale(.25);
+      transform: rotate(45deg) scale(.5);
+      animation: down .5s infinite;
+      animation-direction: alternate-reverse;
+      @keyframes down {
+        0% {
+          opacity: 0;
+          transform: rotate(45deg) scale(.5) translate(-50px, -50px);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(45deg) scale(.5) translate(0px, 0px);
+        }
+      }
+    }
+    &.left {
+      transform: rotate(135deg) scale(.25);
+    }
+  }
+}
+
+/*
+#   2 - PANELS   2 - PANELS   2 - PANELS   2 - PANELS   2 - PANELS   2 - PANELS   2 - PANELS
+*/
+
+section.panel {
+  position: relative;
+  padding-bottom: 2rem;
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 1;
+  cursor: default;
+  // Pinning
+  &.pin, .pin {
+    padding-bottom: 3rem;
+    .section-bg {
+      margin-bottom: 200px;
+    }
+    &.slideY {
+      opacity: 0;
+      transform: translate(0, -50px);
+    }
+  }
+
+  // Padding
+  &.pd-top, .pd-top { padding: $g-nav-size-small 0; }
+  &.pd-top-nav, .pd-top-nav { padding-top: $g-nav-size-small; }
+
+  // Height
+  &.h100, &.hShort, &.h75, &.h50, &.hNone {
+    overflow-x: hidden;
+    position: relative;
+    display: table;
+    width: 100%;
+  }
+
+  // Theme
+  &.white { background-color: white; }
+  &.grey { background-color: grey; }
+  &.black { background-color: black; }
+
+  // Background
+  .section-mob-bg {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .panel-bg {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    background-size: auto;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Wrapper
+  .panel-wrapper {
+    display: table-cell;
+    overflow-y: hidden;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+
+    // Positioning
+    &.absolute {
+      position: absolute;
+      top: 0; left: 0;
+    }
+    // Vertical Alignment
+    &.va-hero.va-middle {
+      vertical-align: middle;
+    }
+    &.va-top {
+      vertical-align: top;
+    }
+    &.va-middle {
+      vertical-align: middle;
+    }
+    &.va-bottom {
+      vertical-align: bottom;
+    }
+
+  }// End Wrapper
+
+  // Inside the Wrapper
+  .panel-inner {
+    position: relative;
+    overflow-x: hidden;
+
+    // Rows
+    .panel-row {
+      padding-bottom: 2rem;
+    }
+
+    // Boxes
+    .panel-boxes {
+      padding: 1rem;
+      .panel-box {
+      }
+    }
+  }
+}
+
+// Posters
+
+.poster {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.clear { clear: both; }
+  &.center {
+    margin: 0 auto;
+  }
+  display: block;
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  section {
+    .scroll-this-way {
+      &.up {
+        transform: rotate(-135deg) scale(.5);
+      }
+      &.right {
+        transform: rotate(-45deg) scale(.5);
+      }
+      &.down {
+        transform: rotate(45deg) scale(.5);
+      }
+      &.left {
+        transform: rotate(135deg) scale(.5);
+      }
+    }
+    &.panel {
+      background-size: 100% auto;
+      &.pd-top-nav, .pd-top-nav { padding: $g-nav-size 0; }
+      .panel-wrapper {
+        &.va-hero.va-middle {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  section.panel {
+    .section-mob-bg {
+      display: none;
+    }
+  }
+}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}

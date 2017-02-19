@@ -9,8 +9,8 @@
 #   3 - DARK
 */
 
-$g-theme-light: #C6C6C6;
-$g-theme-dark: #55575d;
+$g-theme-light: $g-type-pos;
+$g-theme-dark: $g-type-neg;
 
 /*.navbar-brand {
   fill: $g-logo-color;
@@ -20,14 +20,15 @@ $g-theme-dark: #55575d;
   border-width: 2px;
   //&.navbar { border-bottom-color: $g-theme-dark; }
   &.navbar-brand { fill: $g-theme-dark; }
-  div,span, i, a,
+  div,span, i, a, p,
   h1, h2, h3, h4, h5, h6
   { color: $g-theme-dark; border-color: $g-theme-dark; border-width: 2px; }
   a:hover, a:focus, a:active, a:active:hover
   { color: lighten($g-theme-dark, 20%); border-color: lighten($g-theme-dark, 20%); background: transparent; }
   &.btn {
-    background: transparent;
+    background: $g-theme-dark;
     border: 2px solid $g-theme-dark;
+    color: $g-theme-light;
   }
   &.icon-bar {
     background-color: $g-theme-dark!important;
@@ -42,17 +43,28 @@ $g-theme-dark: #55575d;
   border-width: 2px;
   //&.navbar { border-bottom-color: $g-theme-light; }
   &.navbar-brand { fill: $g-theme-light; }
-  div,span, i, a,
+  div,span, i, a, p,
   h1, h2, h3, h4, h5, h6
   { color: $g-theme-light; border-color: $g-theme-light; border-width: 2px; }
   a:hover, a:focus, a:active, a:active:hover
-  { color: lighten($g-theme-light, 20%); border-color: lighten($g-theme-light, 20%); background: transparent; }
+  { background-color: lighten($g-theme-light, 20%); color: lighten($g-theme-light, 20%); border-color: lighten($g-theme-light, 20%); background: transparent; }
   &.btn {
-    background: transparent;
+    background: $g-theme-light;
     border: 2px solid $g-theme-light;
+    color: $g-theme-dark;
+    &.btn-plain {
+      text-decoration: underline;
+      &:after {
+        content: "";
+        border-bottom: 2px solid $g-theme-light;
+      }
+    }
   }
   &.icon-bar {
     background-color: $g-theme-light!important;
+  }
+  &.scroll-this-way {
+    border-color: $g-theme-light;
   }
 }
 

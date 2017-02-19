@@ -147,7 +147,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/scrollmagic/minified/ScrollMagic.min.js',
     basePaths.dev + 'js/scrollmagic/minified/plugins/animation.gsap.min.js',
     basePaths.dev + 'js/scrollmagic/minified/plugins/debug.addIndicators.min.js',
-    basePaths.dev + 'js/scrollControl.js',
+    //basePaths.dev + 'js/scrollControl.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',
@@ -173,7 +173,7 @@ gulp.task('scripts', function() {
     basePaths.dev + 'js/scrollmagic/minified/ScrollMagic.min.js',
     basePaths.dev + 'js/scrollmagic/minified/plugins/animation.gsap.min.js',
     basePaths.dev + 'js/scrollmagic/minified/plugins/debug.addIndicators.min.js',
-    basePaths.dev + 'js/scrollControl.js',
+    //basePaths.dev + 'js/scrollControl.js',
 
     // Start - All BS4 stuff
     basePaths.dev + 'js/bootstrap4/bootstrap.js',

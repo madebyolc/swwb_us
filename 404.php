@@ -5,73 +5,61 @@
  */
 
 get_header(); ?>
-<div class="wrapper" id="404-wrapper">
-    
-    <div  id="content" class="container">
+<div class="wrapper top" id="wrapper-page">
 
-        <div class="row">
-        
-            <div id="primary" class="content-area">
+  <section id="section-1" class="panel pin h50 pd-top-nav" style="background: #f0f0f0;">
 
-                <main id="main" class="site-main" role="main">
+    <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-1-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center;"></div>
 
-                    <section class="error-404 not-found">
-                        
-                        <header class="page-header">
+    <div id="section-1-panel" class="panel-wrapper va-hero va-middle">
 
-                            <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'understrap' ); ?></h1>
-                        </header><!-- .page-header -->
+      <div class="panel-inner">
 
-                        <div class="page-content">
+          <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
 
-                            <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'understrap' ); ?></p>
+            <div class="container-wrapper-100">
 
-                            <?php get_search_form(); ?>
+              <div id="section-1-description-wrapper">
 
-                            <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+                <!--<div class="breadcrumb lighten"><?php get_breadcrumb(); ?></div>-->
 
-                            <?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+                <div id="typed-strings">
 
-                                <div class="widget widget_categories">
+        					<p><?php _e( 'Sorry...', 'understrap' ); ?></p>
+        					<p><?php _e( 'This page has either been moved or no longer exists...', 'understrap' ); ?></p>
 
-                                    <h2 class="widget-title"><?php _e( 'Most Used Categories', 'understrap' ); ?></h2>
+        				</div>
 
-                                    <ul>
-                                    <?php
-                                        wp_list_categories( array(
-                                            'orderby'    => 'count',
-                                            'order'      => 'DESC',
-                                            'show_count' => 1,
-                                            'title_li'   => '',
-                                            'number'     => 10,
-                                        ) );
-                                    ?>
-                                    </ul>
+        				<span class="">
 
-                                </div><!-- .widget -->
-                            
-                            <?php endif; ?>
+        					<h1 class="entry-title typr d <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
 
-                            <?php
-                                /* translators: %1$s: smiley */
-                                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'understrap' ), convert_smilies( ':)' ) ) . '</p>';
-                                the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-                            ?>
+        						<span id="typed"></span>
 
-                            <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+        					</h1>
 
-                        </div><!-- .page-content -->
-                        
-                    </section><!-- .error-404 -->
+        				</span>
 
-                </main><!-- #main -->
-                
-            </div><!-- #primary -->
+                <div class="search search-lg typr">
 
-        </div> <!-- .row -->
-        
-    </div><!-- Container end -->
-    
+                  <?php get_search_form(); ?>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

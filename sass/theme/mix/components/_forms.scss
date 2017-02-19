@@ -1,0 +1,188 @@
+/*
+#   FORMS
+#   _forms.scss
+#
+#   INDEX
+#
+#   1 -
+#
+*/
+
+/*
+#   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
+*/
+
+.input-group {
+  width: auto; //can't understand why this had changed, quick fix
+}
+
+.form {
+  .form-control, .btn-search { font-size: $font-size-h6; }
+  &.lines-dark {
+    .form-control, .btn-search {
+      background: transparent;
+      border-width: 0 0 2px 0;
+      border-radius: 0;
+    }
+  }
+}
+
+// Search
+
+.search {
+  form {
+  }
+
+  &.search-lg {
+    form {
+      label { display: none; }
+      .input-group {
+        width: auto;
+        .form-control {
+          font-size: 1.5rem;
+          border: 2px solid $g-grey;
+          border-right: 0px;
+        }
+      }
+      .input-group-btn {
+        background: $g-grey;
+        font-size: 1.5rem;
+        border: 2px solid $g-grey;
+        border-left: 0px;
+        input {
+          background: transparent;
+          color: $g-white;
+        }
+      }
+    }
+  }
+}
+
+span.pledge-count {
+  border: 2px solid black;
+  padding: 0 .5rem;
+  border-radius: .25rem;
+  background: transparent;
+}
+form.lh_signing-form {
+  margin-top: 0rem;
+  p {
+    display: inline-block;
+  }
+  span {
+    line-height: 2rem;
+  }
+  span.ex {
+    font-weight: bold;
+  }
+  p#lh_signing-first_name {
+    &:before {
+      content: "I, ";
+    }
+    min-width: 100%;
+    input {
+      min-width: 100%;
+    }
+  }
+  p#lh_signing-email {
+    &:before {
+      content: "";
+    }
+    min-width: 100%;
+    input {
+      min-width: 100%;
+    }
+  }
+  p#lh_signing-submit {
+    width: 100%;
+  }
+  input {
+    background: rgba(255,255,255,0);
+    border: 0;
+    border-bottom: 2px solid $g-black;
+    margin-bottom: .75rem;
+    &.lh_signing-submit {
+      margin-left: 0;
+      margin-top: 2rem;
+      padding: .5rem 1rem;
+      background: $g-black;
+      color: $g-white;
+      font-weight: bold;
+      border-radius: .125rem;
+      text-transform: none;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  .search {
+    form {
+    }
+
+    &.search-lg {
+      form {
+        label { display: none; }
+        .input-group {
+          .form-control {
+            font-size: 2rem;
+            border: 2px solid $g-grey;
+            border-right: 0px;
+          }
+        }
+        .input-group-btn {
+          background: $g-grey;
+          font-size: 2rem;
+          border: 2px solid $g-grey;
+          border-left: 0px;
+          input {
+            background: transparent;
+            color: $g-white;
+          }
+        }
+      }
+    }
+  }
+  form.lh_signing-form {
+    p {
+      display: inline-block;
+    }
+    span {
+      line-height: 3.5rem;
+    }
+    p#lh_signing-first_name {
+      min-width: 0;
+      input {
+        min-width: 0;
+      }
+    }
+    p#lh_signing-email {
+      &:before {
+        content: "at ";
+      }
+      min-width: 0;
+      input {
+        min-width: 0;
+      }
+    }
+    p#lh_signing-submit {
+      text-align: left;
+      min-width: 0;
+      width: auto;
+    }
+    input {
+      margin-bottom: .5rem;
+      &.lh_signing-submit {
+        margin-left: 1rem;
+        margin-top: 0;
+        width: auto;
+        display: inline-block;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}
