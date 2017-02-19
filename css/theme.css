@@ -131,8 +131,14 @@
 
 @font-face {
   font-family: 'SWWBDisplay';
-  src: url("../fonts/CaslonOS-Regular.otf");
+  src: url("../fonts/SourceSansPro-Regular.otf");
   font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'SWWBDisplay';
+  src: url("../fonts/SourceSansPro-Semibold.otf");
+  font-weight: bold;
   font-style: normal; }
 
 /*!
@@ -7692,6 +7698,17 @@ body {
   body.overflow {
     overflow: hidden; }
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, samp, figure, small, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  table-layout: fixed; }
+
 a {
   color: #222;
   -webkit-transition: all 0.15s ease;
@@ -7750,149 +7767,150 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 #
 #   1 - TYPR
 */
-.typr {
+.typr, .select2-result-label {
   font-size: 1rem;
+  font-family: "SWWBDisplay";
   color: #454542;
   letter-spacing: .5px; }
-  .typr h1, .typr h2, .typr h3, .typr h4, .typr h5, .typr h6 {
+  .typr h1, .typr h2, .typr h3, .typr h4, .typr h5, .typr h6, .select2-result-label h1, .select2-result-label h2, .select2-result-label h3, .select2-result-label h4, .select2-result-label h5, .select2-result-label h6 {
     margin-bottom: 1rem; }
-  .typr h1 {
+  .typr h1, .select2-result-label h1 {
     font-size: 1.5rem;
     color: #2b2b29;
     line-height: 1.875rem; }
-  .typr h2 {
+  .typr h2, .select2-result-label h2 {
     font-size: 1.2rem;
     color: #454542;
     line-height: 1.875rem; }
-  .typr h3 {
+  .typr h3, .select2-result-label h3 {
     font-size: 0.9rem;
     color: #797974;
     line-height: 1.875rem; }
-  .typr h4 {
+  .typr h4, .select2-result-label h4 {
     font-size: 0.75rem;
     color: #93938d;
     line-height: 1.875rem; }
-  .typr h5 {
+  .typr h5, .select2-result-label h5 {
     font-size: 0.6rem;
     color: #5f5f5b;
     line-height: 1.875rem; }
-  .typr h6 {
+  .typr h6, .select2-result-label h6 {
     font-size: 0.6rem;
     color: #454542;
     line-height: 1.875rem; }
-  .typr.d {
-    font-weight: 700; }
-  .typr.spaced {
+  .typr.d, .select2-result-label.d {
+    font-family: "SWWBDisplay"; }
+  .typr.spaced, .select2-result-label.spaced {
     letter-spacing: 1.5px; }
-  .typr.lead, .typr .lead {
+  .typr.lead, .typr .lead, .select2-result-label.lead, .select2-result-label .lead {
     font-size: 150%;
     line-height: 150%; }
-  .typr.lighten, .typr .lighten {
+  .typr.lighten, .typr .lighten, .select2-result-label.lighten, .select2-result-label .lighten {
     opacity: .75; }
-  .typr p.lead {
+  .typr p.lead, .select2-result-label p.lead {
     font-size: 120%;
     line-height: 150%; }
-  .typr.left {
+  .typr.left, .select2-result-label.left {
     text-align: left; }
-  .typr.center {
+  .typr.center, .select2-result-label.center {
     text-align: center; }
-  .typr.right {
+  .typr.right, .select2-result-label.right {
     text-align: right; }
-  .typr.b {
+  .typr.b, .select2-result-label.b {
     font-weight: bold; }
-  .typr.c {
+  .typr.c, .select2-result-label.c {
     text-transform: uppercase; }
 
 @media (min-width: 576px) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: 1.5rem; }
-    .typr h1 {
+    .typr h1, .select2-result-label h1 {
       font-size: 1.5rem;
       line-height: 1.875rem; }
-    .typr h2 {
+    .typr h2, .select2-result-label h2 {
       font-size: 1.2rem;
       line-height: 1.875rem; }
-    .typr h3 {
+    .typr h3, .select2-result-label h3 {
       font-size: 0.9rem;
       line-height: 1.875rem; }
-    .typr h4 {
+    .typr h4, .select2-result-label h4 {
       font-size: 0.75rem;
       line-height: 1.875rem; }
-    .typr h5 {
+    .typr h5, .select2-result-label h5 {
       font-size: 0.6rem;
       line-height: 1.875rem; }
-    .typr h6 {
+    .typr h6, .select2-result-label h6 {
       font-size: 0.6rem;
       line-height: 1.875rem; } }
 
 @media (min-width: 768px) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: 1.5rem; }
-    .typr h1 {
+    .typr h1, .select2-result-label h1 {
       font-size: 1.75rem;
       line-height: 2.1875rem; }
-    .typr h2 {
+    .typr h2, .select2-result-label h2 {
       font-size: 1.4rem;
       line-height: 2.1875rem; }
-    .typr h3 {
+    .typr h3, .select2-result-label h3 {
       font-size: 1.05rem;
       line-height: 2.1875rem; }
-    .typr h4 {
+    .typr h4, .select2-result-label h4 {
       font-size: 0.875rem;
       line-height: 2.1875rem; }
-    .typr h5 {
+    .typr h5, .select2-result-label h5 {
       font-size: 0.7rem;
       line-height: 2.1875rem; }
-    .typr h6 {
+    .typr h6, .select2-result-label h6 {
       font-size: 0.7rem;
       line-height: 2.1875rem; }
-    .typr.lead {
-      font-size: 250%;
+    .typr.lead, .select2-result-label.lead {
+      font-size: 200%;
       line-height: 150%; } }
 
 @media (min-width: 992px) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: 1.125rem; }
-    .typr h1 {
+    .typr h1, .select2-result-label h1 {
       font-size: 1.75rem;
       line-height: 2.1875rem; }
-    .typr h2 {
+    .typr h2, .select2-result-label h2 {
       font-size: 1.4rem;
       line-height: 2.1875rem; }
-    .typr h3 {
+    .typr h3, .select2-result-label h3 {
       font-size: 1.05rem;
       line-height: 2.1875rem; }
-    .typr h4 {
+    .typr h4, .select2-result-label h4 {
       font-size: 0.875rem;
       line-height: 2.1875rem; }
-    .typr h5 {
+    .typr h5, .select2-result-label h5 {
       font-size: 0.7rem;
       line-height: 2.1875rem; }
-    .typr h6 {
+    .typr h6, .select2-result-label h6 {
       font-size: 0.7rem;
       line-height: 2.1875rem; } }
 
 @media (min-width: 1200px) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: 1.5rem; }
-    .typr h1 {
-      font-size: 2rem;
-      line-height: 2.5rem; }
-    .typr h2 {
-      font-size: 1.6rem;
-      line-height: 2.5rem; }
-    .typr h3 {
-      font-size: 1.2rem;
-      line-height: 2.5rem; }
-    .typr h4 {
-      font-size: 1rem;
-      line-height: 2.5rem; }
-    .typr h5 {
-      font-size: 0.8rem;
-      line-height: 2.5rem; }
-    .typr h6 {
-      font-size: 0.8rem;
-      line-height: 2.5rem; } }
+    .typr h1, .select2-result-label h1 {
+      font-size: 1.75rem;
+      line-height: 2.1875rem; }
+    .typr h2, .select2-result-label h2 {
+      font-size: 1.4rem;
+      line-height: 2.1875rem; }
+    .typr h3, .select2-result-label h3 {
+      font-size: 1.05rem;
+      line-height: 2.1875rem; }
+    .typr h4, .select2-result-label h4 {
+      font-size: 0.875rem;
+      line-height: 2.1875rem; }
+    .typr h5, .select2-result-label h5 {
+      font-size: 0.7rem;
+      line-height: 2.1875rem; }
+    .typr h6, .select2-result-label h6 {
+      font-size: 0.7rem;
+      line-height: 2.1875rem; } }
 
 /*
 #   THEMES
@@ -9179,6 +9197,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   display: flex;
   background: transparent; }
 
+@media (min-height: 376px) {
+  .feature-buttons .feature-meta {
+    display: inline-block; } }
+
 @media (min-width: 576px) {
   .hero.push-top {
     padding-top: 50px; }
@@ -9193,7 +9215,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   .feature-buttons .feature-meta {
     display: block; }
   .feature-buttons .feature-meta {
-    display: none; }
+    display: inline-block; }
   .feature-meta.continue {
     display: block; } }
 
@@ -9224,8 +9246,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 @media (min-width: 1200px) {
   .feature-inner .entry-title span, .feature-inner .entry-title a {
-    font-size: 4rem;
-    line-height: 6rem; } }
+    font-size: 3rem;
+    line-height: 4.5rem; } }
 
 /*
 #   PAGE
@@ -9441,6 +9463,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 /*
 #   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
 */
+.input-group {
+  width: auto; }
+
 .form .form-control, .form .btn-search {
   font-size: 1rem; }
 
@@ -9449,66 +9474,15 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   border-width: 0 0 2px 0;
   border-radius: 0; }
 
-.form.get-involved {
-  background: transparent;
-  padding: 0; }
-  .form.get-involved #printer-friendly {
-    display: none; }
-  .form.get-involved .crm-container .status {
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid #ff6d5a;
-    border-radius: 0;
-    margin: 0.5em 0;
-    padding: 0.25em 0.5em;
-    color: #2b2b29;
-    font-weight: normal; }
-  .form.get-involved .label {
-    float: none !important;
-    width: auto !important;
-    text-align: left !important; }
-  .form.get-involved .crm-container .crm-section .content {
-    margin-left: 0; }
-  .form.get-involved .crm-container div.form-item, .form.get-involved .crm-container.crm-public .select2-container, .form.get-involved .crm-container.crm-public .select2-results {
-    max-width: 310px; }
-  .form.get-involved #crm-container.crm-public input[type="text"], .form.get-involved #crm-container.crm-public input[type="password"], .form.get-involved #crm-container.crm-public input[type="email"], .form.get-involved #crm-container.crm-public select {
-    min-width: 300px; }
-  .form.get-involved #crm-container.crm-public .price-set-row input {
-    margin: 0 1rem; }
-  .form.get-involved .crm-container .crm-submit-buttons, .form.get-involved .crm-container .action-link {
-    margin-left: 0; }
-  .form.get-involved .crm-container a.button, .form.get-involved .crm-container a.button:link, .form.get-involved .crm-container a.button:visited, .form.get-involved .crm-container input.crm-form-submit, .form.get-involved .crm-container .ui-dialog-buttonset .ui-button, .form.get-involved .crm-container input[type=button], .form.get-involved .crm-container .crm-button {
-    text-shadow: none;
-    background: green;
-    color: #FFFFFF;
-    font-size: inherit;
-    font-weight: normal;
-    margin: 0;
-    padding: .33rem;
-    text-decoration: none;
-    cursor: pointer;
-    border: 0;
-    border-radius: 0;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px; }
-  .form.get-involved .crm-container .crm-button.crm-i-button input[type="button"], .form.get-involved .crm-container .crm-button.crm-i-button input.crm-form-submit {
-    border: 0;
-    padding-left: 0;
-    padding-right: 0; }
-  .form.get-involved .crm-i-button > .crm-i {
-    display: none; }
-  .form.get-involved .crm-container.crm-public .select2-container, .form.get-involved .crm-container.crm-public .select2-results {
-    min-width: 100%; }
-
 .search.search-lg form label {
   display: none; }
 
-.search.search-lg form .input-group .form-control {
-  font-size: 1.5rem;
-  border: 2px solid #CCC;
-  border-right: 0px; }
+.search.search-lg form .input-group {
+  width: auto; }
+  .search.search-lg form .input-group .form-control {
+    font-size: 1.5rem;
+    border: 2px solid #CCC;
+    border-right: 0px; }
 
 .search.search-lg form .input-group-btn {
   background: #CCC;
@@ -9519,11 +9493,52 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     background: transparent;
     color: #FFFFFF; }
 
+span.pledge-count {
+  border: 2px solid black;
+  padding: 0 .5rem;
+  border-radius: .25rem;
+  background: transparent; }
+
+form.lh_signing-form {
+  margin-top: 0rem; }
+  form.lh_signing-form p {
+    display: inline-block; }
+  form.lh_signing-form span {
+    line-height: 2rem; }
+  form.lh_signing-form span.ex {
+    font-weight: bold; }
+  form.lh_signing-form p#lh_signing-first_name {
+    min-width: 100%; }
+    form.lh_signing-form p#lh_signing-first_name:before {
+      content: "I, "; }
+    form.lh_signing-form p#lh_signing-first_name input {
+      min-width: 100%; }
+  form.lh_signing-form p#lh_signing-email {
+    min-width: 100%; }
+    form.lh_signing-form p#lh_signing-email:before {
+      content: ""; }
+    form.lh_signing-form p#lh_signing-email input {
+      min-width: 100%; }
+  form.lh_signing-form p#lh_signing-submit {
+    width: 100%; }
+  form.lh_signing-form input {
+    background: rgba(255, 255, 255, 0);
+    border: 0;
+    border-bottom: 2px solid #2b2b29;
+    margin-bottom: .75rem; }
+    form.lh_signing-form input.lh_signing-submit {
+      margin-left: 0;
+      margin-top: 2rem;
+      padding: .5rem 1rem;
+      background: #2b2b29;
+      color: #FFFFFF;
+      font-weight: bold;
+      border-radius: .125rem;
+      text-transform: none;
+      width: 100%;
+      display: block; }
+
 @media (min-width: 576px) {
-  .form.get-involved {
-    background: #F0F0F0;
-    border: 1px solid #CCC;
-    padding: 1rem; }
   .search.search-lg form label {
     display: none; }
   .search.search-lg form .input-group .form-control {
@@ -9537,7 +9552,32 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     border-left: 0px; }
     .search.search-lg form .input-group-btn input {
       background: transparent;
-      color: #FFFFFF; } }
+      color: #FFFFFF; }
+  form.lh_signing-form p {
+    display: inline-block; }
+  form.lh_signing-form span {
+    line-height: 3.5rem; }
+  form.lh_signing-form p#lh_signing-first_name {
+    min-width: 0; }
+    form.lh_signing-form p#lh_signing-first_name input {
+      min-width: 0; }
+  form.lh_signing-form p#lh_signing-email {
+    min-width: 0; }
+    form.lh_signing-form p#lh_signing-email:before {
+      content: "at "; }
+    form.lh_signing-form p#lh_signing-email input {
+      min-width: 0; }
+  form.lh_signing-form p#lh_signing-submit {
+    text-align: left;
+    min-width: 0;
+    width: auto; }
+  form.lh_signing-form input {
+    margin-bottom: .5rem; }
+    form.lh_signing-form input.lh_signing-submit {
+      margin-left: 1rem;
+      margin-top: 0;
+      width: auto;
+      display: inline-block; } }
 
 /*
 #   BUTTONS
@@ -9552,7 +9592,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 #   1 - BUTTON    1 - BUTTON    1 - BUTTON    1 - BUTTON    1 - BUTTON    1 - BUTTON
 */
 .btn {
-  border-radius: 0;
+  border-radius: .125rem;
   border: none;
   font-size: 100%;
   font-weight: bold;
@@ -9626,7 +9666,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 @media (min-width: 576px) {
   .btn.btn-plain {
-    text-decoration: none; }
+    text-decoration: none;
+    padding-left: 0; }
   .btn.block {
     display: inline-block;
     width: auto;
@@ -9789,3 +9830,260 @@ section.panel {
 @media (min-width: 768px) {
   section.panel .section-mob-bg {
     display: none; } }
+
+/*
+#   CIVI
+#   _civi.scss
+#
+#   INDEX
+#
+#   1 -
+#
+*/
+/*
+#   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
+*/
+.crm-container {
+  padding: 0;
+  padding-bottom: 1rem;
+  display: block;
+  clear: both; }
+  .crm-container #printer-friendly {
+    display: none; }
+  .crm-container .crm-public-footer {
+    margin-top: 3rem;
+    font-size: 80%; }
+  .crm-container .empowered-by-link {
+    display: inline-block; }
+  .crm-container .messages.crm-error {
+    background: white;
+    color: #cc0000;
+    padding: .75rem;
+    margin-bottom: 1rem;
+    border: 1px solid red;
+    border-radius: 0.25rem; }
+  .crm-container .crm-error {
+    background: white;
+    color: #cc0000;
+    padding: .25rem;
+    padding-left: .5rem;
+    border: 1px solid red;
+    border-radius: 0.25rem;
+    margin-top: 1rem; }
+  .crm-container .crm-error-label {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: inherit; }
+  .crm-container span.crm-error {
+    display: block; }
+  .crm-container #errorList {
+    list-style: none; }
+    .crm-container #errorList li:before {
+      content: " – "; }
+
+.crm-submit-buttons {
+  text-align: center; }
+
+.crm-button.crm-button-type-upload {
+  padding-left: 1.75rem;
+  margin: 3rem 0 1rem;
+  background: green;
+  background-image: none !important;
+  border-radius: .25rem;
+  display: inline-block;
+  text-align: center;
+  min-width: 100%; }
+  .crm-button.crm-button-type-upload .crm-i {
+    color: white;
+    border-color: white; }
+  .crm-button.crm-button-type-upload input.crm-form-submit.default.validate {
+    cursor: pointer;
+    padding: 2rem 2rem 2rem 1rem;
+    font-weight: bold;
+    color: white; }
+
+.crm-container .status, .description {
+  font-size: 80%;
+  padding: .5rem;
+  border-radius: 0.25rem;
+  background: #FFF; }
+
+.crm-container {
+  background: #F0F0F0;
+  border-radius: 0.25rem;
+  padding: 1rem; }
+  .crm-container .crm-public-form-item, .crm-container #billing-payment-block {
+    margin: 0 auto; }
+    .crm-container .crm-public-form-item fieldset legend, .crm-container #billing-payment-block fieldset legend {
+      display: none; }
+    .crm-container .crm-public-form-item.intro_text-section, .crm-container #billing-payment-block.intro_text-section {
+      padding: 2rem 1rem 1rem;
+      text-align: center; }
+    .crm-container .crm-public-form-item #priceset .price-set-row, .crm-container #billing-payment-block #priceset .price-set-row {
+      margin: .525rem 0;
+      display: inline-table; }
+      .crm-container .crm-public-form-item #priceset .price-set-row .price-set-option-content, .crm-container #billing-payment-block #priceset .price-set-row .price-set-option-content {
+        cursor: pointer;
+        background: navy;
+        color: white;
+        margin: .5rem 0rem;
+        padding: .5rem .75rem;
+        border-radius: 0.25rem; }
+        .crm-container .crm-public-form-item #priceset .price-set-row .price-set-option-content label, .crm-container #billing-payment-block #priceset .price-set-row .price-set-option-content label {
+          cursor: pointer;
+          padding-left: .75rem; }
+          .crm-container .crm-public-form-item #priceset .price-set-row .price-set-option-content label span, .crm-container #billing-payment-block #priceset .price-set-row .price-set-option-content label span {
+            color: white; }
+    .crm-container .crm-public-form-item #priceset #amount_sum_label, .crm-container #billing-payment-block #priceset #amount_sum_label {
+      color: #454542;
+      text-align: center;
+      font-style: italic;
+      font-size: 80%; }
+    .crm-container .crm-public-form-item #billing_postal_code-5, .crm-container #billing-payment-block #billing_postal_code-5 {
+      max-width: 200px !important; }
+    .crm-container .crm-public-form-item label, .crm-container #billing-payment-block label {
+      margin: 0; }
+    .crm-container .crm-public-form-item .label, .crm-container #billing-payment-block .label {
+      margin: 1rem 0 .5rem; }
+    .crm-container .crm-public-form-item input.crm-form-radio, .crm-container .crm-public-form-item input.crm-form-checkbox, .crm-container #billing-payment-block input.crm-form-radio, .crm-container #billing-payment-block input.crm-form-checkbox {
+      cursor: pointer;
+      position: relative;
+      padding: .5rem; }
+    .crm-container .crm-public-form-item input.crm-form-text, .crm-container .crm-public-form-item input.creditcard, .crm-container .crm-public-form-item .select2-container ul, .crm-container .crm-public-form-item .select2-container.select2-choice, .crm-container #billing-payment-block input.crm-form-text, .crm-container #billing-payment-block input.creditcard, .crm-container #billing-payment-block .select2-container ul, .crm-container #billing-payment-block .select2-container.select2-choice {
+      padding: .75rem;
+      background: #FFF;
+      background-image: none !important;
+      border-width: 0px;
+      border-radius: 0.25rem;
+      width: 100%; }
+    .crm-container .crm-public-form-item .crm-form-date, .crm-container .crm-public-form-item #credit_card_exp_date_Y, .crm-container .crm-public-form-item #credit_card_exp_date_M, .crm-container #billing-payment-block .crm-form-date, .crm-container #billing-payment-block #credit_card_exp_date_Y, .crm-container #billing-payment-block #credit_card_exp_date_M {
+      padding: 1rem;
+      background: #FFF;
+      background-image: none !important;
+      border-width: 0px;
+      border-radius: 0.25rem;
+      width: 50%;
+      height: 4rem;
+      margin-right: .5rem;
+      max-width: 120px; }
+    .crm-container .crm-public-form-item #billingcheckbox, .crm-container .crm-public-form-item label[for="billingcheckbox"], .crm-container #billing-payment-block #billingcheckbox, .crm-container #billing-payment-block label[for="billingcheckbox"] {
+      display: none; }
+    .crm-container .crm-public-form-item .cvv2-section input, .crm-container .crm-public-form-item .editrow_custom_7-section input, .crm-container #billing-payment-block .cvv2-section input, .crm-container #billing-payment-block .editrow_custom_7-section input {
+      max-width: 200px; }
+    .crm-container .crm-public-form-item.is_recur-section .label, .crm-container #billing-payment-block.is_recur-section .label {
+      display: none; }
+    .crm-container .crm-public-form-item .credit_card_type-section:before, .crm-container #billing-payment-block .credit_card_type-section:before {
+      content: "Select payment type *"; }
+    .crm-container .crm-public-form-item .crm-credit_card_type-icon-visa, .crm-container .crm-public-form-item .crm-credit_card_type-icon-mastercard, .crm-container .crm-public-form-item .crm-credit_card_type-icon-amex, .crm-container .crm-public-form-item .crm-credit_card_type-icon-discover, .crm-container #billing-payment-block .crm-credit_card_type-icon-visa, .crm-container #billing-payment-block .crm-credit_card_type-icon-mastercard, .crm-container #billing-payment-block .crm-credit_card_type-icon-amex, .crm-container #billing-payment-block .crm-credit_card_type-icon-discover {
+      padding: .75rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      display: inline-block;
+      background: #FFF;
+      background-image: none !important;
+      border-width: 0px;
+      border-radius: 0.25rem; }
+      .crm-container .crm-public-form-item .crm-credit_card_type-icon-visa :before, .crm-container .crm-public-form-item .crm-credit_card_type-icon-mastercard :before, .crm-container .crm-public-form-item .crm-credit_card_type-icon-amex :before, .crm-container .crm-public-form-item .crm-credit_card_type-icon-discover :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-visa :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-mastercard :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-amex :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-discover :before {
+        font-family: "FontAwesome";
+        margin-right: .5rem; }
+    .crm-container .crm-public-form-item .crm-credit_card_type-icon-visa :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-visa :before {
+      content: "\f1f0"; }
+    .crm-container .crm-public-form-item .crm-credit_card_type-icon-mastercard :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-mastercard :before {
+      content: "\f1f1"; }
+    .crm-container .crm-public-form-item .crm-credit_card_type-icon-amex :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-amex :before {
+      content: "\f1f3"; }
+    .crm-container .crm-public-form-item .crm-credit_card_type-icon-discover :before, .crm-container #billing-payment-block .crm-credit_card_type-icon-discover :before {
+      content: "\f1f2"; }
+  .crm-container .header-dark {
+    padding: .5rem 0; }
+
+.crm-public-form-item .crm-section .auto-renew {
+  margin-top: 1rem;
+  padding: .75rem;
+  background: #FFF;
+  background-image: none !important;
+  border-width: 0px;
+  border-radius: 0.25rem;
+  width: 100%;
+  float: left; }
+  .crm-public-form-item .crm-section .auto-renew .label {
+    display: none; }
+
+.crm-public-form-item input#auto_renew {
+  float: left;
+  margin-left: .375rem;
+  margin-top: .5rem;
+  width: 25px;
+  height: 25px; }
+
+.crm-public-form-item label[for="auto_renew"] {
+  float: left;
+  cursor: pointer;
+  padding-left: 1rem;
+  width: calc(100% - 60px); }
+
+.crm-public-form-item .editrow_custom_12-section input {
+  width: 25px;
+  height: 25px; }
+
+.crm-public-form-item .editrow_custom_12-section label {
+  display: block;
+  cursor: pointer; }
+
+.crm-public-form-item .editrow_custom_12-section .label label {
+  padding: 0; }
+
+/*.billing_name_address-section {
+  .crm-section {
+    width: 49%;
+    display: inline-block;
+  }
+}*/
+.select2-container {
+  width: 100% !important; }
+  .select2-container ul, .select2-container .select2-choice {
+    background-image: none !important; }
+  .select2-container ul.select2-choices .select2-search-field input {
+    width: 100% !important;
+    padding: 0; }
+
+.select2-container .select2-choice {
+  padding: 1rem 0.75rem !important;
+  border: none !important;
+  height: auto !important; }
+  .select2-container .select2-choice .select2-arrow, .select2-container .select2-choice .select2-search-choice-close {
+    display: none !important; }
+
+.select2-drop-active {
+  border-color: #CCC !important; }
+
+.select2-results .select2-highlighted {
+  background: navy !important;
+  color: white !important;
+  border-radius: 0.25rem !important; }
+  .select2-results .select2-highlighted .select2-result-label {
+    color: white !important; }
+
+.select2-result-label {
+  padding: 0.75rem !important; }
+
+.select2-container-multi .select2-choices .select2-search-choice {
+  margin-right: 0.5rem !important;
+  background: white !important;
+  padding: 0.75rem !important;
+  padding-left: 1.5rem !important;
+  border-color: navy !important; }
+  .select2-container-multi .select2-choices .select2-search-choice div {
+    color: navy !important;
+    line-height: 1.75rem !important; }
+
+.select2-container-multi .select2-search-choice-close {
+  left: 0.5rem !important;
+  top: 0.75rem !important;
+  color: navy !important;
+  border: none !important; }
+
+@media (min-width: 576px) {
+  .crm-button.crm-button-type-upload {
+    min-width: 0; } }

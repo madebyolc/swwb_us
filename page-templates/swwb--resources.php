@@ -1,7 +1,7 @@
 <?php
 /**
  * Project name: SWWB
- * Template name: About
+ * Template name: Resources
  * @package understrap
  */
 
@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div class="wrapper top" id="wrapper-page">
 
-  <section id="section-1" class="panel h100 pd-top-nav" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
+  <section id="section-1" class="panel pin h100 pd-top-nav" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
 
     <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-1-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center;"></div>
 
@@ -27,7 +27,7 @@ get_header(); ?>
 
                 <!--<div class="breadcrumb lighten"><?php get_breadcrumb(); ?></div>-->
 
-                <h1 id="section-1-intro" class="typr lead d b">
+                <h1 id="section-1-intro" class="typr lead b">
 
                   <?php if ( get_post_meta($post->ID, 'section-1-intro', true) ) : echo get_post_meta($post->ID, 'section-1-intro', true); endif; ?>
 
@@ -41,8 +41,8 @@ get_header(); ?>
 
                 <div class="col-sm-12 np">
 
-                  <a href="<?php echo get_permalink( get_page_by_path( 'get-involved' ) ) ?>" class="btn btn-primary btn-lg block go forward typr" role="button" aria-pressed="true">Get Involved</a>
-                  <a href="#continue" class="btn btn-plain bg btn-lg block go bottom typr" role="button" aria-pressed="true">Find out more</a>
+                  <a href="<?php echo get_permalink( get_page_by_path( 'get-involved' ) ) ?>" class="btn btn-primary btn-lg go forward typr" role="button" aria-pressed="true">Get Involved</a>
+                  <a href="#continue" class="btn btn-plain bg btn-lg go bottom typr" role="button" aria-pressed="true">Find out more</a>
 
                 </div>
 

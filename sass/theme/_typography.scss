@@ -132,10 +132,17 @@
   font-style: normal;
 }
 
-// Young Serif
+// Display
 @font-face {
 	font-family: 'SWWBDisplay';
-  src: url('../fonts/CaslonOS-Regular.otf');
+  src: url('../fonts/SourceSansPro-Regular.otf');
 	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SWWBDisplay';
+  src: url('../fonts/SourceSansPro-Semibold.otf');
+	font-weight: bold;
 	font-style: normal;
 }

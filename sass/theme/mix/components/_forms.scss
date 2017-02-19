@@ -12,6 +12,10 @@
 #   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
 */
 
+.input-group {
+  width: auto; //can't understand why this had changed, quick fix
+}
+
 .form {
   .form-control, .btn-search { font-size: $font-size-h6; }
   &.lines-dark {
@@ -23,73 +27,6 @@
   }
 }
 
-.form.get-involved {
-  background: transparent;
-  padding: 0;
-  #printer-friendly {
-    display: none;
-  }
-  .crm-container .status {
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid $g-brand-secondary;
-    border-radius: 0;
-    margin: 0.5em 0;
-    padding: 0.25em 0.5em;
-    color: $g-black;
-    font-weight: normal;
-  }
-  .label {
-    float: none!important;
-    width: auto!important;
-    text-align: left!important;
-  }
-  .crm-container .crm-section .content {
-    margin-left: 0;
-  }
-  .crm-container div.form-item, .crm-container.crm-public .select2-container, .crm-container.crm-public .select2-results {
-    max-width: 310px;
-  }
-  #crm-container.crm-public input[type="text"], #crm-container.crm-public input[type="password"], #crm-container.crm-public input[type="email"], #crm-container.crm-public select {
-    min-width: 300px;
-  }
-  #crm-container.crm-public .price-set-row input {
-    margin: 0 1rem;
-  }
-  .crm-container .crm-submit-buttons, .crm-container .action-link {
-    margin-left: 0;
-  }
-  .crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container input.crm-form-submit, .crm-container .ui-dialog-buttonset .ui-button, .crm-container input[type=button], .crm-container .crm-button {
-    text-shadow: none;
-    background: $g-btn-success;
-    color: $g-white;
-    font-size: inherit;
-    font-weight: normal;
-    margin: 0;
-    padding: .33rem;
-    text-decoration: none;
-    cursor: pointer;
-    border: 0;
-    border-radius: 0;
-    width: 100%;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  .crm-container .crm-button.crm-i-button input[type="button"], .crm-container .crm-button.crm-i-button input.crm-form-submit {
-    border: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .crm-i-button>.crm-i {
-    display: none;
-  }
-  .crm-container.crm-public .select2-container, .crm-container.crm-public .select2-results {
-    min-width: 100%;
-  }
-}
-
-
 // Search
 
 .search {
@@ -100,6 +37,7 @@
     form {
       label { display: none; }
       .input-group {
+        width: auto;
         .form-control {
           font-size: 1.5rem;
           border: 2px solid $g-grey;
@@ -120,23 +58,66 @@
   }
 }
 
-// Responsive breakpoints
-@include media-breakpoint-up(sm) {
-  .form.get-involved {
-    background: #F0F0F0;
-    border: 1px solid $g-grey;
-    padding: 1rem;
-    #crm-container.crm-public input[type="text"], #crm-container.crm-public input[type="password"], #crm-container.crm-public input[type="email"], #crm-container.crm-public select {
-
+span.pledge-count {
+  border: 2px solid black;
+  padding: 0 .5rem;
+  border-radius: .25rem;
+  background: transparent;
+}
+form.lh_signing-form {
+  margin-top: 0rem;
+  p {
+    display: inline-block;
+  }
+  span {
+    line-height: 2rem;
+  }
+  span.ex {
+    font-weight: bold;
+  }
+  p#lh_signing-first_name {
+    &:before {
+      content: "I, ";
     }
-    .crm-container div.form-item, .crm-container.crm-public .select2-container, .crm-container.crm-public .select2-results {
-
-    }
-    #crm-container.crm-public input[type="text"], #crm-container.crm-public input[type="password"], #crm-container.crm-public input[type="email"], #crm-container.crm-public select {
-
+    min-width: 100%;
+    input {
+      min-width: 100%;
     }
   }
+  p#lh_signing-email {
+    &:before {
+      content: "";
+    }
+    min-width: 100%;
+    input {
+      min-width: 100%;
+    }
+  }
+  p#lh_signing-submit {
+    width: 100%;
+  }
+  input {
+    background: rgba(255,255,255,0);
+    border: 0;
+    border-bottom: 2px solid $g-black;
+    margin-bottom: .75rem;
+    &.lh_signing-submit {
+      margin-left: 0;
+      margin-top: 2rem;
+      padding: .5rem 1rem;
+      background: $g-black;
+      color: $g-white;
+      font-weight: bold;
+      border-radius: .125rem;
+      text-transform: none;
+      width: 100%;
+      display: block;
+    }
+  }
+}
 
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
   .search {
     form {
     }
@@ -161,6 +142,43 @@
             color: $g-white;
           }
         }
+      }
+    }
+  }
+  form.lh_signing-form {
+    p {
+      display: inline-block;
+    }
+    span {
+      line-height: 3.5rem;
+    }
+    p#lh_signing-first_name {
+      min-width: 0;
+      input {
+        min-width: 0;
+      }
+    }
+    p#lh_signing-email {
+      &:before {
+        content: "at ";
+      }
+      min-width: 0;
+      input {
+        min-width: 0;
+      }
+    }
+    p#lh_signing-submit {
+      text-align: left;
+      min-width: 0;
+      width: auto;
+    }
+    input {
+      margin-bottom: .5rem;
+      &.lh_signing-submit {
+        margin-left: 1rem;
+        margin-top: 0;
+        width: auto;
+        display: inline-block;
       }
     }
   }

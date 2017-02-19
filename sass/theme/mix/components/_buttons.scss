@@ -16,7 +16,7 @@
 .btn {
 
   // Default style
-  border-radius: 0;
+  border-radius: .125rem;
   border: none;
 
   font-size: 100%;
@@ -134,6 +134,7 @@
     // Styles
     &.btn-plain {
       text-decoration: none;
+      padding-left: 0;
     }
     &.block {
       display: inline-block;

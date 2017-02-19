@@ -7,8 +7,9 @@
 #   1 - TYPR
 */
 
-.typr {
+.typr, .select2-result-label {
   font-size: $g-type-t-xs;
+  font-family: "SWWBDisplay";
   color: $g-type-co-2;
   letter-spacing: .5px;
   h1, h2, h3, h4, h5, h6 {
@@ -34,8 +35,7 @@
        line-height: $g-type-h-xs*1.25; }
 
   &.d {
-    //font-family: "SWWBDisplay";
-    font-weight: 700;
+    font-family: "SWWBDisplay";
   }
 
   &.spaced {
@@ -78,7 +78,7 @@
 
 // Responsive breakpoints
 @include media-breakpoint-up(sm) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: $g-type-t-sm;
     h1 { font-size: $g-type-h-sm*$g-typr-multi-1;
          line-height: $g-type-h-sm*1.25; }
@@ -95,7 +95,7 @@
   }
 }
 @include media-breakpoint-up(md) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: $g-type-t-md;
     h1 { font-size: $g-type-h-md*$g-typr-multi-1;
          line-height: $g-type-h-md*1.25; }
@@ -110,13 +110,13 @@
     h6 { font-size: $g-type-h-md*$g-typr-multi-6;
          line-height: $g-type-h-md*1.25; }
     &.lead {
-      font-size: 250%;
+      font-size: 200%;
       line-height: 150%;
     }
   }
 }
 @include media-breakpoint-up(lg) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: $g-type-t-lg;
     h1 { font-size: $g-type-h-lg*$g-typr-multi-1;
          line-height: $g-type-h-lg*1.25; }
@@ -133,7 +133,7 @@
   }
 }
 @include media-breakpoint-up(xl) {
-  .typr {
+  .typr, .select2-result-label {
     font-size: $g-type-t-xl;
     h1 { font-size: $g-type-h-xl*$g-typr-multi-1;
          line-height: $g-type-h-xl*1.25; }

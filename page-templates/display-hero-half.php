@@ -1,7 +1,7 @@
 <?php
 /**
  * Project name: SWWB
- * Template name: Get Involved
+ * Template name: Display Hero Half
  * @package understrap
  */
 
