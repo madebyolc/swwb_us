@@ -55,7 +55,7 @@
 }
 
 .feature-background {
-  position: fixed;
+  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -462,6 +462,11 @@
 }
 
 // Responsive breakpoints
+@media (min-height: 376px) { // Landscape devices
+  .feature-buttons .feature-meta {
+    display: inline-block;
+  }
+}
 @include media-breakpoint-up(sm) {
   .hero {
     &.push-top {
@@ -483,7 +488,7 @@
     display: block;
   }
   .feature-buttons .feature-meta {
-    display: none;
+    display: inline-block;
   }
   .feature-meta.continue {
     display: block;

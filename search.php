@@ -16,13 +16,20 @@ get_header(); ?>
 
                 <main id="main" class="site-main" role="main">
 
+
                 <?php if ( have_posts() ) : ?>
 
-                    <header class="page-header">
+                    <header class="page-header typr">
 
                         <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'understrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
                     </header><!-- .page-header -->
+
+                    <div class="search search-lg typr">
+
+                      <?php get_search_form(); ?>
+
+                    </div>
 
                     <?php /* Start the Loop */ ?>
                     <?php while ( have_posts() ) : the_post(); ?>

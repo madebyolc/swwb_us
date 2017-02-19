@@ -1,7 +1,7 @@
 <?php
 /**
  * Project name: SWWB
- * Template name: Get Involved
+ * Template name: Campaign - Go the extra mile
  * @package understrap
  */
 
@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div class="wrapper top" id="wrapper-page">
 
-  <section id="section-1" class="panel h50 pd-top-nav" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-position: bottom center; background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
+  <section id="section-1" class="panel h100 pd-top-nav" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-position: bottom center; background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
 
     <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-1-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center;"></div>
 
@@ -21,25 +21,37 @@ get_header(); ?>
 
           <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
 
-            <div class="container-wrapper-100">
+            <div id="section-1-description-wrapper">
 
-              <div id="section-1-description-wrapper">
+              <!--<div class="breadcrumb lighten"><?php get_breadcrumb(); ?></div>-->
 
-                <!--<div class="breadcrumb lighten"><?php get_breadcrumb(); ?></div>-->
+              <h1 id="section-1-intro" class="typr lead d">
 
-                <h1 id="section-1-intro" class="typr lead b">
+                <?php echo 'Will you join '?>
 
-                  <?php if ( get_post_meta($post->ID, 'section-1-intro', true) ) : echo get_post_meta($post->ID, 'section-1-intro', true); endif; ?>
+                <span class="pledge-count"><?php echo do_shortcode('[lh_signing_total_count id="43"]') ?></span>
 
-                </h1>
+                <?php echo 'others &amp; pledge to '?>
 
-                <h2 id="section-1-description" class="typr lighten spaced col-sm-6 np">
+                <?php if ( get_post_meta($post->ID, 'section-1-intro', true) ) : echo get_post_meta($post->ID, 'section-1-intro', true); endif; ?>
 
-                  <?php if ( get_post_meta($post->ID, 'section-1-content', true) ) : echo get_post_meta($post->ID, 'section-1-content', true); endif; ?>
+              </h1>
 
-                </h2>
+            </div>
 
-              </div>
+            <div id="section-1-pledge-wrapper" class="col-sm-12 np">
+
+              <h1 class="typr">
+
+                <?php echo do_shortcode('[lh_signing_form first_name="1" first_name_placeholder="My Name" last_name="0" email_placeholder="My Email" submit_value="Pledge"]') ?>
+
+              </h1>
+
+            </div>
+
+            <div class="col-sm-12 np">
+
+              <a href="#lh_signing-content_message-div" class="btn btn-plain bg btn-sm block go bottom typr nm" role="button" aria-pressed="true">Find out more</a>
 
             </div>
 
@@ -51,7 +63,7 @@ get_header(); ?>
 
   </section>
 
-  <div id="continue"></div>
+  <div id="lh_signing-content_message-div"></div>
   <section id="section-2" class="panel h100 pd-top white" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-2-background-image', true) ) : echo get_post_meta($post->ID, 'section-2-background-image', true); endif; ?>'); background-position: top center; background-repeat: repeat-y; background-color: <?php if ( get_post_meta($post->ID, 'section-2-background-colour', true) ) : echo get_post_meta($post->ID, 'section-2-background-colour', true); endif; ?>;">
 
     <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-2-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-2-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center; background-repeat: repeat-y;"></div>
@@ -70,13 +82,9 @@ get_header(); ?>
 
                   <div class="panel-box">
 
-                    <div id="section-2-description-wrapper">
+                    <div id="section-2-pledge-wrapper">
 
-                      <p id="section-2-content" class="typr">
 
-                        <?php if ( get_post_meta($post->ID, 'section-2-content', true) ) : echo get_post_meta($post->ID, 'section-2-content', true); endif; ?>
-
-                      </p>
 
                     </div>
 
@@ -90,7 +98,6 @@ get_header(); ?>
 
                     <div class="typr">
 
-                        <?php echo do_shortcode('[civicrm component="contribution" id="6" mode="live" hijack="0"]'); ?>
 
                     </div>
 

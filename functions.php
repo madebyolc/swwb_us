@@ -38,6 +38,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
+* Load CiviCrm functions
+*/
+require get_template_directory() . '/inc/civicrm.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
