@@ -39,10 +39,12 @@ $(document).ready(function() {
   $page = $('.page-button');
   $nav_panel = $('global-menu ul li a');
   $slide = $('#menu-global a');
+  $header = $('.ah.page-header.off-canvas');
 
   $nav_list.click(function() {
     $(this).toggleClass('active');
     $navbar.toggleClass('active');
+    $header.toggleClass('fixed');
     $('body').toggleClass('overflow');
     $site.toggleClass('active');
     $page.toggleClass('active'); // Page Button
@@ -53,6 +55,7 @@ $(document).ready(function() {
   $nav_close.click(function() {
     $nav_list.toggleClass('active');
     $navbar.toggleClass('active');
+    $header.toggleClass('fixed');
     $('body').toggleClass('overflow');
     $site.toggleClass('active');
     $page.toggleClass('active');
@@ -63,6 +66,7 @@ $(document).ready(function() {
   $page.click(function() {
     $nav_list.toggleClass('active');
     $navbar.toggleClass('active');
+    $header.toggleClass('fixed');
     $('body').toggleClass('overflow');
     $site.toggleClass('active');
     $page.toggleClass('active');
