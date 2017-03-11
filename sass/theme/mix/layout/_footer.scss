@@ -15,22 +15,41 @@
 #wrapper-footer-full {
   position: relative;
   z-index: 2;
-  background: $g-white;
-  .typr { color: $g-grey; }
+  background: $g-light-grey;
+  .timeline-Widget {
+    border-radius: .33rem;
+  }
 }
 
 #wrapper-footer {
   position: relative;
   z-index: 2;
   background: $g-black;
+  .navbar {
+    min-height: none;
+    max-height: none;
+  }
+  .wrap-brand {
+    width: 50%;
+    .navbar-brand {
+      transform: none;
+      height: auto;
+      svg {
+        transform: none;
+      }
+      .swwb_logo {
+        fill: $g-white;
+      }
+    }
+  }
 }
 
 .footer-main {
 
-  padding-top: $g-nav-size-small;
+  color: lighten($g-type-neg, 30%);
 
   .footer-nav {
-
+    margin-top: 2rem;
     margin-bottom: 1rem;
     display: -webkit-flex;
     display: flex;
@@ -41,15 +60,15 @@
 
     .footer-nav-block {
       margin-bottom: 2rem;
-      padding: 0 1rem 0;
+      padding: 0 1rem 0 0;
       width: 50%;
-      border-left: 2px solid lighten($g-type-neg, 5%);
+      border-left: 0px solid lighten($g-type-neg, 30%);
       &:hover {
         .footer-nav-heading { color: $g-type-pos; }
       }
       .footer-nav-heading {
         margin-bottom: .5rem;
-        color: lighten($g-type-neg, 20%);
+        color: lighten($g-type-neg, 30%);
         -webkit-transition: all $g-trans-medium ease;
         -moz-transition: all $g-trans-medium ease;
         transition: all $g-trans-medium ease;
@@ -85,7 +104,13 @@
 
 
 // Responsive breakpoints
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+  #wrapper-footer {
+    .wrap-brand {
+      width: 25%;
+    }
+  }
+}
 @include media-breakpoint-up(md) {
   .footer-main {
     padding-top: 0;

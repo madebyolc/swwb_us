@@ -18,27 +18,36 @@
 #   1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING    1 - BRANDING
 */
 
-$g-black: #2b2b29;
+$g-black: #3b3b39;
 $g-dark-grey: #c5c4c6;
 $g-grey: #CCC;
-$g-light-grey: #EEE;
+$g-light-grey: #f0f0f0;
 $g-white: #FFFFFF;
-$g-brand-primary: #2b2b29;//ff6d5a  2b2b29
-$g-brand-secondary: #ff6d5a;
+
+$g-brand-primary: #3a61e6;//ff6d5a  2b2b29
+$g-brand-secondary: grey;
 $g-brand-reading: #2b2b29;
+$g-brand-c-1: #3ce6d5;
+$g-brand-c-2: #ff9f1c;
+$g-brand-c-3: #ff1919;
+
+$g-status: #ff9f1c;
+$g-error: red;
+$g-success: $g-brand-primary;
+
 $g-logo-color: $g-brand-primary;
-$g-logo-size: 110px;
-$g-logo-size-small: 50px;
+$g-logo-size: 385px;
+$g-logo-size-small: 200px;
 
 $g-body-background: rbg(247, 246, 244);
 $g-body-colour: #444;
 $g-wrapper-background: $g-white;
-$g-post-background: $g-white;
+$g-post-background: $g-light-grey;
 
 $g-btn-primary: $g-brand-primary;
 $g-btn-secondary: $g-brand-secondary;
 $g-btn-tertiary: #555;
-$g-btn-success: green;
+$g-btn-success: $g-success;
 
 /*
 #   2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION    2 - NAVIGATION
@@ -46,6 +55,10 @@ $g-btn-success: green;
 
 $g-nav-size: $g-logo-size;
 $g-nav-size-small: $g-logo-size-small;
+$g-nav-size-height: 100px;
+$g-nav-size-height-small: 50px;
+$g-wrapper-top-padding: 2rem;
+$g-wrapper-top-padding-small: 1rem;
 $g-nav-background: ;
 $g-nav-explore-color: $g-logo-color;
 
@@ -101,23 +114,23 @@ $g-typr-multi-5: .4;
 $g-typr-multi-6: .4;
 // Multipliers
 $g-typr-lead-multi-1: 2;
-$g-typr-lead-multi-2: 1.8;
+$g-typr-lead-multi-2: 1.9;
 $g-typr-lead-multi-3: 1.6;
 $g-typr-lead-multi-4: 1.5;
 $g-typr-lead-multi-5: 1.4;
 $g-typr-lead-multi-6: 1.4;
 // Type
 $g-type-t-xs: 1rem;
-$g-type-t-sm: 1.5rem;
-$g-type-t-md: 1.5rem;
-$g-type-t-lg: 1.125rem;
-$g-type-t-xl: 1.5rem;
+$g-type-t-sm: 1rem;
+$g-type-t-md: 1rem;
+$g-type-t-lg: 1.25rem;
+$g-type-t-xl: 1.33rem;
 // Headers
-$g-type-h-xs: 1.5rem;
-$g-type-h-sm: 1.5rem;
-$g-type-h-md: 1.75rem;
-$g-type-h-lg: 1.75rem;
-$g-type-h-xl: 1.75rem;
+$g-type-h-xs: 1.25rem;
+$g-type-h-sm: 1.25rem;
+$g-type-h-md: 1.5rem;
+$g-type-h-lg: 1.5rem;
+$g-type-h-xl: 1.5rem;
 
 // Typography colours
 $g-type-link-color: #222;

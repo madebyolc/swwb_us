@@ -16,20 +16,52 @@
 .btn {
 
   // Default style
-  border-radius: .125rem;
-  border: none;
+  border: solid;
+  border-radius: .33rem;
+  border-width: 1px;
 
-  font-size: 100%;
+  font-size: $g-type-t-xs;
   font-weight: bold;
-  text-transform: uppercase;
+  //text-transform: uppercase;
+
+  &.btn-group-lg>.btn, &.btn-xs {
+    padding: .5rem .75rem;
+    &.go {
+      padding-right: 1rem;
+    }
+  }&.btn-group-lg>.btn, &.btn-sm {
+    padding: .75rem 1.25rem;
+    &.go {
+      padding-right: 1.5rem;
+    }
+  }&.btn-group-lg>.btn, &.btn-md {
+    padding: .8rem 1.75rem;
+    &.go {
+      padding-right: 2rem;
+    }
+  }&.btn-group-lg>.btn, &.btn-lg {
+    padding: 1rem 2.25rem;
+    &.go {
+      padding-right: 2.5rem;
+    }
+  }
 
   &:hover {
-    opacity: .5;
+    //transform: translateY(-.25rem);
   }
 
   // Styles
-  &.btn-plain {
+  &.btn-none, &.btn-none:hover, &.btn-none:active, &.btn-none:focus, &.btn-none:link {
+    background: none;
+    border: 0;
+    padding: .25rem;
+  }
+  &.btn-plain, &.btn-plain:hover, &.btn-plain:active, &.btn-plain:focus, &.btn-plain:link {
     text-decoration: none;
+    border-color: $g-btn-primary;
+    border-width: 1px;
+    background-color: white;
+    color: $g-btn-primary;
     /*&:after {
       content: "";
       border-bottom: 2px solid black;
@@ -40,20 +72,38 @@
       text-decoration: none;
       border-bottom: 2px solid $g-type-link-underline;
     }*/
-    &:hover {
-      &:after {
-        text-decoration: none;
-        border-bottom-color: $g-type-link-underline-hover;
-      }
-    }
   }
-  &.btn-primary, &.btn-primary:hover {
+  &.btn-plain-grey, &.btn-plain-grey:hover, &.btn-plain-grey:active, &.btn-plain-grey:focus, &.btn-plain-grey:link {
+    text-decoration: none;
+    border-color: $g-black;
+    border-width: 1px;
+    background-color: transparent;
+    color: $g-black;
+    /*&:after {
+      content: "";
+      border-bottom: 2px solid black;
+      position: relative;
+      left: 0;
+      display: none;
+      width: 100%;
+      text-decoration: none;
+      border-bottom: 2px solid $g-type-link-underline;
+    }*/
+  }
+  &.btn-primary, &.btn-primary:hover, &.btn-primary:active, &.btn-primary:focus, &.btn-primary:link {
     color: white;
     background: $g-btn-primary;
+    border-color: $g-btn-primary;
   }
-  &.btn-success, &.btn-success:hover {
+  &.btn-success, &.btn-success:hover, &.btn-success:active, &.btn-success:focus, &.btn-success:link {
     color: white;
     background: $g-btn-success;
+    &:after {
+      position: relative;
+      left: .33rem;
+      font-family: "FontAwesome";
+      content: "\f106";
+    }
   }
   &.btn-tertiary {
     color: $g-btn-tertiary;
@@ -63,6 +113,9 @@
     text-transform: capitalize;
     color: $g-white;
     border-bottom: 2px solid $g-white;
+    &:hover {
+      transform: none;
+    }
   }
 
   &.go {
@@ -89,10 +142,6 @@
   &.block {
     display: block;
     width: 100%;
-    margin-top: 1rem;
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   // Clear it
@@ -102,12 +151,27 @@
 
 }
 
+.btn-group .btn {
+  border-radius: 0 0 .33rem .33rem!important;
+  &:first-child {
+    margin-top: 0;
+    border-radius: .33rem .33rem 0 0!important;
+    left: -1px;
+  }
+}
+
 // Themed buttons
 
 // Light
 .light {
   .btn {
     &.btn-plain {
+      color: $g-theme-light;
+      &:after {
+        border-color: $g-theme-light;
+      }
+    }
+    &.btn-plain-grey {
       color: $g-theme-light;
       &:after {
         border-color: $g-theme-light;
@@ -131,10 +195,12 @@
 // Responsive breakpoints
 @include media-breakpoint-up(sm) {
   .btn {
-    // Styles
+    font-size: $g-type-t-sm;
     &.btn-plain {
       text-decoration: none;
-      padding-left: 0;
+    }
+    &.btn-plain-grey {
+      text-decoration: none;
     }
     &.block {
       display: inline-block;
@@ -142,12 +208,28 @@
       margin-top: 0;
     }
   }
+  .btn-group .btn {
+    border-radius: 0 .33rem .33rem 0!important;
+    &:first-child {
+      margin-top: 0;
+      border-radius: .33rem 0 0 .33rem!important;
+      left: -1px;
+    }
+  }
 }
 @include media-breakpoint-up(md) {
-
+  .btn {
+    font-size: $g-type-t-md;
+  }
 }
 @include media-breakpoint-up(lg) {
+  .btn {
+    font-size: $g-type-t-lg;
+  }
 }
 @include media-breakpoint-up(xl) {
+  .btn {
+    font-size: $g-type-t-xl;
+  }
 
 }

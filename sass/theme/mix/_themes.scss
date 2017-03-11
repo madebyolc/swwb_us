@@ -16,24 +16,25 @@ $g-theme-dark: $g-type-neg;
   fill: $g-logo-color;
 }*/
 
-.theme {
+/*.theme {
   border-width: 2px;
   //&.navbar { border-bottom-color: $g-theme-dark; }
   &.navbar-brand { fill: $g-theme-dark; }
   div,span, i, a, p,
   h1, h2, h3, h4, h5, h6
-  { color: $g-theme-dark; border-color: $g-theme-dark; border-width: 2px; }
+  { color: $g-theme-dark; border-color: $g-theme-dark; border-width: 1px; }
   a:hover, a:focus, a:active, a:active:hover
   { color: lighten($g-theme-dark, 20%); border-color: lighten($g-theme-dark, 20%); background: transparent; }
-  &.btn {
+  &.btn, &.btn a, &a.btn {
     background: $g-theme-dark;
-    border: 2px solid $g-theme-dark;
+    border-width: 2px;
+    border-color: $g-theme-dark;
     color: $g-theme-light;
   }
   &.icon-bar {
-    background-color: $g-theme-dark!important;
+    background-color: $g-brand-primary!important;
   }
-}
+}*/
 
 /*
 #   2 - LIGHT    2 - LIGHT    2 - LIGHT    2 - LIGHT    2 - LIGHT    2 - LIGHT    2 - LIGHT    2 - LIGHT    2 - LIGHT
@@ -45,26 +46,67 @@ $g-theme-dark: $g-type-neg;
   &.navbar-brand { fill: $g-theme-light; }
   div,span, i, a, p,
   h1, h2, h3, h4, h5, h6
-  { color: $g-theme-light; border-color: $g-theme-light; border-width: 2px; }
+  { color: $g-theme-light; border-color: $g-theme-light; border-width: 1px; }
   a:hover, a:focus, a:active, a:active:hover
   { background-color: lighten($g-theme-light, 20%); color: lighten($g-theme-light, 20%); border-color: lighten($g-theme-light, 20%); background: transparent; }
-  &.btn {
+  &.btn, .btn {
     background: $g-theme-light;
-    border: 2px solid $g-theme-light;
+    border-color: $g-theme-light;
     color: $g-theme-dark;
+    border-width: 2px;
     &.btn-plain {
-      text-decoration: underline;
-      &:after {
-        content: "";
-        border-bottom: 2px solid $g-theme-light;
+      text-decoration: none;
+      border-color: $g-theme-light;
+      background-color: transparent;
+      color: $g-theme-light;
+      &:hover, &:focus, &:active, &:link {
+        border-color: $g-theme-light;
+        background-color: transparent;
+        color: $g-theme-light;
       }
+    }
+    &:hover, &:focus, &:active, &:link {
+      border-color: $g-theme-light;
+      background-color: transparent;
+      color: $g-theme-light;
     }
   }
   &.icon-bar {
-    background-color: $g-theme-light!important;
+    background-color: $g-brand-primary!important;
   }
   &.scroll-this-way {
     border-color: $g-theme-light;
+  }
+  form.lh_signing-form input, .pledge-count {
+    color: $g-theme-light;
+    border-color: $g-theme-light;
+  }
+  form.lh_signing-form input.lh_signing-submit {
+    color: $g-theme-dark;
+    background: $g-theme-light;
+  }
+  .header-icon {
+    svg path {
+      stroke: $g-theme-light;
+    }
+  }
+  .typr .lead, .lead {
+    color: $g-theme-light;
+    &:after {
+      background: $g-theme-light;
+    }
+  }
+  .typr .box, .box {
+    border-color: $g-theme-light;
+  }
+  .typr .section:after {
+    background: $g-theme-light;
+  }
+}
+
+.primary {
+  &.typr, .typr {
+    color: $g-brand-primary;
   }
 }
 
