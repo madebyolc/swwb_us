@@ -5967,6 +5967,7 @@ $(document).ready(function() {
   function setHeight() {
     windowWidth = $(window).innerWidth();
     windowHeight = $(window).innerHeight();
+    windowHeightQuarter = $(window).innerHeight()/4;
     windowHeightHalf = $(window).innerHeight()/2;
     windowHeightThreeQuarters = $(window).innerHeight()/4*3;
     windowHeightShort = $(window).innerHeight()-50;
@@ -5975,7 +5976,7 @@ $(document).ready(function() {
     $('.pushmenu').css('max-width', windowWidth);
     $('.hero').css('min-height', windowHeight);
     $('.hero-short').css('min-height', windowHeight);
-    $('#wrapper-footer').css('min-height', windowHeight);
+    $('#wrapper-footer').css('min-height', windowHeightHalf);
     $('.wrapper.search-wrapper').css('min-height', windowHeight);
     $('.feature-background').css('max-height', windowHeight);
     // Pages
@@ -5985,6 +5986,8 @@ $(document).ready(function() {
     $('.panel.h75').css('height', windowHeightThreeQuarters);
     $('.panel.h50').css('min-height', windowHeightHalf);
     $('.panel.h50').css('height', windowHeightHalf);
+    $('.panel.h25').css('height', windowHeightQuarter);
+    $('.panel.h25').css('min-height', windowHeightQuarter);
     $('.panel.hShort').css('min-height', windowHeightShort);
     $('.panel.hShort').css('height', windowHeightShort);
     //REVIEW might need to add the above function to all wrappers

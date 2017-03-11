@@ -11,90 +11,40 @@ get_header(); ?>
 
 <div class="wrapper top" id="wrapper-page">
 
-  <section id="section-1" class="panel h50 pd-top-nav" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-position: bottom center; background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
+  <section class="panel pd-top-nav" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
 
-    <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-1-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center;"></div>
-
-    <div id="section-1-panel" class="panel-wrapper va-hero va-middle">
+    <div id="section-1-panel" class="panel-wrapper va-top">
 
       <div class="panel-inner">
 
-          <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
+          <div class="container typr">
 
             <div class="container-wrapper-100">
 
-              <div id="section-1-description-wrapper">
+              <div id="get-involved-content-wrapper" class="typr col-sm-4 np theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
 
-                <!--<div class="breadcrumb lighten"><?php get_breadcrumb(); ?></div>-->
-
-                <h1 id="section-1-intro" class="typr lead b">
+                <h1 id="get-involved-content-intro" class="page-title lead section">
 
                   <?php if ( get_post_meta($post->ID, 'section-1-intro', true) ) : echo get_post_meta($post->ID, 'section-1-intro', true); endif; ?>
 
                 </h1>
 
-                <h2 id="section-1-description" class="typr lighten spaced col-sm-6 np">
+                <h2 id="get-involved-content-description" class="typr spaced frame">
 
                   <?php if ( get_post_meta($post->ID, 'section-1-content', true) ) : echo get_post_meta($post->ID, 'section-1-content', true); endif; ?>
 
                 </h2>
 
+
               </div>
 
-            </div>
+              <div id="get-involved-form" class="panel-page frame-thin br-top typr col-xs-12 col-sm-7 offset-sm-1 theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-form-theme', true) ) : echo get_post_meta($post->ID, 'section-1-form-theme', true); endif; ?>">
 
-          </div>
+                <?php echo do_shortcode('[civicrm component="contribution" id="6" mode="live" hijack="0"]'); ?>
 
-      </div>
+                <div class="typr center">
 
-    </div>
-
-  </section>
-
-  <div id="continue"></div>
-  <section id="section-2" class="panel h100 pd-top white" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-2-background-image', true) ) : echo get_post_meta($post->ID, 'section-2-background-image', true); endif; ?>'); background-position: top center; background-repeat: repeat-y; background-color: <?php if ( get_post_meta($post->ID, 'section-2-background-colour', true) ) : echo get_post_meta($post->ID, 'section-2-background-colour', true); endif; ?>;">
-
-    <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-2-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-2-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center; background-repeat: repeat-y;"></div>
-
-    <div id="section-2-panel" class="panel-wrapper va-top">
-
-      <div class="panel-inner">
-
-          <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-2-theme', true) ) : echo get_post_meta($post->ID, 'section-2-theme', true); endif; ?>">
-
-            <div class="container-wrapper-100">
-
-              <div class="panel-row row">
-
-                <div class="panel-boxes col-sm-12">
-
-                  <div class="panel-box">
-
-                    <div id="section-2-description-wrapper">
-
-                      <p id="section-2-content" class="typr">
-
-                        <?php if ( get_post_meta($post->ID, 'section-2-content', true) ) : echo get_post_meta($post->ID, 'section-2-content', true); endif; ?>
-
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="panel-boxes col-sm-8 offset-sm-2">
-
-                  <div class="panel-box">
-
-                    <div class="typr">
-
-                        <?php echo do_shortcode('[civicrm component="contribution" id="6" mode="live" hijack="0"]'); ?>
-
-                    </div>
-
-                  </div>
+                  <?php	wp_nav_menu( array('theme_location' => 'social-menu', 'container_class' => 'social-menu' ) );?>
 
                 </div>
 

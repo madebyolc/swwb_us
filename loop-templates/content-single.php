@@ -7,68 +7,43 @@
 <?php $archive_year  = get_the_time('Y'); ?>
 <?php $archive_month = get_the_time('m'); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="wrapper top" id="wrapper-page">
 
-	<div class="hero push-top feature theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>" style="background-color: <?php if ( get_post_meta($post->ID, 'feature_background', true) ) : echo get_post_meta($post->ID, 'feature_background', true); endif; ?>;">
+	<section class="panel mg-top <?php if ( !get_the_post_thumbnail_url( $post->ID, 'large', true) ) : echo 'h50'; else : echo 'h75'; endif; ?>" style="background-size: cover; background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>'); background-color: <?php if ( get_post_meta($post->ID, 'page-background', true) ) : echo get_post_meta($post->ID, 'page-background', true); endif; ?>">
 
-		<div class="feature-background" style="background-image: url('<?php if ( !get_post_meta($post->ID, 'feature_background', false) ) :echo get_the_post_thumbnail_url( $post->ID, 'large' ); endif; ?>');"></div>
+		<div class="panel-wrapper va-bottom">
 
-		<div class="feature-wrap">
+				<div class="panel-inner">
 
-			<div class="feature-inner container">
+					<div class="content-single container pd-top-small typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
 
-				<div id="typed-strings">
-					
-					<p><a href="#read" role="button"><?php the_title(); ?></a></p>
+						<div class="container-wrapper-100 panel-page frame-thin br-top">
+
+							<div id="typed-strings">
+
+								<p><?php the_title(); ?></p>
+
+							</div>
+
+							<h1 class="page-title section lead d b">
+
+								<span id="typed"></span>
+
+							</h1>
+
+						</div>
+
+					</div>
 
 				</div>
 
-				<span class="">
-
-					<h1 class="entry-title typr d <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
-
-						<span id="typed"></span>
-
-					</h1>
-
-				</span>
-
-			</div>
-
-			<div class="feature-buttons container">
-
-				<div class="entry-meta">
-
-					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> category"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_category(' '); ?></span>
-
-					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> date"><i class="fa fa-calendar-o" aria-hidden="true"></i> <a href="<?php echo get_month_link( $archive_year, $archive_month ); ?>"><?php the_date() ?></a></span>
-
-					<span class="feature-meta  <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <?php the_author_posts_link(); ?></span>
-
-					<span class="feature-meta continue"><a href="#read" role="button" class="btn btn-primary btn-lg go bottom typr theme <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">Continue to Article</a></span>
-
-				</div><!-- .entry-meta -->
-
-			</div>
-
-			<!--<div class="article-pseudo-header"></div>-->
-
 		</div>
 
-	</div>
+	</section>
 
-	<header id="read" class="entry-header">
+</div>
 
-		<div class="article header container">
-
-			<div class="entry-meta">
-
-
-			</div><!-- .entry-meta -->
-
-		</div>
-
-	</header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div id="article-content" class="entry-content">
 

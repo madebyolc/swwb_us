@@ -12,18 +12,22 @@
 #   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
 */
 
-$civi-1: #F0F0F0;
-$civi-2: #FFF;
+$civi-1: #fff;
+$civi-2: #fff;
 $civi-3: $g-grey;
+$civi-4: $g-brand-primary;
 $civi-r: .25rem;
 $civi-text-primary: $g-type-co-1;
 $civi-text-secondary: $g-type-co-2;
 $civi-font-normal: 100%;
 $civi-font-small: 80%;
 
-$civi-neg: navy;
+$civi-neg: $g-brand-primary;
 $civi-pos: white;
 
+#get-involved-form .crm-title {
+  display: none;
+}
 .crm-container {
   padding: 0;
   padding-bottom: 1rem;
@@ -81,9 +85,9 @@ $civi-pos: white;
 .crm-button.crm-button-type-upload {
   padding-left: 1.75rem;
   margin: 3rem 0 1rem;
-  background: green;
+  background: $g-brand-primary;
   background-image: none!important;
-  border-radius: .25rem;
+  border-radius: .33rem;
   display: inline-block;
   text-align: center;
   min-width: 100%;
@@ -93,17 +97,27 @@ $civi-pos: white;
   }
   input.crm-form-submit.default.validate {
     cursor: pointer;
-    padding: 2rem 2rem 2rem 1rem;
+    border-radius: .33rem;
+    padding: 1rem 2rem 1rem 1rem;
     font-weight: bold;
     color: white;
+    background: inherit;
+    border: 0;
   }
 }
-
+.crm-group.membership-group #priceset #help {
+  padding: 1rem;
+  background: $g-status;
+  color: $civi-pos;
+  font-weight: bold;
+  border-radius: .33rem;
+}
 .crm-container .status, .description {
   font-size: $civi-font-small;
   padding: .5rem;
   border-radius: $civi-r;
   background: $civi-2;
+  border: 1px solid $civi-4;
 }
 
 .crm-container {
@@ -113,6 +127,7 @@ $civi-pos: white;
 
   .crm-public-form-item, #billing-payment-block {
     margin: 0 auto;
+
     fieldset legend {
       display: none;
     }
@@ -120,8 +135,9 @@ $civi-pos: white;
     }
 
     &.intro_text-section {
-      padding: 2rem 1rem 1rem;
-      text-align: center;
+      padding: 2rem 0;
+      text-align: left;
+      font-family: "Now";
     }
 
     #membership {
@@ -179,7 +195,7 @@ $civi-pos: white;
       padding: .75rem;
       background: $civi-2;
       background-image: none!important; //remove horrible shadow
-      border-width: 0px;
+      border: 1px solid $civi-4!important;
       border-radius: $civi-r;
       width: 100%;
       //max-width: 400px;
@@ -189,7 +205,7 @@ $civi-pos: white;
       padding: 1rem;
       background: $civi-2;
       background-image: none!important;
-      border-width: 0px;
+      border: 1px solid $civi-4;
       border-radius: $civi-r;
       width: 50%;
       height: 4rem;
@@ -226,7 +242,7 @@ $civi-pos: white;
       display: inline-block;
       background: $civi-2;
       background-image: none!important; //remove horrible shadow
-      border-width: 0px;
+      border: 1px solid $civi-4;
       border-radius: $civi-r;
       :before {
         font-family: "FontAwesome";
@@ -265,9 +281,10 @@ $civi-pos: white;
     margin-top: 1rem;
     .label { display: none; }
     padding: .75rem;
-    background: $civi-2;
+    background: $civi-4;
+    color: $civi-pos;
     background-image: none!important; //remove horrible shadow
-    border-width: 0px;
+    border: 1px solid $civi-4;
     border-radius: $civi-r;
     width: 100%;
     float: left;
@@ -319,11 +336,14 @@ $civi-pos: white;
 
 .select2-container .select2-choice {
   padding: 1rem .75rem!important;
-  border: none!important;
+  border: 1px solid $civi-4!important;
   height: auto!important;
   .select2-arrow, .select2-search-choice-close {
     display: none!important;
   }
+}
+.select2-search input {
+  min-height: 3rem!important;
 }
 
 #select2-drop {

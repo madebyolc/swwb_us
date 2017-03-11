@@ -4,41 +4,101 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="background-color: <?php if ( get_post_meta($post->ID, 'feature_background', true) ) : echo get_post_meta($post->ID, 'feature_background', true); endif; ?>;">
+<section class="anc" id="<?php echo sanitize_title_with_dashes( get_the_title()); ?>"></section>
 
-	<header class="entry-header <?php if ( get_post_meta($post->ID, 'feature_background', true) && get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?> typr">
+<div id="child-<?php the_ID(); ?>" class="panel-row row nm panel-page br-full">
 
-		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<div class="panel-box heading grey row nm col-sm-12 np">
 
-		<?php the_title( sprintf( '<h2 class="entry-title "><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<div class="col-sm-8 np">
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><h1 class="d b"><?php the_title(); ?></h1></a>
 
-		<div class="entry-meta">
+		</div>
 
-			<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php the_category(' '); ?></span>
+		<div class="col-sm-4 np typr right mob-left">
 
-			<span class="feature-meta"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <?php the_author_posts_link(); ?></span>
+			<h2 class="lighten b" >
 
-		</div><!-- .entry-meta -->
+				<small>
 
-		<?php endif; ?>
+					<span class="hidden-sm-down">Posted</span> <?php echo get_the_date('M Y'); ?>
 
-	</header><!-- .entry-header -->
+				</small>
 
-		<div class="entry-content typr">
+			</h2>
 
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-					'after'  => '</div>',
-				) );
-			?>
+			<script>
+				var btns = document.querySelectorAll('button');
+				var clipboard = new Clipboard(btns);
+				clipboard.on('success', function(e) {
+						console.log(e);
+				});
+				clipboard.on('error', function(e) {
+						console.log(e);
+				});
+			</script>
 
-		</div><!-- .entry-content -->
+		</div>
 
-	<footer class="entry-footer">
+	</div>
 
-	</footer><!-- .entry-footer -->
+	<?php if ( has_post_thumbnail() ) { ?>
 
-</article><!-- #post-## -->
+		<div class="panel-box col-sm-6 np">
+
+			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?></a>
+
+		</div>
+
+		<div class="panel-box panel-excerpt col-sm-6 np pad-left typr">
+
+			<?php echo the_excerpt(); ?>
+
+				<span class="small lighten b">
+
+					<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> Posted in <?php the_category(' '); ?></span>
+
+					<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
+
+				</span>
+
+				<div class="panel-box">
+
+					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>" class="btn btn-plain btn-md block go forward typr" role="button" aria-pressed="true">Read</a>
+
+				</div>
+
+			</div>
+
+	<?php }	else { ?>
+
+		<div class="panel-box panel-excerpt col-sm-6 np">
+
+			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?></a>
+
+			<?php echo the_excerpt(); ?>
+
+		</div>
+
+		<div class="panel-box panel-excerpt col-sm-6 np pad-left typr">
+
+				<span class="small lighten b">
+
+					<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> Posted in <?php the_category(' '); ?></span>
+
+					<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
+
+				</span>
+
+				<div class="panel-box">
+
+					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>" class="btn btn-plain btn-md block go forward typr" role="button" aria-pressed="true">Read</a>
+
+				</div>
+
+			</div>
+
+	<?php	}	?>
+
+</div><!-- end row -->

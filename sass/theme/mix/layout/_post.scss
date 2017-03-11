@@ -19,10 +19,10 @@
   width: 100%;
   height: 50px;
   overflow: hidden;
-  padding-top: $g-nav-size-small;
+  padding-top: $g-nav-size-height-small;
   background: #F0F0F0;
   &.push-top {
-    padding-top: $g-nav-size-small;
+    padding-top: $g-nav-size-height-small;
   }
   .wrap {
     display: table-cell;
@@ -45,17 +45,17 @@
   width: 100%;
   min-height: 650px;
   overflow: hidden;
-  background: rgba(255,255,255,0.75);
+  //background: rgba(255,255,255,0.75);
   &.light {
-    background: rgba(0,0,0,0.7);
+    //background: rgba(0,0,0,0.7);
   }
   &.clear {
     background: none;
   }
+  background-size: cover;
 }
 
 .feature-background {
-  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -204,7 +204,7 @@
 
 .article-pseudo-header,
 .article.entry.container {
-  background: $g-post-background;
+  background: $g-white;
 }
 
 .article-nav {
@@ -240,19 +240,20 @@
 
 .article.entry figure {
   .wp-caption-text {
-    margin-bottom: 1rem;
-    padding: .5rem 1rem .75rem;
-    background: $g-grey;
-    color: $g-type-co-3;
     a {
       &:after { font-family: "FontAwesome"; content: "\f08e"; display: inline-block; padding-left: .25rem; font-size: 70%; text-decoration: none; }
     }
   }
 }
 
-.article .entry-footer {
-  padding: 2rem 0;
+.article.footer {
   background: $g-white;
+  border-radius: 0 0 .33rem .33rem;
+  padding-bottom: 2rem;
+}
+.article .entry-footer {
+  padding: 0 0 2rem 0;
+  background: $g-light-grey;
   .typr, .typr h3, a {
     color: $g-type-neg;
   }
@@ -415,7 +416,7 @@
   padding: 0;
   width: 100%;
   border: solid $g-grey;
-  border-width: 1px 0;
+  border-width: 1px 0 0;
   h3 {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -464,13 +465,13 @@
 // Responsive breakpoints
 @media (min-height: 376px) { // Landscape devices
   .feature-buttons .feature-meta {
-    display: inline-block;
+    display: block;
   }
 }
 @include media-breakpoint-up(sm) {
   .hero {
     &.push-top {
-      padding-top: $g-nav-size-small;
+      padding-top: $g-nav-size-height-small;
     }
   }
   .feature-wrap {
@@ -497,12 +498,12 @@
 @include media-breakpoint-up(md) {
   .hero {
     &.push-top {
-      padding-top: $g-nav-size;
+      padding-top: $g-nav-size-height;
     }
   }
   .feature-wrap {
     vertical-align: middle;
-    padding: 0 0 $g-nav-size;
+    padding: 0 0 $g-nav-size-height;
   }
   .feature-inner {
     .entry-title span, .entry-title a {

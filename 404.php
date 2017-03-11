@@ -5,40 +5,44 @@
  */
 
 get_header(); ?>
-<div class="wrapper top" id="wrapper-page">
+<div class="wrapper" id="wrapper-page">
 
-  <section id="section-1" class="panel pin h50 pd-top-nav" style="background: #f0f0f0;">
+  <section class="panel pd-top background-primary">
 
-    <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-1-background-image', true),"_m.png",-4); endif; ?>'); background-position: top center;"></div>
-
-    <div id="section-1-panel" class="panel-wrapper va-hero va-middle">
+    <div id="section-1-panel" class="va-top">
 
       <div class="panel-inner">
 
-          <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
+          <div class="container typr theme">
 
             <div class="container-wrapper-100">
 
-              <div id="section-1-description-wrapper">
+              <div class="light">
 
-                <!--<div class="breadcrumb lighten"><?php get_breadcrumb(); ?></div>-->
+                <div class="breadcrumb lighten theme"><?php get_breadcrumb(); ?></div>
 
-                <div id="typed-strings">
+              </div>
 
-        					<p><?php _e( 'Sorry...', 'understrap' ); ?></p>
-        					<p><?php _e( 'This page has either been moved or no longer exists...', 'understrap' ); ?></p>
+              <div class="panel-page br-top" id="404-panel-wrapper">
 
-        				</div>
+                <div>
 
-        				<span class="">
+                  <div id="typed-strings">
 
-        					<h1 class="entry-title typr d <?php if ( get_post_meta($post->ID, 'theme', true) ) : echo get_post_meta($post->ID, 'theme', true); endif; ?>">
+                  <p><?php _e( 'This page has either been moved or no longer exists', 'understrap' ); ?></p>
 
-        						<span id="typed"></span>
+                  </div>
 
-        					</h1>
+                  <h1 id="section-1-intro" class="page-title lead">
 
-        				</span>
+                    <p>
+                      <?php _e( '', 'understrap' ); ?>
+                      <span id="typed"></span>
+                     </p>
+
+                  </h1>
+
+                </div>
 
                 <div class="search search-lg typr">
 
