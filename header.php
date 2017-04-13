@@ -53,7 +53,7 @@
 
         <div class="push-block">
 
-          <form method="get" id="searchform" class="form lg lines-dark" action="//localhost:3000/swwb/" role="search" _lpchecked="1">
+          <form method="get" id="searchform" class="form lg lines-dark" action="/swwb/" role="search" _lpchecked="1">
 
             <label for="s" class="assistive-text sr-only">Search</label>
 
