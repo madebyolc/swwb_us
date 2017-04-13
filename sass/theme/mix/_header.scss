@@ -23,8 +23,11 @@
   z-index: 1000;
   top: 0; left: 0;
   overflow-y: hidden;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, .20);
-  background: blue;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0);
+  background: $g-white;
+  -webkit-transition: all $g-trans-slow ease;
+  -moz-transition: all $g-trans-slow ease;
+  transition: all $g-trans-slow ease;
 }
 .ah.page-header.off-canvas {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.40);
@@ -78,19 +81,13 @@
     -moz-transition: all $g-trans-fast ease;
     transition: all $g-trans-fast ease;
 
-    transform: translateX(-1rem);
-
     .custom-logo-link img {
       max-width: 8rem;
       height: auto;
     }
     svg {
-      -webkit-transform: scale(.9);
-          -ms-transform: scale(.9);
-              transform: scale(.9);
-      -webkit-transform-origin: left;
-          -ms-transform-origin: left;
-              transform-origin: left;
+      height: 100%;
+      min-height: 100%;
     }
     .swwb_logo {
       fill: $g-brand-primary;
@@ -712,11 +709,8 @@ $push: 75%;
     .navbar-brand {
       height: $g-nav-size-height;
       max-height: $g-nav-size-height;
-      transform: translateX(-1.55rem);
+      transform: translateX(0);
       svg {
-        -webkit-transform: scale(.75);
-            -ms-transform: scale(.75);
-                transform: scale(.75);
       }
     }
   }
