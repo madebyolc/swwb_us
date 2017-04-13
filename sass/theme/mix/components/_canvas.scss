@@ -1,0 +1,16 @@
+/*
+#   CANVAS
+#   _canvas.scss
+#   canvas has been developed to be used as a simple framework for display-style content (front-page, campaigns, etc.)
+#
+*/
+
+section.canvas {
+  background: $g-white;
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}
