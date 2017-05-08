@@ -1,0 +1,59 @@
+// Displaying the_content inside panels
+
+.panel-page {
+  &.content {
+    margin-bottom: 2rem;
+    figure {
+      width: 100%!important;
+      max-width: 100%;
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+      figcaption {
+        border: 1px solid $g-light-grey;
+        border-radius: 0 0 .33rem .33rem;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: $g-dark-grey;
+      }
+    }
+    ul, ol {
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.article .entry-content {
+  //padding-top: $g-nav-size-height-small;
+}
+
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  .article .entry-content {
+    //padding-top: $g-nav-size-height;
+    figure {
+      width: 100%!important;
+      max-width: 100%;
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+      figcaption {
+        border: 1px solid $g-light-grey;
+        border-radius: 0 0 .33rem .33rem;
+        padding: .5rem 1rem;
+        margin-bottom: 1rem;
+        color: $g-dark-grey;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}

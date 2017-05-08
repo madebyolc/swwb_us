@@ -5,73 +5,65 @@
  */
 
 get_header(); ?>
-<div class="wrapper" id="404-wrapper">
-    
-    <div  id="content" class="container">
+<div class="wrapper" id="wrapper-page">
 
-        <div class="row">
-        
-            <div id="primary" class="content-area">
+  <section class="panel pd-top background-primary">
 
-                <main id="main" class="site-main" role="main">
+    <div id="section-1-panel" class="va-top">
 
-                    <section class="error-404 not-found">
-                        
-                        <header class="page-header">
+      <div class="panel-inner">
 
-                            <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'understrap' ); ?></h1>
-                        </header><!-- .page-header -->
+          <div class="container typr theme">
 
-                        <div class="page-content">
+            <div class="container-wrapper-100">
 
-                            <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'understrap' ); ?></p>
+              <div class="light">
 
-                            <?php get_search_form(); ?>
+                <div class="breadcrumb lighten theme"><?php get_breadcrumb(); ?></div>
 
-                            <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+              </div>
 
-                            <?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+              <div class="panel-page br-top" id="404-panel-wrapper">
 
-                                <div class="widget widget_categories">
+                <div>
 
-                                    <h2 class="widget-title"><?php _e( 'Most Used Categories', 'understrap' ); ?></h2>
+                  <div id="typed-strings">
 
-                                    <ul>
-                                    <?php
-                                        wp_list_categories( array(
-                                            'orderby'    => 'count',
-                                            'order'      => 'DESC',
-                                            'show_count' => 1,
-                                            'title_li'   => '',
-                                            'number'     => 10,
-                                        ) );
-                                    ?>
-                                    </ul>
+                  <p><?php _e( 'This page has either been moved or no longer exists', 'understrap' ); ?></p>
 
-                                </div><!-- .widget -->
-                            
-                            <?php endif; ?>
+                  </div>
 
-                            <?php
-                                /* translators: %1$s: smiley */
-                                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'understrap' ), convert_smilies( ':)' ) ) . '</p>';
-                                the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-                            ?>
+                  <h1 id="section-1-intro" class="page-title lead">
 
-                            <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+                    <p>
+                      <?php _e( '', 'understrap' ); ?>
+                      <span id="typed"></span>
+                     </p>
 
-                        </div><!-- .page-content -->
-                        
-                    </section><!-- .error-404 -->
+                  </h1>
 
-                </main><!-- #main -->
-                
-            </div><!-- #primary -->
+                </div>
 
-        </div> <!-- .row -->
-        
-    </div><!-- Container end -->
-    
+                <div class="search search-lg typr">
+
+                  <?php get_search_form(); ?>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
 </div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

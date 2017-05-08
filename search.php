@@ -8,35 +8,55 @@
 get_header(); ?>
 <div class="wrapper search-wrapper">
 
-    <div class="container search">
+  <section class="panel pd-top background-primary">
 
-        <div class="row">
+    <div id="section-1-panel" class="va-top">
 
-            <section id="primary" class="content-area">
+      <div class="panel-inner">
 
-                <main id="main" class="site-main" role="main">
+          <div class="container typr theme">
+
+            <div class="container-wrapper-100">
+
+              <div class="light">
+
+                <div class="breadcrumb lighten theme"><?php get_breadcrumb(); ?></div>
+
+              </div>
+
+              <div class="panel-page br-top theme primary" id="search-panel-wrapper">
 
                 <?php if ( have_posts() ) : ?>
 
-                    <header class="page-header">
+                    <header class="page-header typr">
 
-                        <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'understrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="page-title lead"><?php printf( __( 'Search Results for: %s', 'understrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
                     </header><!-- .page-header -->
 
+                    <div class="search search-lg typr">
+
+                      <?php get_search_form(); ?>
+
+                    </div>
+
                     <?php /* Start the Loop */ ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
+                    <div class="pd-top">
 
-                        <?php
-                        /**
-                         * Run the loop for the search to output the results.
-                         * If you want to overload this in a child theme then include a file
-                         * called content-search.php and that will be used instead.
-                         */
-                        get_template_part( 'loop-templates/content', 'search' );
-                        ?>
+                      <?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php endwhile; ?>
+                          <?php
+                          /**
+                           * Run the loop for the search to output the results.
+                           * If you want to overload this in a child theme then include a file
+                           * called content-search.php and that will be used instead.
+                           */
+                          get_template_part( 'loop-templates/content', 'search' );
+                          ?>
+
+                      <?php endwhile; ?>
+
+                    </div>
 
                     <div class="pagination">
 
@@ -51,6 +71,29 @@ get_header(); ?>
                     <?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
                 <?php endif; ?>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+<div class="container search">
+
+        <div class="row">
+
+            <section id="primary" class="content-area">
+
+                <main id="main" class="site-main" role="main">
+
+
+
 
                 </main><!-- #main -->
 

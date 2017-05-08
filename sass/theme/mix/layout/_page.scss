@@ -36,7 +36,8 @@ main {
 
   article {
     margin-top: 2rem;
-    background: #eee;
+    border: 1px solid #888;
+    border-width: 0 0 1px 0;
     &:first-child {
       margin-top: 0;
     }
@@ -47,7 +48,6 @@ main {
       .wp-post-img-link {
         display: block;
         width: 100%;
-        max-height: 500px;
         overflow-y: hidden;
         img {
           width: 100%;
@@ -62,32 +62,37 @@ main {
     }
   }
 
-  article.entry-content {
-    background: green;
-  }
-
   .list-archive-nav {
     display: block;
     .button {
-      padding: .25rem .5rem;
-      border-radius: .125rem;
-      background: #F0F0F0;
-      color: $g-type-neg;
+      //padding: .5rem 1rem;
+      background: $g-light-grey;
+      border-color: $g-light-grey;
+      padding-left: 0;
+      //color: $g-brand-primary;
+      //line-height: 3rem;
+      &:focus {
+        background: $g-light-grey;
+        border-color: $g-light-grey;
+      }
       &.collapsed {
-        background: transparent;
-        color: $g-type-neg;
+        background: $g-light-grey;
+        color: $g-brand-primary;
       }
     }
   }
 
   .list-archive-container {
     position: relative;
-    border-bottom: 2px solid #CCC;
-    background: #F0F0F0;
+    background: $g-light-grey;
+    border: 1px solid $g-brand-primary;
+    border-width: 2px 0 0;
+    margin-bottom: 2rem;
     z-index: 1;
     min-height: 0;
+    top: 0px;
     .wrap {
-      padding: 1rem 1rem 1.5rem;
+      padding: 1rem 1rem 2rem;
     }
     li.categories {
       display: block;
@@ -159,6 +164,39 @@ main {
   }
 }
 
+// Archive pages
+.archive-section, .archive-filter, .archive-panel, .archive-pagination {
+  background: $g-light-grey;
+}
+
+section.campaign {
+  //background-color: #2e4db6!important;
+}
+
+.page-about {
+  #section-1-intro-wrapper {
+    min-height: 0;
+  }
+}
+
+// HEADER ICONS
+.header-icon {
+  svg path {
+    stroke: $g-brand-primary;
+  }
+  &.parent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 /*
 #   5 - PAGINATION    5 - PAGINATION    5 - PAGINATION    5 - PAGINATION    5 - PAGINATION    5 - PAGINATION    5 - PAGINATION
 */
@@ -190,7 +228,13 @@ main {
 }
 
 // Responsive breakpoints
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+  .page-about {
+    #section-1-intro-wrapper {
+      min-height: 200px;
+    }
+  }
+}
 @include media-breakpoint-up(md) {}
 @include media-breakpoint-up(lg) {}
 @include media-breakpoint-up(xl) {}

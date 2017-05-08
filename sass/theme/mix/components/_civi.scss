@@ -1,0 +1,391 @@
+/*
+#   CIVI
+#   _civi.scss
+#
+#   INDEX
+#
+#   1 -
+#
+*/
+
+/*
+#   1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN    1 - MAIN
+*/
+
+$civi-1: #fff;
+$civi-2: #fff;
+$civi-3: $g-grey;
+$civi-4: $g-brand-primary;
+$civi-r: .25rem;
+$civi-text-primary: $g-type-co-1;
+$civi-text-secondary: $g-type-co-2;
+$civi-font-normal: 100%;
+$civi-font-small: 80%;
+
+$civi-neg: $g-brand-primary;
+$civi-pos: white;
+
+#get-involved-form .crm-title {
+  display: none;
+}
+.crm-container {
+  padding: 0;
+  padding-bottom: 1rem;
+  display: block;
+  clear: both;
+
+  #printer-friendly {
+    display: none;
+  }
+  .crm-public-footer {
+    margin-top: 3rem;
+    font-size: $civi-font-small;
+  }
+  .empowered-by-link {
+    display: inline-block;
+  }
+  .messages.crm-error {
+    background: $civi-pos;
+    color: darken(red, 10%);
+    padding: .75rem;
+    margin-bottom: 1rem;
+    border: 1px solid red;
+    border-radius: $civi-r;
+  }
+  .crm-error {
+    background: $civi-pos;
+    color: darken(red, 10%);
+    padding: .25rem;
+    padding-left: .5rem;
+    border: 1px solid red;
+    border-radius: $civi-r;
+    margin-top: 1rem;
+  }
+  .crm-error-label {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: inherit;
+  }
+  span.crm-error {
+
+      display: block;
+      //max-width: 400px;
+  }
+  #errorList {
+    list-style: none;
+    li:before {
+      content: " – ";
+    }
+  }
+}
+.crm-submit-buttons {
+  text-align: center;
+}
+.crm-button.crm-button-type-upload {
+  padding-left: 1.75rem;
+  margin: 3rem 0 1rem;
+  background: $g-brand-primary;
+  background-image: none!important;
+  border-radius: .33rem;
+  display: inline-block;
+  text-align: center;
+  min-width: 100%;
+  .crm-i {
+    color: white;
+    border-color: white;
+  }
+  input.crm-form-submit.default.validate {
+    cursor: pointer;
+    border-radius: .33rem;
+    padding: 1rem 2rem 1rem 1rem;
+    font-weight: bold;
+    color: white;
+    background: inherit;
+    border: 0;
+  }
+}
+.crm-group.membership-group #priceset #help {
+  padding: 1rem;
+  background: $g-status;
+  color: $civi-pos;
+  font-weight: bold;
+  border-radius: .33rem;
+}
+.crm-container .status, .description {
+  font-size: $civi-font-small;
+  padding: .5rem;
+  border-radius: $civi-r;
+  background: $civi-2;
+  border: 1px solid $civi-4;
+}
+
+.crm-container {
+  background: $civi-1;
+  border-radius: $civi-r;
+  padding: 1rem;
+
+  .crm-public-form-item, #billing-payment-block {
+    margin: 0 auto;
+
+    fieldset legend {
+      display: none;
+    }
+    .form-item {
+    }
+
+    &.intro_text-section {
+      padding: 2rem 0;
+      text-align: left;
+      font-family: "Now";
+    }
+
+    #membership {
+    }
+
+    #priceset {
+      .price-set-row {
+        margin: .525rem 0;
+        display: inline-table;
+        .price-set-option-content {
+          cursor: pointer;
+          background: $civi-neg;
+          color: $civi-pos;
+          margin: .5rem 0rem;
+          padding: .5rem .75rem;
+          border-radius: $civi-r;
+          label {
+            cursor: pointer;
+            padding-left: .75rem;
+            span {
+              color: $civi-pos;
+            }
+          }
+        }
+      }
+      #amount_sum_label {
+        color: $civi-text-secondary;
+        text-align: center;
+        font-style: italic;
+        font-size: $civi-font-small;
+      }
+    }
+
+
+    #billing_postal_code-5 {
+      max-width: 200px!important;
+    }
+
+    label {
+      margin: 0;
+    }
+
+    .label {
+      margin: 1rem 0 .5rem;
+    }
+
+    input.crm-form-radio, input.crm-form-checkbox {
+      cursor: pointer;
+      position: relative;
+      padding: .5rem;
+      //xs top: .3rem;
+    }
+
+    input.crm-form-text, input.creditcard, .select2-container ul, .select2-container.select2-choice {
+      padding: .75rem;
+      background: $civi-2;
+      background-image: none!important; //remove horrible shadow
+      border: 1px solid $civi-4!important;
+      border-radius: $civi-r;
+      width: 100%;
+      //max-width: 400px;
+    }
+
+    .crm-form-date, #credit_card_exp_date_Y, #credit_card_exp_date_M {
+      padding: 1rem;
+      background: $civi-2;
+      background-image: none!important;
+      border: 1px solid $civi-4;
+      border-radius: $civi-r;
+      width: 50%;
+      height: 4rem;
+      margin-right: .5rem;
+      max-width: 120px;
+    }
+
+    input.error {
+      //margin-bottom: 1rem;
+    }
+
+    #billingcheckbox, label[for="billingcheckbox"] {
+      display: none;
+    }
+
+    .cvv2-section, .editrow_custom_7-section {
+      input {
+        max-width: 200px;
+      }
+    }
+
+    &.is_recur-section {
+      .label { display: none; }
+    }
+    .credit_card_type-section {
+      &:before {
+        content: "Select payment type *";
+      }
+    }
+    .crm-credit_card_type-icon-visa, .crm-credit_card_type-icon-mastercard, .crm-credit_card_type-icon-amex, .crm-credit_card_type-icon-discover {
+      padding: .75rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      display: inline-block;
+      background: $civi-2;
+      background-image: none!important; //remove horrible shadow
+      border: 1px solid $civi-4;
+      border-radius: $civi-r;
+      :before {
+        font-family: "FontAwesome";
+        margin-right: .5rem;
+      }
+    }
+    .crm-credit_card_type-icon-visa {
+      :before {
+        content: "\f1f0";
+      }
+    }
+    .crm-credit_card_type-icon-mastercard {
+      :before {
+        content: "\f1f1";
+      }
+    }
+    .crm-credit_card_type-icon-amex {
+      :before {
+        content: "\f1f3";
+      }
+    }
+    .crm-credit_card_type-icon-discover {
+      :before {
+        content: "\f1f2";
+      }
+    }
+  }
+  .header-dark {
+    padding: .5rem 0;
+  }
+}
+
+.crm-public-form-item {
+
+  .crm-section .auto-renew {
+    margin-top: 1rem;
+    .label { display: none; }
+    padding: .75rem;
+    background: $civi-4;
+    color: $civi-pos;
+    background-image: none!important; //remove horrible shadow
+    border: 1px solid $civi-4;
+    border-radius: $civi-r;
+    width: 100%;
+    float: left;
+  }
+  input#auto_renew {
+    float: left;
+    margin-left: .375rem;
+    margin-top: .5rem;
+    width: 25px; height: 25px;
+  }
+  label[for="auto_renew"] {
+    float: left;
+    cursor: pointer;
+    padding-left: 1rem;
+    width: calc(100% - 60px);
+  }
+  .editrow_custom_12-section {
+    input {
+
+      width: 25px; height: 25px;
+    }
+    label {
+      display: block;
+      cursor: pointer;
+    }
+    .label label {
+      padding: 0;
+    }
+  }
+
+}
+/*.billing_name_address-section {
+  .crm-section {
+    width: 49%;
+    display: inline-block;
+  }
+}*/
+.select2-container {
+  width: 100%!important;
+  //max-width: 400px!important;
+  ul, .select2-choice {
+    background-image: none!important;
+  }
+  ul.select2-choices .select2-search-field input {
+    width: 100%!important;
+    padding: 0;
+  }
+}
+
+.select2-container .select2-choice {
+  padding: 1rem .75rem!important;
+  border: 1px solid $civi-4!important;
+  height: auto!important;
+  .select2-arrow, .select2-search-choice-close {
+    display: none!important;
+  }
+}
+.select2-search input {
+  min-height: 3rem!important;
+}
+
+#select2-drop {
+}
+
+.select2-drop-active {
+  border-color: $civi-3!important;
+}
+.select2-results .select2-highlighted {
+  background: $civi-neg!important;
+  color: $civi-pos!important;
+  border-radius: $civi-r!important;
+  .select2-result-label {
+    color: $civi-pos!important;
+  }
+}
+.select2-result-label {
+  padding: .75rem!important;
+}
+.select2-container-multi .select2-choices .select2-search-choice {
+  margin-right: .5rem!important;
+  background: $civi-pos!important;
+  padding: .75rem!important;
+  padding-left: 1.5rem!important;
+  border-color: $civi-neg!important;
+  div {
+    color: $civi-neg!important;
+    line-height: 1.75rem!important;
+  }
+}
+.select2-container-multi .select2-search-choice-close {
+  left: .5rem!important; top: .75rem!important;
+  color: $civi-neg!important;
+  border: none!important;
+}
+
+// Responsive breakpoints
+@include media-breakpoint-up(sm) {
+  .crm-button.crm-button-type-upload {
+    min-width: 0;
+  }
+}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}

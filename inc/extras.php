@@ -58,3 +58,24 @@ If (! is_singular()) {
 	}
 }
 add_filter( 'post_thumbnail_html', 'wpb_autolink_featured_images', 10, 3 );
+
+function custom_excerpt_length( $length ) {
+	return 21;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function trim_excerpt($text) {
+return str_replace(' [...]', '', $text);}
+add_filter('get_the_excerpt', 'trim_excerpt');
+
+function get_posts_page_url() {
+  if( 'page' == get_option( 'show_on_front' ) ) {
+    $posts_page_id = get_option( 'page_for_posts' );
+    $posts_page = get_page( $posts_page_id );
+    $posts_page_url = site_url( get_page_uri( $posts_page_id ) );
+  }
+  else {
+    $posts_page_url = site_url();
+  }
+  return $posts_page_url;
+}

@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="wrapper" id="page-wrapper">
 
-    <div  id="content" class="container">
+    <div  id="content" class="container typr">
 
         <div class="row">
 

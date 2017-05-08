@@ -12,10 +12,26 @@ body {
   position: relative;
   background-color: $g-body-background;
   color: $g-body-colour;
+  -moz-font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   // Stop body scrolling when nav is activated
   &.overflow {
     overflow: hidden;
   }
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, samp, figure, small, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, table, caption, tbody, tfoot, thead, tr, th, td {
+border: 0;
+font-size: 100%;
+font-style: inherit;
+font-weight: inherit;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
+table-layout:fixed;
 }
 
 // Start Typographical Styles
@@ -23,6 +39,9 @@ body {
 // Links
 a {
   color: $g-type-link-color;
+  -webkit-transition: all $g-trans-medium ease;
+  -moz-transition: all $g-trans-medium ease;
+  transition: all $g-trans-medium ease;
   &:hover { color: $g-type-link-color-hover; }
 }
 
