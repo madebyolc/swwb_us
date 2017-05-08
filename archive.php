@@ -24,11 +24,11 @@ get_header(); ?>
 
               <div class="container-wrapper-100">
 
-                <div id="section-1-description-wrapper typr">
+                <div id="section-1-description-wrapper">
 
                   <?php if ( is_category() ) :
 
-                    echo '<h1 class="page-title lead section">' . single_cat_title( 'SWWB ', false ) . '</h1>';
+                    echo '<h1 class="page-title lead">' . single_cat_title( ' ', false ) . ' News</h1>';
                     the_archive_description( '<h2 class="typr spaced frame">', '</p>' );
 
                     elseif ( is_archive() ) :

@@ -64,13 +64,15 @@ main {
 
   .list-archive-nav {
     display: block;
+    text-align: right;
     .button {
       //padding: .5rem 1rem;
-      background: $g-light-grey;
-      border-color: $g-light-grey;
-      padding-left: 0;
+      background: $g-white;
+      border-color: $g-brand-primary;
+      border-width: 0 0 2px 0;
       //color: $g-brand-primary;
       //line-height: 3rem;
+      border-radius: .33rem .33rem 0 0;
       &:focus {
         background: $g-light-grey;
         border-color: $g-light-grey;
@@ -85,8 +87,8 @@ main {
   .list-archive-container {
     position: relative;
     background: $g-light-grey;
-    border: 1px solid $g-brand-primary;
-    border-width: 2px 0 0;
+    border: 0px solid $g-brand-primary;
+    //border-width: 2px 0 0;
     margin-bottom: 2rem;
     z-index: 1;
     min-height: 0;
@@ -165,8 +167,15 @@ main {
 }
 
 // Archive pages
-.archive-section, .archive-filter, .archive-panel, .archive-pagination {
-  background: $g-light-grey;
+.archive-section, .archive-panel, .archive-pagination {
+  background: $g-white;
+}
+.archive-section {
+  padding-bottom: 0rem;
+  margin-bottom: 2rem;
+}
+.archive-filter {
+  background: transparent;
 }
 
 section.campaign {

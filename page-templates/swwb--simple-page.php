@@ -106,6 +106,20 @@ get_header(); ?>
 
             <div class="panel-page panel h50 br-full content typr">
 
+              <?php if ( has_post_thumbnail() ) : ?>
+
+      					<div class="article-thumbnail">
+
+      						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+
+      					  	<?php the_post_thumbnail(); ?>
+
+      						</a>
+
+      					</div>
+
+      				<?php endif; ?>
+
               <?php the_content(); ?>
 
             </div>

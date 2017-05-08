@@ -21,11 +21,11 @@
 $g-black: #3b3b39;
 $g-dark-grey: #c5c4c6;
 $g-grey: #CCC;
-$g-light-grey: #f0f0f0;
+$g-light-grey: lighten(#555, 50%);
 $g-white: #FFFFFF;
 
 $g-brand-primary: #3b3b39;//ff6d5a  2b2b29 3a61e6
-$g-brand-secondary: grey;
+$g-brand-secondary: #3a61e6;
 $g-brand-reading: #2b2b29;
 $g-brand-c-1: #3ce6d5;
 $g-brand-c-2: #ff9f1c;
@@ -62,8 +62,8 @@ $g-wrapper-top-padding-small: 1rem;
 $g-nav-background: ;
 $g-nav-explore-color: $g-logo-color;
 
-$g-nav-push-color: $g-white;
-$g-nav-push-background: $g-brand-primary;
+$g-nav-push-color: $g-brand-primary;
+$g-nav-push-background: $g-white;
 $g-nav-push-esc-color: $g-nav-push-color;
 $g-nav-push-logo-color: $g-nav-push-color;
 

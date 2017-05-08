@@ -107,7 +107,7 @@
   padding-right: 15px;
 }
 .article.entry.container, .article.footer.container {
-  width: calc(100% - 30px);
+  //width: calc(100% - 30px);
 }
 .content-single.container {
   width: 80%;
@@ -181,8 +181,6 @@
     padding-right: 1.5rem;
   }
   #wrapper-page .content-single.container {
-    padding-left: 0;
-    padding-right: 0;
   }
   .wrap-pushmenu .navbar .container {
     margin: 0;
@@ -215,8 +213,7 @@
     padding-right: 2.25rem;
   }
   #wrapper-page .content-single.container {
-    padding-left: 0;
-    padding-right: 0;
+
   }
   .wrap-pushmenu .navbar .container {
     margin: 0;
@@ -249,8 +246,6 @@
     padding-right: 2.25rem;
   }
   #wrapper-page .content-single.container {
-    padding-left: 0;
-    padding-right: 0;
   }
   .wrap-pushmenu .navbar .container {
     margin: 0;

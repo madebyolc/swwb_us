@@ -9,15 +9,15 @@
 
 <div class="wrapper top" id="wrapper-page">
 
-	<section class="panel mg-top <?php if ( !get_the_post_thumbnail_url( $post->ID, 'large', true) ) : echo 'h50'; else : echo 'h75'; endif; ?>" style="background-size: cover; background-image: url('<?php echo get_the_post_thumbnail_url( $post->ID, 'large' ); ?>'); background-color: <?php if ( get_post_meta($post->ID, 'page-background', true) ) : echo get_post_meta($post->ID, 'page-background', true); endif; ?>">
+	<section class="panel mg-top hNone">
 
-		<div class="panel-wrapper va-bottom">
+		<div class="panel-wrapper">
 
 				<div class="panel-inner">
 
 					<div class="content-single container pd-top-small typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
 
-						<div class="container-wrapper-100 panel-page frame-thin br-top">
+						<div class="container-wrapper-100">
 
 							<div id="typed-strings">
 
@@ -25,7 +25,7 @@
 
 							</div>
 
-							<h1 class="page-title section lead d b">
+							<h1 class="page-title lead d b">
 
 								<span id="typed"></span>
 
@@ -50,6 +50,20 @@
 		<div class="article entry container">
 
 			<div class="article-content typr">
+
+				<?php if ( has_post_thumbnail() ) : ?>
+
+					<div class="article-thumbnail">
+
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+
+					  	<?php the_post_thumbnail(); ?>
+
+						</a>
+
+					</div>
+
+				<?php endif; ?>
 
 				<?php the_content(); ?>
 

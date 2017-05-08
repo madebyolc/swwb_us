@@ -196,7 +196,7 @@
   }
   .entry-header, .entry-content {
     z-index: 99;
-    background-color: $g-post-background;
+    background-color: $g-white;
   }
   .entry-content {
   }
@@ -216,8 +216,12 @@
   width: 100%;
 }
 
+.article-thumbnail {
+  margin-bottom: 2rem;
+}
+
 .article.entry {
-  padding: 2rem 0;
+  padding: 0;
   line-height: 1.8;
   overflow-y: hidden;
   p {
@@ -253,7 +257,7 @@
 }
 .article .entry-footer {
   padding: 0 0 2rem 0;
-  background: $g-light-grey;
+  background: $g-white;
   .typr, .typr h3, a {
     color: $g-type-neg;
   }

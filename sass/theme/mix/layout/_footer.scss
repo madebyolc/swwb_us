@@ -16,6 +16,7 @@
   position: relative;
   z-index: 2;
   background: $g-light-grey;
+  border-top: 2px solid $g-brand-primary;
   .timeline-Widget {
     border-radius: .33rem;
   }
@@ -24,7 +25,8 @@
 #wrapper-footer {
   position: relative;
   z-index: 2;
-  background: $g-black;
+  background: $g-white;
+  border-top: 2px solid $g-brand-primary;
   .navbar {
     min-height: none;
     max-height: none;
@@ -64,7 +66,7 @@
       width: 50%;
       border-left: 0px solid lighten($g-type-neg, 30%);
       &:hover {
-        .footer-nav-heading { color: $g-type-pos; }
+        .footer-nav-heading { color: lighten($g-type-neg, 20%); }
       }
       .footer-nav-heading {
         margin-bottom: .5rem;
@@ -81,10 +83,10 @@
           display: block;
           width: 100%;
           a {
-            color: $g-type-pos-dark;
+            color: lighten($g-type-neg, 30%);
             border-bottom-color: rgba(255,255,255,0.125);
             &:hover {
-              color: $g-type-pos;
+              color: $g-type-neg;
               border-bottom-color: $g-type-pos;
             }
           }
