@@ -88,6 +88,7 @@
     svg {
       height: 100%;
       min-height: 100%;
+      max-width: 200px;
     }
     .swwb_logo {
       fill: $g-brand-primary;
@@ -220,6 +221,7 @@
   z-index: 999999999;
   position: fixed;
   overflow-x: hidden;
+  border-left: 2px solid $g-brand-primary;
 }
 
 .pushmenu-left.pushmenu-open {
@@ -711,6 +713,7 @@ $push: 75%;
       max-height: $g-nav-size-height;
       transform: translateX(0);
       svg {
+        max-width: 200px;
       }
     }
   }

@@ -256,7 +256,7 @@ section.panel {
     // Page
     .panel-page {
       background: white;
-      padding: 1rem;
+      padding: 0rem;
       &.pagination {
         padding: 1rem 2rem 3rem;
       }
@@ -363,7 +363,7 @@ section.panel {
         // Page
         .panel-page {
           background: white;
-          padding: 3rem;
+          padding: 0rem;
           &.full {
             padding: 2.25rem;
           }

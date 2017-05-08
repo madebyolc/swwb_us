@@ -70,7 +70,7 @@ get_header(); ?>
     <!--<div class="<?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?> scroll-this-way down"></div>-->
 
   </section>
-  
+
   <div id="continue"></div>
   <section id="section-2" class="panel h100 pd-top-nav white" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-2-background-image', true) ) : echo get_post_meta($post->ID, 'section-2-background-image', true); endif; ?>'); background-position: bottom center; background-color: <?php if ( get_post_meta($post->ID, 'section-2-background-colour', true) ) : echo get_post_meta($post->ID, 'section-2-background-colour', true); endif; ?>;">
 
@@ -395,8 +395,6 @@ get_header(); ?>
 
               <div class="col-sm-7 offset-sm-5 np">
 
-                <div class="panel-page br-top col-xs-12 col-sm-12 offset-sm-0">
-
                   <div id="section-6-description-wrapper" class="typr">
 
                     <h1 id="section-6-heading" class="lead section col-sm-12 np">
@@ -420,8 +418,6 @@ get_header(); ?>
                     </p>
 
                   </div>
-
-                </div>
 
               </div>
 
