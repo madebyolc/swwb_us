@@ -9329,24 +9329,26 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-align: right; }
   .archive .list-archive-nav .button, .search .list-archive-nav .button, .index .list-archive-nav .button, .author .list-archive-nav .button {
     background: #FFFFFF;
-    border-color: #3b3b39;
-    border-width: 0 0 2px 0;
+    border-color: #FFFFFF;
+    border-bottom-color: #3b3b39;
+    border-width: 2px;
     border-radius: .33rem .33rem 0 0; }
     .archive .list-archive-nav .button:focus, .search .list-archive-nav .button:focus, .index .list-archive-nav .button:focus, .author .list-archive-nav .button:focus {
-      background: #d5d5d5;
-      border-color: #d5d5d5; }
+      border-color: #3b3b39;
+      border-width: 2px; }
     .archive .list-archive-nav .button.collapsed, .search .list-archive-nav .button.collapsed, .index .list-archive-nav .button.collapsed, .author .list-archive-nav .button.collapsed {
-      background: #d5d5d5;
-      color: #3b3b39; }
+      border-color: #FFFFFF;
+      border-bottom-color: #3b3b39;
+      border-width: 2px; }
 
 .archive .list-archive-container, .search .list-archive-container, .index .list-archive-container, .author .list-archive-container {
   position: relative;
-  background: #d5d5d5;
-  border: 0px solid #3b3b39;
+  background: #FFFFFF;
+  border: 2px solid #3b3b39;
   margin-bottom: 2rem;
   z-index: 1;
   min-height: 0;
-  top: 0px; }
+  top: -2px; }
   .archive .list-archive-container .wrap, .search .list-archive-container .wrap, .index .list-archive-container .wrap, .author .list-archive-container .wrap {
     padding: 1rem 1rem 2rem; }
   .archive .list-archive-container li.categories, .search .list-archive-container li.categories, .index .list-archive-container li.categories, .author .list-archive-container li.categories {
@@ -9358,14 +9360,20 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
         display: block; }
         .archive .list-archive-container li.categories ul li a, .search .list-archive-container li.categories ul li a, .index .list-archive-container li.categories ul li a, .author .list-archive-container li.categories ul li a {
           display: list-item;
-          padding: .25rem 0; }
+          padding: .25rem 0;
+          border-bottom-color: #FFFFFF; }
+          .archive .list-archive-container li.categories ul li a:hover, .search .list-archive-container li.categories ul li a:hover, .index .list-archive-container li.categories ul li a:hover, .author .list-archive-container li.categories ul li a:hover {
+            border-bottom-color: #3b3b39; }
         .archive .list-archive-container li.categories ul li ul li, .search .list-archive-container li.categories ul li ul li, .index .list-archive-container li.categories ul li ul li, .author .list-archive-container li.categories ul li ul li {
           margin-left: 1.125rem;
           margin-bottom: 0;
-          border-left: 1px solid #2b2b29; }
+          border-left: 2px solid #2b2b29; }
           .archive .list-archive-container li.categories ul li ul li a, .search .list-archive-container li.categories ul li ul li a, .index .list-archive-container li.categories ul li ul li a, .author .list-archive-container li.categories ul li ul li a {
+            border-bottom-color: #FFFFFF;
             padding: .25rem .5rem;
             font-weight: normal; }
+            .archive .list-archive-container li.categories ul li ul li a:hover, .search .list-archive-container li.categories ul li ul li a:hover, .index .list-archive-container li.categories ul li ul li a:hover, .author .list-archive-container li.categories ul li ul li a:hover {
+              border-bottom-color: #3b3b39; }
   .archive .list-archive-container .list-archive .title, .search .list-archive-container .list-archive .title, .index .list-archive-container .list-archive .title, .author .list-archive-container .list-archive .title {
     margin-bottom: .25rem;
     display: block;
@@ -9375,10 +9383,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   .archive .list-archive-container .list-archive li.archive-date, .search .list-archive-container .list-archive li.archive-date, .index .list-archive-container .list-archive li.archive-date, .author .list-archive-container .list-archive li.archive-date {
     display: block;
     margin-left: 1.125rem;
-    border-left: 1px solid #2b2b29; }
+    border-left: 2px solid #2b2b29; }
     .archive .list-archive-container .list-archive li.archive-date a, .search .list-archive-container .list-archive li.archive-date a, .index .list-archive-container .list-archive li.archive-date a, .author .list-archive-container .list-archive li.archive-date a {
       display: list-item;
-      padding: .25rem .5rem; }
+      padding: .25rem .5rem;
+      border-bottom-color: #FFFFFF; }
+      .archive .list-archive-container .list-archive li.archive-date a:hover, .search .list-archive-container .list-archive li.archive-date a:hover, .index .list-archive-container .list-archive li.archive-date a:hover, .author .list-archive-container .list-archive li.archive-date a:hover {
+        border-bottom-color: #3b3b39; }
   .archive .list-archive-container .list-archive li.archive-year, .search .list-archive-container .list-archive li.archive-year, .index .list-archive-container .list-archive li.archive-year, .author .list-archive-container .list-archive li.archive-year {
     display: block;
     padding-left: 0;
@@ -9387,7 +9398,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
       margin-top: 0; }
   .archive .list-archive-container .list-archive li.archive-year a, .search .list-archive-container .list-archive li.archive-year a, .index .list-archive-container .list-archive li.archive-year a, .author .list-archive-container .list-archive li.archive-year a {
     display: list-item;
-    padding: .25rem 0; }
+    padding: .25rem 0;
+    border-bottom-color: #FFFFFF; }
+    .archive .list-archive-container .list-archive li.archive-year a:hover, .search .list-archive-container .list-archive li.archive-year a:hover, .index .list-archive-container .list-archive li.archive-year a:hover, .author .list-archive-container .list-archive li.archive-year a:hover {
+      border-bottom-color: #3b3b39; }
 
 /*
 #   4 - SPECIFIC PAGES    4 - SPECIFIC PAGES    4 - SPECIFIC PAGES    4 - SPECIFIC PAGES    4 - SPECIFIC PAGES    4 - SPECIFIC PAGES    4 - SPECIFIC PAGES

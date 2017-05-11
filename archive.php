@@ -55,7 +55,7 @@ get_header(); ?>
                     </a>
                   </span>
 
-                  <div class="list-archive-container collapse" id="list-archive-filter">
+                  <div class="list-archive-container collapse col-sm-6 offset-sm-6" id="list-archive-filter">
 
                     <div class="wrap">
                       <div class="list-archive typr left">

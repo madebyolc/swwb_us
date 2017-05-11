@@ -68,31 +68,33 @@ main {
     .button {
       //padding: .5rem 1rem;
       background: $g-white;
-      border-color: $g-brand-primary;
-      border-width: 0 0 2px 0;
+      border-color: $g-white;
+      border-bottom-color: $g-brand-primary;
+      border-width: 2px;
       //color: $g-brand-primary;
       //line-height: 3rem;
       border-radius: .33rem .33rem 0 0;
       &:focus {
-        background: $g-light-grey;
-        border-color: $g-light-grey;
+        border-color: $g-brand-primary;
+        border-width: 2px;
       }
       &.collapsed {
-        background: $g-light-grey;
-        color: $g-brand-primary;
+        border-color: $g-white;
+        border-bottom-color: $g-brand-primary;
+        border-width: 2px;
       }
     }
   }
 
   .list-archive-container {
     position: relative;
-    background: $g-light-grey;
-    border: 0px solid $g-brand-primary;
+    background: $g-white;
+    border: 2px solid $g-brand-primary;
     //border-width: 2px 0 0;
     margin-bottom: 2rem;
     z-index: 1;
     min-height: 0;
-    top: 0px;
+    top: -2px;
     .wrap {
       padding: 1rem 1rem 2rem;
     }
@@ -106,14 +108,22 @@ main {
           a {
             display: list-item;
             padding: .25rem 0;
+            border-bottom-color: $g-white;
+            &:hover {
+              border-bottom-color: $g-brand-primary;
+            }
           }
           ul li {
             margin-left: 1.125rem;
             margin-bottom: 0;
-            border-left: 1px solid $g-type-neg;
+            border-left: 2px solid $g-type-neg;
             a {
+              border-bottom-color: $g-white;
               padding: .25rem .5rem;
               font-weight: normal;
+              &:hover {
+                border-bottom-color: $g-brand-primary;
+              }
             }
           }
         }
@@ -132,10 +142,14 @@ main {
       li.archive-date {
         display: block;
         margin-left: 1.125rem;
-        border-left: 1px solid $g-type-neg;
+        border-left: 2px solid $g-type-neg;
         a {
           display: list-item;
           padding: .25rem .5rem;
+          border-bottom-color: $g-white;
+          &:hover {
+            border-bottom-color: $g-brand-primary;
+          }
         }
       }
       li.archive-year {
@@ -149,6 +163,10 @@ main {
       li.archive-year a {
         display: list-item;
         padding: .25rem 0;
+        border-bottom-color: $g-white;
+        &:hover {
+          border-bottom-color: $g-brand-primary;
+        }
       }
     }
 
