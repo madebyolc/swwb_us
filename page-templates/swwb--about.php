@@ -163,9 +163,11 @@ get_header(); ?>
   </section>
 
   <section class="anc" id="section-4"></section>
-  <section class="panel h100 grey" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-4-background-image', true) ) : echo get_post_meta($post->ID, 'section-4-background-image', true); endif; ?>'); background-position: top center; background-color: <?php if ( get_post_meta($post->ID, 'section-4-background-colour', true) ) : echo get_post_meta($post->ID, 'section-4-background-colour', true); endif; ?>;">
+  <section class="panel h100" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-4-background-image', true) ) : echo get_post_meta($post->ID, 'section-4-background-image', true); endif; ?>'); background-position: bottom center; background-color: <?php if ( get_post_meta($post->ID, 'section-4-background-colour', true) ) : echo get_post_meta($post->ID, 'section-4-background-colour', true); endif; ?>;">
 
-    <div id="section-4-panel" class="panel-wrapper va-top">
+    <div class="section-mob-bg" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-4-background-image', true) ) : echo substr_replace(get_post_meta($post->ID, 'section-4-background-image', true),"_m.png",-4); endif; ?>'); background-position: bottom center;"></div>
+
+    <div id="section-4-panel" class="panel-wrapper va-middle">
 
       <div class="panel-inner">
 
@@ -173,23 +175,33 @@ get_header(); ?>
 
             <div class="container-wrapper-100">
 
-              <div class="panel-page transparent col-xs-12 col-sm-12 offset-sm-0">
+              <div class="panel-page transparent col-xs-12 col-sm-12">
 
-                <div id="section-4-description-wrapper typr">
+                <div id="section-4-description-wrapper" class="typr col-sm-12 np">
 
-                  <p id="section-4-intro" class="typr spaced frame">
+                  <h1 id="section-4-heading" class="lead section">
 
                     <?php if ( get_post_meta($post->ID, 'section-4-intro', true) ) : echo get_post_meta($post->ID, 'section-4-intro', true); endif; ?>
 
-                    <br/><br/>
-
-                    <a href="#section-5" class="btn btn-plain go bottom np bg btn-xs typr" role="button" aria-pressed="true">Aims &amp; Objectives</a>
-
-                  </p>
-
-                  <div id="section-4-poster" class="poster clear col-sm-12 np" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-4-poster', true) ) : echo get_post_meta($post->ID, 'section-4-poster', true); endif; ?>');"></div>
+                  </h1>
 
                 </div>
+
+                <div class="col-sm-6 np">
+
+                  <div class="col-sm-12 np">
+
+                    <p id="section-4-intro" class="typr spaced frame">
+
+                      <?php if ( get_post_meta($post->ID, 'section-4-content', true) ) : echo get_post_meta($post->ID, 'section-4-content', true); endif; ?>
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div id="section-4-poster" class="poster pin-left col-sm-6" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-4-poster', true) ) : echo get_post_meta($post->ID, 'section-4-poster', true); endif; ?>');"></div>
 
               </div>
 
