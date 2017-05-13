@@ -1,0 +1,66 @@
+// Header
+
+
+.navbar {
+  padding-bottom: 0;
+  &.swwb {
+    background: white;
+    border-bottom: 2px solid $brand-primary;
+    .container {
+      padding-top: 10px;
+      padding-bottom: 15px;
+    }
+  }
+  .navbar-toggler {
+    height: 45px;
+    float: right;
+    border: 0;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#2f277d' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  .navbar-nav .nav-link {
+    color: $brand-secondary;
+  }
+  .navbar-nav .active>.nav-link, .navbar-nav .nav-link.active, .navbar-nav .nav-link.open, .navbar-nav .open>.nav-link {
+    background: $brand-primary;
+    color: white;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: .33rem;
+  }
+  .navbar-collapse {
+    padding-top: 1rem;
+  }
+}
+
+
+
+
+.fixed-padding {
+  display: block;
+  height: 72px;
+}
+
+
+
+
+
+.navbar-brand {
+  padding: 0;
+}
+.navbar-brand.custom-logo-link img {
+  max-height: 45px;
+  width: auto;
+}
+
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {
+  .navbar {
+    .navbar-collapse {
+      padding-top: 0rem;
+    }
+  }
+}
+@include media-breakpoint-up(xl) {}

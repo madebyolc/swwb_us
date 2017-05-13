@@ -5,103 +5,69 @@
  * @package understrap
  */
 
-get_header(); ?>
-<div class="wrapper search-wrapper">
+get_header();
 
-  <section class="panel pd-top background-primary">
+$container   = get_theme_mod( 'understrap_container_type' );
+$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+?>
 
-    <div id="section-1-panel" class="va-top">
+<div class="wrapper" id="search-wrapper">
 
-      <div class="panel-inner">
+	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
-          <div class="container typr theme">
+		<div class="row">
 
-            <div class="container-wrapper-100">
+			<!-- Do the left sidebar check and opens the primary div -->
+			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-              <div class="light">
+			<main class="site-main" id="main">
 
-                <div class="breadcrumb lighten theme"><?php get_breadcrumb(); ?></div>
+				<?php if ( have_posts() ) : ?>
 
-              </div>
+					<header class="page-header">
+						/* translators:*/
+							<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'understrap' ),
+								'<span>' . get_search_query() . '</span>' ); ?></h1>
 
-              <div class="panel-page br-top theme primary" id="search-panel-wrapper">
+					</header><!-- .page-header -->
 
-                <?php if ( have_posts() ) : ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-                    <header class="page-header typr">
+						<?php
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'loop-templates/content', 'search' );
+						?>
 
-                        <h1 class="page-title lead"><?php printf( __( 'Search Results for: %s', 'understrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<?php endwhile; ?>
 
-                    </header><!-- .page-header -->
+				<?php else : ?>
 
-                    <div class="search search-lg typr">
+					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-                      <?php get_search_form(); ?>
+				<?php endif; ?>
 
-                    </div>
+			</main><!-- #main -->
 
-                    <?php /* Start the Loop */ ?>
-                    <div class="pd-top">
+			<!-- The pagination component -->
+			<?php understrap_pagination(); ?>
 
-                      <?php while ( have_posts() ) : the_post(); ?>
+		</div><!-- #primary -->
 
-                          <?php
-                          /**
-                           * Run the loop for the search to output the results.
-                           * If you want to overload this in a child theme then include a file
-                           * called content-search.php and that will be used instead.
-                           */
-                          get_template_part( 'loop-templates/content', 'search' );
-                          ?>
+		<!-- Do the right sidebar check -->
+		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-                      <?php endwhile; ?>
+			<?php get_sidebar( 'right' ); ?>
 
-                    </div>
+		<?php endif; ?>
 
-                    <div class="pagination">
+	</div><!-- .row -->
 
-                      <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
-
-                      <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
-
-                    </div>
-
-                <?php else : ?>
-
-                    <?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-                <?php endif; ?>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-<div class="container search">
-
-        <div class="row">
-
-            <section id="primary" class="content-area">
-
-                <main id="main" class="site-main" role="main">
-
-
-
-
-                </main><!-- #main -->
-
-            </section><!-- #primary -->
-
-        </div><!-- .row -->
-
-    </div><!-- Container end -->
+</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

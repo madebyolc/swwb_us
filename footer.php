@@ -6,76 +6,42 @@
  *
  * @package understrap
  */
- $the_theme = wp_get_theme();
+
+$the_theme = wp_get_theme();
+$container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-      <?php get_sidebar('footerfull'); ?>
+<?php get_sidebar( 'footerfull' ); ?>
 
-        <div class="wrapper" id="wrapper-footer">
+<div class="wrapper" id="wrapper-footer">
 
-          <div class="container">
+	<div class="<?php echo esc_html( $container ); ?>">
 
-              <div class="footer-main">
+		<div class="row">
 
-                <div class="footer-nav">
+			<div class="col-md-12">
 
-                  <div class="footer-nav-block typr">
+				<footer class="site-footer" id="colophon">
 
-                    <p class="footer-nav-heading">
-                      <?php $nav_menu = wp_get_nav_menu_object(7); echo $nav_menu->name; ?>
-                    </p>
+					<div class="site-info">
 
-                    <?php	wp_nav_menu( array('theme_location' => 'footer-about-menu', 'container_class' => 'footer-about-menu typr' ) );?>
+						<!-- insert footer here -->
 
-                  </div>
+					</div><!-- .site-info -->
 
-                  <div class="footer-nav-block typr">
+				</footer><!-- #colophon -->
 
-                    <p class="footer-nav-heading">
-                      <?php $nav_menu = wp_get_nav_menu_object(8); echo $nav_menu->name; ?>
-                    </p>
+			</div><!--col end -->
 
-                    <?php	wp_nav_menu( array('theme_location' => 'footer-news-menu', 'container_class' => 'footer-news-menu typr' ) );?>
+		</div><!-- row end -->
 
-                  </div>
+	</div><!-- container end -->
 
-                  <div class="footer-nav-block typr">
+</div><!-- wrapper end -->
 
-                    <p class="footer-nav-heading">
-                      <?php $nav_menu = wp_get_nav_menu_object(9); echo $nav_menu->name; ?>
-                    </p>
+</div><!-- #page -->
 
-                    <?php	wp_nav_menu( array('theme_location' => 'footer-involve-menu', 'container_class' => 'footer-involve-menu typr' ) );?>
-
-                  </div>
-
-                  <div class="footer-nav-block typr">
-
-                    <p class="footer-nav-heading">
-                      <?php $nav_menu = wp_get_nav_menu_object(10); echo $nav_menu->name; ?>
-                    </p>
-
-                    <?php	wp_nav_menu( array('theme_location' => 'footer-misc-menu', 'container_class' => 'footer-misc-menu typr' ) );?>
-
-                  </div>
-
-                </div>
-
-                &copy; Social Workers Without Borders
-
-              </div>
-
-          </div><!-- container end -->
-
-        </div><!-- wrapper end -->
-
-        <?php wp_footer(); ?>
-
-      </div><!-- #page -->
-
-  </swwbwrap>
-
-  <div class="page-button"></div>
+<?php wp_footer(); ?>
 
 </body>
 

@@ -5,5 +5,6 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
-
-@import "mix/gvars";
+$font-family-sans-serif:Arial, sans-serif;
+$brand-primary:         #2f277d; //#ff6d5a
+$brand-secondary:       #444; //#ff6d5a

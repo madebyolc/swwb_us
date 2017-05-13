@@ -1,0 +1,62 @@
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: $brand-primary;
+}
+
+.h1, h1 {
+  font-size: 2rem;
+}
+.h2, h2 {
+  font-size: 1.75rem;
+}
+.h3, h3 {
+  font-size: 1.5rem;
+}
+.h4, h4 {
+  font-size: 1.25rem;
+}
+.h5, h5 {
+  font-size: 1.125rem;
+}
+.h6, h6 {
+  font-size: 1rem;
+}
+
+p {
+  letter-spacing: .5px;
+  font-size: 1.25rem;
+  color: #555;
+}
+
+
+
+
+dl, ol, ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+
+
+
+
+.entry-content {
+  .h1, h1 {
+    font-size: 1.5rem;
+  }
+  .h2, h2 {
+    font-size: 1.25rem;
+  }
+  .h3, h3 {
+    font-size: 1rem;
+  }
+  .h4, h4 {
+    font-size: 1rem;
+  }
+  .h5, h5 {
+    font-size: 1rem;
+  }
+  .h6, h6 {
+    font-size: 1rem;
+  }
+}

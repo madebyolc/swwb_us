@@ -5,38 +5,51 @@
  * @package understrap
  */
 
-get_header(); ?>
-<div class="wrapper fixed-nav" id="single-wrapper">
+get_header();
+$container   = get_theme_mod( 'understrap_container_type' );
+$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+?>
 
-    <div id="content" class="article container">
+<div class="wrapper" id="single-wrapper">
 
-        <div class="row">
+	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
-            <div id="primary" class="content-area">
+		<div class="row">
 
-                <main id="main" class="site-main" role="main">
+			<!-- Do the left sidebar check -->
+			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-                    <?php while ( have_posts() ) : the_post(); ?>
+			<main class="site-main" id="main">
 
-                        <?php get_template_part( 'loop-templates/content', 'single' ); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-                        <!--<div class="pagination">
+					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-                          <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
+						<?php understrap_post_nav(); ?>
 
-                          <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+					?>
 
-                        </div>-->
+				<?php endwhile; // end of the loop. ?>
 
-                    <?php endwhile; // end of the loop. ?>
+			</main><!-- #main -->
 
-                </main><!-- #main -->
+		</div><!-- #primary -->
 
-            </div><!-- #primary -->
+		<!-- Do the right sidebar check -->
+		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-        </div><!-- .row -->
+			<?php get_sidebar( 'right' ); ?>
 
-    </div><!-- Container end -->
+		<?php endif; ?>
+
+	</div><!-- .row -->
+
+</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

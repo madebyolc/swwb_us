@@ -1,104 +1,51 @@
 <?php
 /**
+ * Post rendering content according to caller of get_template_part.
+ *
  * @package understrap
  */
+
 ?>
 
-<section class="anc" id="<?php echo sanitize_title_with_dashes( get_the_title()); ?>"></section>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-<div id="child-<?php the_ID(); ?>" class="panel-row row nm panel-page br-full">
+	<header class="entry-header">
 
-	<div class="panel-box heading grey row nm col-sm-12 np">
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+		'</a></h2>' ); ?>
 
-		<div class="col-sm-8 np">
+		<?php if ( 'post' == get_post_type() ) : ?>
 
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><h1 class="d b"><?php the_title(); ?></h1></a>
+			<div class="entry-meta">
+				<?php understrap_posted_on(); ?>
+			</div><!-- .entry-meta -->
 
-		</div>
+		<?php endif; ?>
 
-		<div class="col-sm-4 np typr right mob-left">
+	</header><!-- .entry-header -->
 
-			<h2 class="lighten b" >
+	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-				<small>
 
-					<span class="hidden-sm-down">Posted</span> <?php echo get_the_date('M Y'); ?>
+	<div class="entry-content">
 
-				</small>
+		<?php
+		the_excerpt();
+		?>
 
-			</h2>
+		<?php
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+			'after'  => '</div>',
+		) );
+		?>
 
-			<script>
-				var btns = document.querySelectorAll('button');
-				var clipboard = new Clipboard(btns);
-				clipboard.on('success', function(e) {
-						console.log(e);
-				});
-				clipboard.on('error', function(e) {
-						console.log(e);
-				});
-			</script>
+	</div><!-- .entry-content -->
 
-		</div>
+	<footer class="entry-footer">
 
-	</div>
+		<?php understrap_entry_footer(); ?>
 
-	<?php if ( has_post_thumbnail() ) { ?>
+	</footer><!-- .entry-footer -->
 
-		<div class="panel-box col-sm-6 np">
-
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?></a>
-
-		</div>
-
-		<div class="panel-box panel-excerpt col-sm-6 np pad-left typr">
-
-			<?php echo the_excerpt(); ?>
-
-				<span class="small lighten b">
-
-					<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> Posted in <?php the_category(' '); ?></span>
-
-					<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
-
-				</span>
-
-				<div class="panel-box">
-
-					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>" class="btn btn-plain btn-md block go forward typr" role="button" aria-pressed="true">Read</a>
-
-				</div>
-
-			</div>
-
-	<?php }	else { ?>
-
-		<div class="panel-box panel-excerpt col-sm-6 np">
-
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?></a>
-
-			<?php echo the_excerpt(); ?>
-
-		</div>
-
-		<div class="panel-box panel-excerpt col-sm-6 np pad-left typr">
-
-				<span class="small lighten b">
-
-					<span class="feature-meta category"><i class="fa fa-map-marker" aria-hidden="true"></i> Posted in <?php the_category(' '); ?></span>
-
-					<span class="feature-meta author"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Written by <?php the_author_posts_link(); ?></span>
-
-				</span>
-
-				<div class="panel-box">
-
-					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>" class="btn btn-plain btn-md block go forward typr" role="button" aria-pressed="true">Read</a>
-
-				</div>
-
-			</div>
-
-	<?php	}	?>
-
-</div><!-- end row -->
+</article><!-- #post-## -->

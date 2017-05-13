@@ -10,40 +10,60 @@
  * @package understrap
  */
 
-get_header(); ?>
+get_header();
+
+$container   = get_theme_mod( 'understrap_container_type' );
+$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+
+?>
 
 <div class="wrapper" id="page-wrapper">
 
-    <div  id="content" class="container typr">
+	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
-        <div class="row">
+		<div class="row">
 
-    	   <div id="primary" class="content-area">
+			<!-- Do the left sidebar check -->
+			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-                 <main id="main" class="site-main" role="main">
+			<main class="site-main" id="main">
 
-                    <?php while ( have_posts() ) : the_post(); ?>
 
-                        <?php get_template_part( 'loop-templates/content', 'page' ); ?>
+				<?php
+					if ( function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb('
+						<p id="breadcrumbs">','</p>
+						');
+					}
+				?>
 
-                        <?php
-                            // If comments are open or we have at least one comment, load up the comment template
-                            if ( comments_open() || get_comments_number() ) :
-                                comments_template();
-                            endif;
-                        ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php endwhile; // end of the loop. ?>
+					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
-                </main><!-- #main -->
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+					?>
 
-    	    </div><!-- #primary -->
+				<?php endwhile; // end of the loop. ?>
 
-            <?php get_sidebar(); ?>
+			</main><!-- #main -->
 
-        </div><!-- .row -->
+		</div><!-- #primary -->
 
-    </div><!-- Container end -->
+		<!-- Do the right sidebar check -->
+		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+
+			<?php get_sidebar( 'right' ); ?>
+
+		<?php endif; ?>
+
+	</div><!-- .row -->
+
+</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

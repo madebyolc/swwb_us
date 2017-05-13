@@ -1,68 +1,82 @@
 <?php
 /**
  * The template for displaying 404 pages (not found).
+ *
  * @package understrap
  */
 
-get_header(); ?>
-<div class="wrapper" id="wrapper-page">
+get_header();
+?>
+<div class="wrapper" id="404-wrapper">
 
-  <section class="panel pd-top background-primary">
+	<div class="container" id="content">
 
-    <div id="section-1-panel" class="va-top">
+		<div class="row">
 
-      <div class="panel-inner">
+			<div class="content-area" id="primary">
 
-          <div class="container typr theme">
+				<main class="site-main" id="main" role="main">
 
-            <div class="container-wrapper-100">
+					<section class="error-404 not-found">
 
-              <div class="light">
+						<header class="page-header">
 
-                <div class="breadcrumb lighten theme"><?php get_breadcrumb(); ?></div>
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.',
+							'understrap' ); ?></h1>
 
-              </div>
+						</header><!-- .page-header -->
 
-              <div class="panel-page br-top" id="404-panel-wrapper">
+						<div class="page-content">
 
-                <div>
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?',
+							'understrap' ); ?></p>
 
-                  <div id="typed-strings">
+							<?php get_search_form(); ?>
 
-                  <p><?php _e( 'This page has either been moved or no longer exists', 'understrap' ); ?></p>
+							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-                  </div>
+							<?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 
-                  <h1 id="section-1-intro" class="page-title lead">
+								<div class="widget widget_categories">
 
-                    <p>
-                      <?php _e( '', 'understrap' ); ?>
-                      <span id="typed"></span>
-                     </p>
+									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'understrap' ); ?></h2>
 
-                  </h1>
+									<ul>
+										<?php
+										wp_list_categories( array(
+											'orderby'    => 'count',
+											'order'      => 'DESC',
+											'show_count' => 1,
+											'title_li'   => '',
+											'number'     => 10,
+										) );
+										?>
+									</ul>
 
-                </div>
+								</div><!-- .widget -->
 
-                <div class="search search-lg typr">
+							<?php endif; ?>
 
-                  <?php get_search_form(); ?>
+							<?php
+							/* translators: %1$s: smiley */
+							$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s',
+							'understrap' ), convert_smilies( ':)' ) ) . '</p>';
+							the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+							?>
 
-                </div>
+							<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
-              </div>
+						</div><!-- .page-content -->
 
-            </div>
+					</section><!-- .error-404 -->
 
-          </div>
+				</main><!-- #main -->
 
-        </div>
+			</div><!-- #primary -->
 
-      </div>
+		</div> <!-- .row -->
 
-    </section>
-
-  </div>
+	</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
 

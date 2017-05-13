@@ -11,68 +11,69 @@
  * @package understrap
  */
 
-get_header(); ?>
+get_header();
 
-    <?php
-    if ( is_front_page() && is_home() ) {
+$container   = get_theme_mod( 'understrap_container_type' );
+$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+?>
 
-        get_sidebar('hero');
+<?php if ( is_front_page() && is_home() ) : ?>
+	<?php get_template_part( 'global-templates/hero', 'none' ); ?>
+<?php endif; ?>
 
-        get_sidebar('statichero');
+<div class="wrapper" id="wrapper-index">
 
-    } else {
-    // Do nothing...or?
-    }
-    ?>
+	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
-    <div class="wrapper index" id="wrapper-index">
+		<div class="row">
 
-	   <div id="content" class="container index">
+			<!-- Do the left sidebar check and opens the primary div -->
+			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-            <div class="row">
+			<main class="site-main" id="main">
 
-    	       <div id="primary" class="content-area">
+				<?php if ( have_posts() ) : ?>
 
-                     <main id="main" class="site-main" role="main">
+					<?php /* Start the Loop */ ?>
 
-                    <?php if ( have_posts() ) : ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-                        <?php /* Start the Loop */ ?>
+						<?php
 
-                        <?php while ( have_posts() ) : the_post(); ?>
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'loop-templates/content', get_post_format() );
+						?>
 
-                                <?php
-                                    /* Include the Post-Format-specific template for the content.
-                                     * If you want to override this in a child theme, then include a file
-                                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                     */
-                                    get_template_part( 'loop-templates/content', get_post_format() );
-                                ?>
+					<?php endwhile; ?>
 
-                        <?php endwhile; ?>
+				<?php else : ?>
 
-                        <div class="pagination">
+					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-                          <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
+				<?php endif; ?>
 
-                          <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
+			</main><!-- #main -->
 
-                        </div>
+			<!-- The pagination component -->
+			<?php understrap_pagination(); ?>
 
-                    <?php else : ?>
+		</div><!-- #primary -->
 
-                        <?php get_template_part( 'loop-templates/content', 'none' ); ?>
+		<!-- Do the right sidebar check -->
+		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-                    <?php endif; ?>
+			<?php get_sidebar( 'right' ); ?>
 
-                    </main><!-- #main -->
+		<?php endif; ?>
 
-    	       </div><!-- #primary -->
+	</div><!-- .row -->
 
-            </div><!-- .row -->
+</div><!-- Container end -->
 
-       </div><!-- Container end -->
-
-    </div><!-- Wrapper end -->
+</div><!-- Wrapper end -->
 
 <?php get_footer(); ?>

@@ -7,185 +7,83 @@
  * @package understrap
  */
 
-get_header(); ?>
+get_header();
+?>
 
-<script type="text/javascript" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-includes/js/ps/page-scroll.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+<?php
+$container   = get_theme_mod( 'understrap_container_type' );
+$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+?>
 
-  <div class="wrapper top" id="wrapper-page">
+<div class="wrapper" id="archive-wrapper">
 
-    <section id="archive-section" class="archive-section panel mg-top-nav pd-top-small" style="background-image: url('<?php if ( get_post_meta($post->ID, 'section-1-background-image', true) ) : echo get_post_meta($post->ID, 'section-1-background-image', true); endif; ?>'); background-color: <?php if ( get_post_meta($post->ID, 'section-1-background-colour', true) ) : echo get_post_meta($post->ID, 'section-1-background-colour', true); endif; ?>;">
+	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
-      <div class="panel-wrapper-min va-top">
+		<div class="row">
 
-        <div class="panel-inner">
+			<!-- Do the left sidebar check -->
+			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
-            <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
+			<main class="site-main" id="main">
 
-              <div class="container-wrapper-100">
+				<?php if ( have_posts() ) : ?>
 
-                <div id="section-1-description-wrapper">
+					<header class="page-header">
+						<h1 class="archive-title"><?php single_cat_title( 'News from ' ); ?></h1>
+						<?php
+						single_cat_title( 'Group: ', false );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						?>
+					</header><!-- .page-header -->
 
-                  <?php if ( is_category() ) :
+					<ul class="categories-list">
+					    <?php wp_list_categories( array(
+					        'orderby'            => 'name',
+					        'show_count'         => true,
+					        'use_desc_for_title' => false,
+									'title_li'							 => ' '
+					    ) ); ?>
+					</ul>
 
-                    echo '<h1 class="page-title lead">' . single_cat_title( ' ', false ) . ' News</h1>';
-                    the_archive_description( '<h2 class="typr spaced frame">', '</p>' );
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-                    elseif ( is_archive() ) :
+						<?php
 
-                    echo '<p class="typr lead  db">' . str_replace('Month: ','',get_the_archive_title()) . '</p>';
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'loop-templates/content', get_post_format() );
+						?>
 
-                  endif; ?>
+					<?php endwhile; ?>
 
-                </div>
+				<?php else : ?>
 
-              </div>
+					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-            </div>
+				<?php endif; ?>
 
-            <div class="archive-filter container archive typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
+			</main><!-- #main -->
 
-              <div class="container-wrapper-100">
+			<!-- The pagination component -->
+			<?php understrap_pagination(); ?>
 
-                <div class="col-sm-12 np typr left">
+		</div><!-- #primary -->
 
-                  <span class="list-archive-nav">
-                    <a href="#" class="button btn btn-tertiary go bottom" data-toggle="collapse" data-target="#list-archive-filter" data-parent="#list-archive-group" aria-expanded="false" aria-controls="list-archive-filter">
-                      Filter
-                    </a>
-                  </span>
+		<!-- Do the right sidebar check -->
+		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-                  <div class="list-archive-container collapse col-sm-6 offset-sm-6" id="list-archive-filter">
+			<?php get_sidebar( 'right' ); ?>
 
-                    <div class="wrap">
-                      <div class="list-archive typr left">
-                        <div class="row">
-                          <div class="col-sm-6">
-                            <span class="title b">Group</span>
-                            <?php
-                            $args = array(
-                              'current_category' => 3,
-                              'title_li' => ' '
-                            );
-                              wp_list_categories($args);
-                            ?>
-                          </div>
-                          <div class="col-sm-6">
-                            <span class="title b">Date</span>
-                            <?php
-                              global $wpdb;
-                              $limit = 0;
-                              $year_prev = null;
-                              $months = $wpdb->get_results("SELECT DISTINCT MONTH( post_date ) AS month ,	YEAR( post_date ) AS year, COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'post' GROUP BY month , year ORDER BY post_date DESC");
-                              foreach($months as $month) :
-                                $year_current = $month->year;
-                                if ($year_current != $year_prev){
-                                  if ($year_prev != null){?>
+		<?php endif; ?>
 
-                                  <?php } ?>
+	</div> <!-- .row -->
 
-                                <li class="archive-year"><a href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/"><?php echo $month->year; ?></a></li>
+</div><!-- Container end -->
 
-                                <?php } ?>
-                                <li class="archive-date"><a href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>"><span class="archive-month"><?php echo date_i18n("F", mktime(0, 0, 0, $month->month, 1, $month->year)) ?></span></a></li>
-                              <?php $year_prev = $year_current;
-
-                              if(++$limit >= 18) { break; }
-
-                              endforeach; ?>
-                          </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="archive-panel panel">
-
-      <div class="panel-wrapper-min">
-
-        <div class="panel-inner">
-
-          <div class="container typr theme ">
-
-            <div class="container-wrapper-100">
-
-              <?php if ( have_posts() ) : ?>
-
-              <?php /* Start the Loop */ ?>
-              <?php while ( have_posts() ) : the_post(); ?>
-
-                <div class="article-box-panel">
-                  <?php
-                      /* Include the Post-Format-specific template for the content.
-                       * If you want to override this in a child theme, then include a file
-                       * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                       */
-                      get_template_part( 'loop-templates/content', get_post_format() );
-                  ?>
-                </div>
-
-              <?php endwhile; ?>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section id="sub-<?php the_ID(); ?>" class="archive-pagination sub-page panel">
-
-      <div id="section-1-panel">
-
-        <div class="panel-inner">
-
-          <div class="container typr theme <?php if ( is_singular() && get_post_meta($post->ID, 'section-1-theme', true) ) : echo get_post_meta($post->ID, 'section-1-theme', true); endif; ?>">
-
-            <div class="container-wrapper-100">
-
-              <div class="panel-page pagination br-top no-shadow">
-
-                <div class="previous typr"><span class="link"><?php next_posts_link( 'Previous' ); ?></span></div>
-
-                <div class="next typr"><span class="link"><?php previous_posts_link( 'Next' ); ?></span></div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    </div>
-
-    <?php else : ?>
-
-        <?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-    <?php endif; ?>
-
-  </div><!-- Container end -->
+</div><!-- Wrapper end -->
 
 <?php get_footer(); ?>
