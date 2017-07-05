@@ -22,7 +22,7 @@
 
 		<div class="entry-meta">
 
-			Posted on <span class="entry-date"><?php echo get_the_date(); ?></span> by <span class="entry-author"><?php echo get_the_author(); ?></span>
+			Posted on <span class="entry-date"><?php echo get_the_date(); ?></span> by <span class="entry-author"><?php echo get_the_author(); ?> in <?php understrap_entry_footer(); ?></span>
 
 		</div><!-- .entry-meta -->
 
