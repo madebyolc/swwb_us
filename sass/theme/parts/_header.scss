@@ -5,7 +5,7 @@
   padding-bottom: 0;
   &.swwb {
     background: white;
-    border-bottom: 2px solid $brand-primary;
+    border-bottom: 1px solid $brand-tertiary;
     .container {
       padding-top: 10px;
       padding-bottom: 15px;
@@ -23,14 +23,15 @@
     color: $brand-secondary;
   }
   .navbar-nav .active>.nav-link, .navbar-nav .nav-link.active, .navbar-nav .nav-link.open, .navbar-nav .open>.nav-link {
-    background: $brand-primary;
-    color: white;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    border-radius: .33rem;
+    color: $brand-primary;
+    font-weight: bold;
   }
   .navbar-collapse {
     padding-top: 1rem;
+  }
+
+  .menu-item a {
+    letter-spacing: normal;
   }
 }
 

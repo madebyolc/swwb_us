@@ -17,7 +17,7 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 
 			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
+				Posted on <span class="entry-date"><?php echo get_the_date(); ?></span> by <span class="entry-author"><?php echo get_the_author(); ?></span>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>

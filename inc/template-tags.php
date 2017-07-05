@@ -108,4 +108,3 @@ function understrap_category_transient_flusher() {
 }
 add_action( 'edit_category', 'understrap_category_transient_flusher' );
 add_action( 'save_post',     'understrap_category_transient_flusher' );
-

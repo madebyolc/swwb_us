@@ -3,43 +3,117 @@
 }
 
 .content-area {
-  padding-top: 30px;
+  padding-top: 3rem;
+}
+
+// CONTENT AREA
+
+.page-header {
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+  //border-bottom: 1px solid $grey-tertiary;
+}
+
+.archive-title {
+  color: $grey-primary;
+}
+
+.categories-list {
+  display: none;
 }
 
 
+// ENTRY AREA
 
+.archive .entry-header {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
 
+.single .entry-header {
+  text-align: left;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  .entry-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    letter-spacing: 3px;
+  }
+}
 
+.entry-meta {
+  color: #AAA;
+}
+
+// WIDGET AREA
 
 
 .widget-area {
-  padding-top: 30px;
+
+  margin-top: 5rem;
   padding-left: 1rem;
   //border-left: 2px solid $brand-primary;
 }
 
 .widget-area {
 
+  .widget {
+    margin-bottom: 3rem;
+  }
+
   .widget-title {
-    padding-bottom: .5rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid grey;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid $grey-tertiary;
+    color: $grey-primary;
   }
 
-  .cat-item {
+  .widget_categories .widget-title {
+    &:before {
+      font-family: "fontawesome";
+      content: "\f0ac";
+      padding-right: .5rem;
+    }
+  }
+
+  .cat-item, .cat-item a {
     margin-bottom: .25rem;
+    color: $grey-secondary;
   }
 
+  .cat-item.cat-item-1 {
+    display: none;
+  }
+
+  .widget_recent_entries .widget-title {
+    &:before {
+      font-family: "fontawesome";
+      content: "\f040";
+      padding-right: .5rem;
+    }
+  }
 
   .widget_recent_entries {
     li {
-      padding-left: 1rem;
-      &:before {
+      //padding-left: 1rem;
+      a {
+        color: $grey-secondary;
+      }
+      /*&:before {
         position: absolute;
         content: "–";
         margin-left: -1rem;
-      }
+      }*/
       margin-bottom: .5rem;
+    }
+  }
+
+  .widget_twitter-timeline-profile .widget-title {
+    &:before {
+      font-family: "fontawesome";
+      content: "\f099";
+      padding-right: .5rem;
     }
   }
 
@@ -47,6 +121,7 @@
     label {
       display: none;
     }
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
@@ -105,7 +180,7 @@
 
 
 article {
-  border-bottom: 1px solid $brand-primary;
+  //border-bottom: 1px solid $brand-primary;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   #secondary img, article img, figure, img, img.wp-post-image {

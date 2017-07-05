@@ -8,3 +8,8 @@
 $font-family-sans-serif:Arial, sans-serif;
 $brand-primary:         #2f277d; //#ff6d5a
 $brand-secondary:       #444; //#ff6d5a
+$brand-tertiary:        lighten($brand-primary, 50%);
+
+$grey-primary:         #555;
+$grey-secondary:       #666;
+$grey-tertiary:       #DDD;
